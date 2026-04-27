@@ -10,7 +10,8 @@ title: Our Services
     <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
       <div class="p-6">
         <h3 class="text-xl font-bold text-blue-900 mb-3">{{ service.data.title }}</h3>
-        <p class="text-gray-600 mb-4">{{ service.templateContent | striptags | truncate(150) }}</p>
+        <!-- Use service.content instead of templateContent -->
+        <p class="text-gray-600 mb-4">{{ service.content | striptags | truncate(150) }}</p>
       </div>
     </div>
   {% endfor %}
