@@ -2,21 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- This viewport tag is the magic that makes mobile viewing work -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} | Wisefrog</title>
-  <!-- Link to the Tailwind CSS we will generate -->
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <!-- This script catches email confirmation tokens on the homepage -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
-  
-  <!-- We will build the navigation and put it here later -->
-  
+  {% include "components/nav.njk" %}
   <main class="flex-grow">
     {{ content | safe }}
   </main>
-
-  <!-- We will build the footer and put it here later -->
-
+  {% include "components/footer.njk" %}
+  
+  <!-- This script handles the redirect to the admin panel after login -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
