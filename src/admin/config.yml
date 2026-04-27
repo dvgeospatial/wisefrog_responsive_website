@@ -29,13 +29,14 @@ collections:
 
   - name: "pages"
     label: "Pages"
-    files:
-      - label: "Home Page"
-        name: "home"
-        file: "src/index.njk"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Hero Text", name: "hero_text", widget: "text", default: "Expert mapping and communications for a greener and more sustainable future."}
-          - {label: "Hero Image 1 (Network)", name: "hero_image_1", widget: "image", required: false}
-          - {label: "Hero Image 2 (Map)", name: "hero_image_2", widget: "image", required: false}
-          - {label: "Hero Background Color", name: "hero_bg_color", widget: "color", default: "#114B5F"}
+    folder: "src/pages"
+    create: false
+    delete: false
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Hero Text", name: "hero_text", widget: "text", default: "Expert mapping and communications for a greener and more sustainable future."}
+      - {label: "Hero Image 1 (Network)", name: "hero_image_1", widget: "image", required: false}
+      - {label: "Hero Image 2 (Map)", name: "hero_image_2", widget: "image", required: false}
+      - {label: "Hero Background Color", name: "hero_bg_color", widget: "color", default: "#114B5F"}
