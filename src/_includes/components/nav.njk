@@ -1,21 +1,24 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <nav class="bg-white shadow-md relative z-10" x-data="{ mobileMenuOpen: false }">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-    <div class="flex justify-between items-center h-24 md:h-28">
+  <!-- Removed horizontal padding (px-0) to push logo to the far left -->
+  <div class="max-w-full px-4 lg:px-0 py-3">
+    <!-- Increased nav height to h-32 to accommodate the much larger logos -->
+    <div class="flex justify-between items-center h-32">
       
       <!-- Side-by-Side Logo Container -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="flex items-center space-x-3">
-          <!-- The Frog Icon (Made large) -->
-          <img class="h-16 md:h-20 w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
-          <!-- The Company Text -->
-          <img class="h-8 md:h-10 w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
+        <!-- Added gap-6 for a nice breathable space between logo and text -->
+        <a href="/" class="flex items-center gap-6">
+          <!-- The Frog Icon (Increased to h-28 / 112px) -->
+          <img class="h-20 md:h-28 w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
+          <!-- The Company Text (Increased to h-16 / 64px) -->
+          <img class="h-12 md:h-16 w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
         </a>
       </div>
 
-      <!-- Desktop Menu -->
-      <div class="hidden md:flex md:items-center md:space-x-8">
+      <!-- Desktop Menu (Pushed slightly inward from the right edge with pr-8) -->
+      <div class="hidden md:flex md:items-center md:space-x-8 pr-8">
         <a href="/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Home</a>
         <a href="/services/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Services</a>
         <a href="/portfolio/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Portfolio</a>
@@ -24,9 +27,9 @@
       </div>
 
       <!-- Mobile Hamburger -->
-      <div class="flex items-center md:hidden">
+      <div class="flex items-center md:hidden pr-4">
         <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-gray-500 hover:text-blue-900 focus:outline-none">
-          <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="display: none;" />
           </svg>
