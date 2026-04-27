@@ -1,27 +1,24 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <nav class="bg-white shadow-md relative z-10" x-data="{ mobileMenuOpen: false }">
-  <!-- Added pl-4 (mobile) and lg:pl-8 (desktop) to push the logos slightly to the right -->
   <div class="max-w-full pl-4 lg:pl-8 pr-4 lg:pr-0 py-3">
     <div class="flex justify-between items-center h-32">
       
       <!-- Side-by-Side Logo Container -->
       <div class="flex-shrink-0 flex items-center">
         <a href="/" class="flex items-center gap-6">
-          <!-- The Frog Icon -->
           <img class="h-20 md:h-28 w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
-          <!-- The Company Text -->
           <img class="h-12 md:h-16 w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
         </a>
       </div>
 
-      <!-- Desktop Menu -->
+      <!-- Desktop Menu (Updated to black, bold, and larger text) -->
       <div class="hidden md:flex md:items-center md:space-x-8 pr-8">
-        <a href="/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Home</a>
-        <a href="/services/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Services</a>
-        <a href="/portfolio/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Portfolio</a>
-        <a href="/about/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">About Us</a>
-        <a href="/contact/" class="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-md text-lg font-bold shadow-sm">Contact</a>
+        <a href="/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">Home</a>
+        <a href="/services/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">Services</a>
+        <a href="/portfolio/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">Portfolio</a>
+        <a href="/about/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">About Us</a>
+        <a href="/contact/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">Contact</a>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -36,14 +33,14 @@
     </div>
   </div>
 
-  <!-- Mobile Dropdown -->
+  <!-- Mobile Dropdown (Updated to match desktop style) -->
   <div x-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200" style="display: none;">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a href="/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-xl font-medium">Home</a>
-      <a href="/services/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-xl font-medium">Services</a>
-      <a href="/portfolio/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-xl font-medium">Portfolio</a>
-      <a href="/about/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-xl font-medium">About Us</a>
-      <a href="/contact/" class="block text-blue-900 font-bold hover:bg-gray-50 px-3 py-2 rounded-md text-xl">Contact</a>
+      <a href="/" class="block text-black hover:bg-gray-50 px-3 py-2 rounded-md text-2xl font-bold">Home</a>
+      <a href="/services/" class="block text-black hover:bg-gray-50 px-3 py-2 rounded-md text-2xl font-bold">Services</a>
+      <a href="/portfolio/" class="block text-black hover:bg-gray-50 px-3 py-2 rounded-md text-2xl font-bold">Portfolio</a>
+      <a href="/about/" class="block text-black hover:bg-gray-50 px-3 py-2 rounded-md text-2xl font-bold">About Us</a>
+      <a href="/contact/" class="block text-black hover:bg-gray-50 px-3 py-2 rounded-md text-2xl font-bold">Contact</a>
     </div>
   </div>
 </nav>
