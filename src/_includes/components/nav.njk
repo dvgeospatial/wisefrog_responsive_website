@@ -2,18 +2,22 @@
 
 <nav class="bg-white shadow-md relative z-10" x-data="{ mobileMenuOpen: false }">
   <div class="max-w-full pl-4 lg:pl-8 pr-4 lg:pr-0 py-3">
-    <div class="flex items-center h-32 relative w-full">
+    <!-- Added justify-between to naturally separate logo and hamburger on mobile -->
+    <!-- Reduced height on mobile (h-24) while keeping it tall on desktop (md:h-32) -->
+    <div class="flex justify-between items-center h-24 md:h-32 relative w-full">
       
       <!-- Side-by-Side Logo Container -->
       <div class="flex-shrink-0 flex items-center z-20">
-        <a href="/" class="flex items-center gap-6">
-          <img class="h-20 md:h-28 w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
-          <!-- The Company Text (Increased to h-14 on mobile and h-20 on desktop) -->
-          <img class="h-14 md:h-20 w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
+        <!-- Reduced gap on mobile (gap-3) vs desktop (md:gap-6) -->
+        <a href="/" class="flex items-center gap-3 md:gap-6">
+          <!-- Scaled down for mobile (h-12) / Kept massive for desktop (md:h-28) -->
+          <img class="h-12 md:h-28 w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
+          <!-- Scaled down for mobile (h-8) / Kept massive for desktop (md:h-20) -->
+          <img class="h-8 md:h-20 w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
         </a>
       </div>
 
-      <!-- Desktop Menu -->
+      <!-- Desktop Menu (Remains perfectly center-aligned) -->
       <div class="hidden md:flex absolute left-1/2 items-center z-10">
         <a href="/" class="absolute right-full mr-8 text-black hover:text-blue-900 px-3 py-2 text-xl font-bold whitespace-nowrap">Home</a>
         
@@ -25,10 +29,10 @@
         </div>
       </div>
 
-      <!-- Mobile Hamburger -->
-      <div class="flex items-center md:hidden absolute right-4">
+      <!-- Mobile Hamburger (Removed absolute positioning so it flows naturally) -->
+      <div class="flex items-center md:hidden z-20">
         <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-gray-500 hover:text-blue-900 focus:outline-none">
-          <svg class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="display: none;" />
           </svg>
