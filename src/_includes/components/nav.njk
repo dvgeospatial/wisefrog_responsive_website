@@ -1,31 +1,30 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<nav class="bg-white shadow-md" x-data="{ mobileMenuOpen: false }">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-20">
+<nav class="bg-white shadow-md relative z-10" x-data="{ mobileMenuOpen: false }">
+  <!-- Increased padding on larger screens to give the bigger logo room to breathe -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+    <div class="flex justify-between items-center h-24">
       
-      <!-- LEFT SIDE: Logo Icon + Company Name Text SVGs -->
+      <!-- Logo Container (Increased from h-12 to h-16/h-20 depending on screen size) -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="flex items-center gap-3 group">
-          <!-- The Frog Logo -->
-          <img class="h-10 w-auto group-hover:opacity-80 transition-opacity" src="/assets/logos/frog_best.svg" alt="Wisefrog Logo">
-          <!-- The Wisefrog Text -->
-          <img class="h-6 w-auto group-hover:opacity-80 transition-opacity" src="/assets/logos/wisefrog_text.svg" alt="wisefrog">
+        <a href="/" class="flex items-center">
+          <img class="h-16 md:h-20 w-auto" src="/assets/logos/wisefrog-logo.svg" alt="Wisefrog Logo" onerror="this.onerror=null; this.outerHTML='<span class=\'text-3xl font-extrabold text-blue-900 tracking-tight\'>WISEFROG</span>';">
         </a>
       </div>
 
-      <!-- RIGHT SIDE: Desktop Menu (Hidden on mobile) -->
+      <!-- Desktop Menu -->
       <div class="hidden md:flex md:items-center md:space-x-8">
-        <a href="/services/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium transition-colors">Services</a>
-        <a href="/portfolio/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium transition-colors">Portfolio</a>
-        <a href="/about/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium transition-colors">About Us</a>
-        <a href="/contact/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium transition-colors">Contact</a>
+        <a href="/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium">Home</a>
+        <a href="/services/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium">Services</a>
+        <a href="/portfolio/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium">Portfolio</a>
+        <a href="/about/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium">About Us</a>
+        <a href="/contact/" class="bg-blue-900 hover:bg-blue-800 text-white px-5 py-2.5 rounded-md text-base font-bold shadow-sm">Contact</a>
       </div>
 
-      <!-- Mobile Hamburger Button -->
+      <!-- Mobile Hamburger -->
       <div class="flex items-center md:hidden">
-        <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-gray-500 hover:text-blue-900 focus:outline-none p-2">
-          <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-gray-500 hover:text-blue-900 focus:outline-none">
+          <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="display: none;" />
           </svg>
@@ -34,13 +33,14 @@
     </div>
   </div>
 
-  <!-- Mobile Menu (Vertical Stack) -->
+  <!-- Mobile Dropdown -->
   <div x-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200" style="display: none;">
-    <div class="px-4 pt-2 pb-4 space-y-2">
-      <a href="/services/" class="block text-gray-800 hover:bg-gray-50 hover:text-blue-900 px-3 py-3 rounded-md text-lg font-medium border-b border-gray-100">Services</a>
-      <a href="/portfolio/" class="block text-gray-800 hover:bg-gray-50 hover:text-blue-900 px-3 py-3 rounded-md text-lg font-medium border-b border-gray-100">Portfolio</a>
-      <a href="/about/" class="block text-gray-800 hover:bg-gray-50 hover:text-blue-900 px-3 py-3 rounded-md text-lg font-medium border-b border-gray-100">About Us</a>
-      <a href="/contact/" class="block text-gray-800 hover:bg-gray-50 hover:text-blue-900 px-3 py-3 rounded-md text-lg font-medium">Contact</a>
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-lg font-medium">Home</a>
+      <a href="/services/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-lg font-medium">Services</a>
+      <a href="/portfolio/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-lg font-medium">Portfolio</a>
+      <a href="/about/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-lg font-medium">About Us</a>
+      <a href="/contact/" class="block text-blue-900 font-bold hover:bg-gray-50 px-3 py-2 rounded-md text-lg">Contact</a>
     </div>
   </div>
 </nav>
