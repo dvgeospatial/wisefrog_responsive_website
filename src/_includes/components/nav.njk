@@ -1,24 +1,26 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <nav class="bg-white shadow-md relative z-10" x-data="{ mobileMenuOpen: false }">
-  <!-- Increased padding on larger screens to give the bigger logo room to breathe -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
-    <div class="flex justify-between items-center h-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div class="flex justify-between items-center h-24 md:h-28">
       
-      <!-- Logo Container (Increased from h-12 to h-16/h-20 depending on screen size) -->
+      <!-- Side-by-Side Logo Container -->
       <div class="flex-shrink-0 flex items-center">
-        <a href="/" class="flex items-center">
-          <img class="h-16 md:h-20 w-auto" src="/assets/logos/wisefrog-logo.svg" alt="Wisefrog Logo" onerror="this.onerror=null; this.outerHTML='<span class=\'text-3xl font-extrabold text-blue-900 tracking-tight\'>WISEFROG</span>';">
+        <a href="/" class="flex items-center space-x-3">
+          <!-- The Frog Icon (Made large) -->
+          <img class="h-16 md:h-20 w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
+          <!-- The Company Text -->
+          <img class="h-8 md:h-10 w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
         </a>
       </div>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex md:items-center md:space-x-8">
-        <a href="/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium">Home</a>
-        <a href="/services/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium">Services</a>
-        <a href="/portfolio/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium">Portfolio</a>
-        <a href="/about/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-base font-medium">About Us</a>
-        <a href="/contact/" class="bg-blue-900 hover:bg-blue-800 text-white px-5 py-2.5 rounded-md text-base font-bold shadow-sm">Contact</a>
+        <a href="/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Home</a>
+        <a href="/services/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Services</a>
+        <a href="/portfolio/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Portfolio</a>
+        <a href="/about/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">About Us</a>
+        <a href="/contact/" class="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-md text-lg font-bold shadow-sm">Contact</a>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -36,11 +38,11 @@
   <!-- Mobile Dropdown -->
   <div x-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200" style="display: none;">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a href="/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-lg font-medium">Home</a>
-      <a href="/services/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-lg font-medium">Services</a>
-      <a href="/portfolio/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-lg font-medium">Portfolio</a>
-      <a href="/about/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-lg font-medium">About Us</a>
-      <a href="/contact/" class="block text-blue-900 font-bold hover:bg-gray-50 px-3 py-2 rounded-md text-lg">Contact</a>
+      <a href="/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-xl font-medium">Home</a>
+      <a href="/services/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-xl font-medium">Services</a>
+      <a href="/portfolio/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-xl font-medium">Portfolio</a>
+      <a href="/about/" class="block text-gray-800 hover:bg-gray-50 px-3 py-2 rounded-md text-xl font-medium">About Us</a>
+      <a href="/contact/" class="block text-blue-900 font-bold hover:bg-gray-50 px-3 py-2 rounded-md text-xl">Contact</a>
     </div>
   </div>
 </nav>
