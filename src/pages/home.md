@@ -2,9 +2,9 @@
 layout: layouts/base.njk
 title: Home
 permalink: /index.html
-hero_text: "Expert mapping and communications for a greener and more sustainable future."
-hero_image_1: "/assets/images/communications_nodes_graph_transparent.png"
-hero_image_2: ""
+hero_text: Expert mapping and communications for a greener and more sustainable future.
+hero_image_1: /assets/images/communications_nodes_graph_transparent.png
+hero_image_2: /assets/images/mapstack_2.png
 hero_bg_color: "#114B5F"
 ---
 
