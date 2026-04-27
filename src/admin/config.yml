@@ -13,7 +13,6 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      # This hidden field automatically injects the exact tag Eleventy needs
       - {label: "Tags", name: "tags", widget: "hidden", default: "services"}
       - {label: "Body", name: "body", widget: "markdown"}
 
@@ -27,3 +26,16 @@ collections:
       - {label: "Tags", name: "tags", widget: "hidden", default: "portfolio"}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/index.njk"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Hero Text", name: "hero_text", widget: "text", default: "Expert mapping and communications for a greener and more sustainable future."}
+          - {label: "Hero Image 1 (Network)", name: "hero_image_1", widget: "image", required: false}
+          - {label: "Hero Image 2 (Map)", name: "hero_image_2", widget: "image", required: false}
+          - {label: "Hero Background Color", name: "hero_bg_color", widget: "color", default: "#114B5F"}
