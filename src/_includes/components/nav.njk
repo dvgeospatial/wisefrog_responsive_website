@@ -1,23 +1,21 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <nav class="bg-white shadow-md relative z-10" x-data="{ mobileMenuOpen: false }">
-  <!-- Removed horizontal padding (px-0) to push logo to the far left -->
-  <div class="max-w-full px-4 lg:px-0 py-3">
-    <!-- Increased nav height to h-32 to accommodate the much larger logos -->
+  <!-- Added pl-4 (mobile) and lg:pl-8 (desktop) to push the logos slightly to the right -->
+  <div class="max-w-full pl-4 lg:pl-8 pr-4 lg:pr-0 py-3">
     <div class="flex justify-between items-center h-32">
       
       <!-- Side-by-Side Logo Container -->
       <div class="flex-shrink-0 flex items-center">
-        <!-- Added gap-6 for a nice breathable space between logo and text -->
         <a href="/" class="flex items-center gap-6">
-          <!-- The Frog Icon (Increased to h-28 / 112px) -->
+          <!-- The Frog Icon -->
           <img class="h-20 md:h-28 w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
-          <!-- The Company Text (Increased to h-16 / 64px) -->
+          <!-- The Company Text -->
           <img class="h-12 md:h-16 w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
         </a>
       </div>
 
-      <!-- Desktop Menu (Pushed slightly inward from the right edge with pr-8) -->
+      <!-- Desktop Menu -->
       <div class="hidden md:flex md:items-center md:space-x-8 pr-8">
         <a href="/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Home</a>
         <a href="/services/" class="text-gray-600 hover:text-blue-900 px-3 py-2 text-lg font-medium">Services</a>
