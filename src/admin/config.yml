@@ -1,9 +1,9 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update
+  branch: main
 
-media_folder: "src/assets/images" # Media files will be stored in the repo here
-public_folder: "/assets/images" # The src attribute for uploaded images
+media_folder: "src/assets/images"
+public_folder: "/assets/images"
 
 collections:
   - name: "services"
@@ -13,6 +13,8 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      # This hidden field automatically injects the exact tag Eleventy needs
+      - {label: "Tags", name: "tags", widget: "hidden", default: "services"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "portfolio"
@@ -22,5 +24,6 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "hidden", default: "portfolio"}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
