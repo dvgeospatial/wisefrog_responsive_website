@@ -2,27 +2,33 @@
 
 <nav class="bg-white shadow-md relative z-10" x-data="{ mobileMenuOpen: false }">
   <div class="max-w-full pl-4 lg:pl-8 pr-4 lg:pr-0 py-3">
-    <div class="flex justify-between items-center h-32">
+    <!-- Changed to a relative full-width container to support absolute centering -->
+    <div class="flex items-center h-32 relative w-full">
       
       <!-- Side-by-Side Logo Container -->
-      <div class="flex-shrink-0 flex items-center">
+      <div class="flex-shrink-0 flex items-center z-20">
         <a href="/" class="flex items-center gap-6">
           <img class="h-20 md:h-28 w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
           <img class="h-12 md:h-16 w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
         </a>
       </div>
 
-      <!-- Desktop Menu (Updated to black, bold, and larger text) -->
-      <div class="hidden md:flex md:items-center md:space-x-8 pr-8">
-        <a href="/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">Home</a>
-        <a href="/services/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">Services</a>
-        <a href="/portfolio/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">Portfolio</a>
-        <a href="/about/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">About Us</a>
-        <a href="/contact/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold">Contact</a>
+      <!-- Desktop Menu (Absolutely positioned to exactly center 'Services') -->
+      <div class="hidden md:flex absolute left-1/2 items-center z-10">
+        <!-- 'Home' is anchored to the left of the center line with an identical mr-8 gap -->
+        <a href="/" class="absolute right-full mr-8 text-black hover:text-blue-900 px-3 py-2 text-xl font-bold whitespace-nowrap">Home</a>
+        
+        <!-- The remaining menu block starts perfectly on the 50% line -->
+        <div class="flex items-center space-x-8">
+          <a href="/services/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold whitespace-nowrap">Services</a>
+          <a href="/portfolio/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold whitespace-nowrap">Portfolio</a>
+          <a href="/about/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold whitespace-nowrap">About Us</a>
+          <a href="/contact/" class="text-black hover:text-blue-900 px-3 py-2 text-xl font-bold whitespace-nowrap">Contact</a>
+        </div>
       </div>
 
       <!-- Mobile Hamburger -->
-      <div class="flex items-center md:hidden pr-4">
+      <div class="flex items-center md:hidden absolute right-4">
         <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-gray-500 hover:text-blue-900 focus:outline-none">
           <svg class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -33,7 +39,7 @@
     </div>
   </div>
 
-  <!-- Mobile Dropdown (Updated to match desktop style) -->
+  <!-- Mobile Dropdown -->
   <div x-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200" style="display: none;">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
       <a href="/" class="block text-black hover:bg-gray-50 px-3 py-2 rounded-md text-2xl font-bold">Home</a>
