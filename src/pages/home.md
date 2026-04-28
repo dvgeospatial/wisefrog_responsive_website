@@ -1,12 +1,12 @@
 ---
-layout: layouts/base.njk
 title: Home
-permalink: /index.html
-hero_text: "Expert mapping and communications for a greener and more sustainable future."
-hero_image_1: "/assets/images/communications_nodes_graph_transparent.png"
-hero_image_2: "/assets/images/mapstack_2.png"
+hero_text: Expert mapping and communications for a greener and more sustainable future.
+hero_image_1: /assets/images/communications_nodes_graph_transparent.png
+hero_image_2: /assets/images/mapstack_2.png
 hero_bg_color: "#114B5F"
-hero_svg_path: "M0,0 L100,0 Q30,50 100,100 L0,100 Z"
+hero_svg_path: M0,0 L103,0 Q30.439999999999998,44 127,100 L0,100 Z
+layout: layouts/base.njk
+permalink: /index.html
 ---
 
 <!-- Hero Section -->
