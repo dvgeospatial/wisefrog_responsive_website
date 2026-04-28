@@ -36,7 +36,7 @@ hero_bg_color: "#114B5F"
       {% endif %}
       
       {% if hero_image_2 %}
-        <img src="{{ hero_image_2 }}" alt="Hero Image 2" class="w-full max-w-md h-auto shadow-2xl rounded-xl">
+        <img src="{{ hero_image_2 }}" alt="Hero Image 2" class="w-full max-w-md h-auto">
       {% endif %}
     </div>
 
