@@ -2,10 +2,11 @@
 layout: layouts/base.njk
 title: Home
 permalink: /index.html
-hero_text: Expert mapping and communications for a greener and more sustainable future.
-hero_image_1: /assets/images/communications_nodes_graph_transparent.png
-hero_image_2: /assets/images/mapstack_2.png
+hero_text: "Expert mapping and communications for a greener and more sustainable future."
+hero_image_1: "/assets/images/communications_nodes_graph_transparent.png"
+hero_image_2: "/assets/images/mapstack_2.png"
 hero_bg_color: "#114B5F"
+hero_svg_path: "M0,0 L100,0 Q30,50 100,100 L0,100 Z"
 ---
 
 <!-- Hero Section -->
@@ -14,8 +15,9 @@ hero_bg_color: "#114B5F"
   <!-- Dynamic Background Color & SVG Curve (Desktop) -->
   <div class="absolute inset-0 w-full lg:w-1/2 h-full z-0" style="background-color: {{ hero_bg_color }};">
     <!-- The curve perfectly attached to the right edge of the background block -->
+    <!-- The d="..." attribute is now completely controlled by the CMS -->
     <svg class="hidden lg:block absolute top-0 left-full h-full w-[200px] xl:w-[300px]" preserveAspectRatio="none" viewBox="0 0 100 100" fill="currentColor" style="color: {{ hero_bg_color }};">
-      <path d="M0,0 C60,0 100,20 100,50 C100,80 60,100 0,100 Z" />
+      <path d="{{ hero_svg_path }}" />
     </svg>
   </div>
 
@@ -32,11 +34,11 @@ hero_bg_color: "#114B5F"
     <!-- Right Column: Images -->
     <div class="w-full lg:w-1/2 flex flex-col items-center justify-center gap-12 relative z-10">
       {% if hero_image_1 %}
-        <img src="{{ hero_image_1 }}" alt="Hero Image 1" class="w-full max-w-md h-auto">
+        <img src="{{ hero_image_1 }}" alt="Network Diagram" class="w-full max-w-md h-auto">
       {% endif %}
       
       {% if hero_image_2 %}
-        <img src="{{ hero_image_2 }}" alt="Hero Image 2" class="w-full max-w-md h-auto">
+        <img src="{{ hero_image_2 }}" alt="Layered Map" class="w-full max-w-md h-auto">
       {% endif %}
     </div>
 
