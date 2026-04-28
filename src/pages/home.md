@@ -2,7 +2,7 @@
 title: Home
 hero_text: Expert mapping and communications for a greener and more sustainable future.
 hero_bg_color: "#114B5F"
-hero_svg_path: M0,0 L67,0 Q-48.96000000000001,46 93,100 L0,100 Z
+hero_svg_path: M0,0 L48,0 Q-47.08,46 46,100 L0,100 Z
 hero_image_1: /assets/images/communications_nodes_graph_transparent.png
 hero_image_2: /assets/images/mapstack_2.png
 hero_image_scale: Large (max-w-lg)
