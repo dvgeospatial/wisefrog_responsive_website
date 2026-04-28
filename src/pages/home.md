@@ -5,7 +5,7 @@ hero_bg_color: "#114B5F"
 hero_svg_path: M0,0 L85,0 Q3.950000000000003,47 100,100 L0,100 Z
 hero_image_1: /assets/images/communications_nodes_graph_transparent.png
 hero_image_2: /assets/images/mapstack_2.png
-hero_image_scale: Full Width (w-full)
+hero_image_scale: Standard (max-w-md)
 layout: layouts/base.njk
 permalink: /index.html
 hero_layout: Stacked Centered
@@ -35,7 +35,7 @@ hero_image_spacing: Standard (gap-12)
 {% elif hero_image_scale == "Full Width (w-full)" %}{% set scaleClass = "w-full" %}{% endif %}
 
 <!-- Hero Section -->
-<section class="relative w-full overflow-hidden flex flex-col lg:flex-row min-h-[60vh] bg-white">
+<section class="relative w-full overflow-hidden flex flex-col lg:flex-row min-h-[80vh] bg-white">
   
   <!-- Dynamic Background Color & SVG Curve (Desktop) -->
   <div class="absolute inset-0 w-full lg:w-1/2 h-full z-0" style="background-color: {{ hero_bg_color }};">
@@ -45,7 +45,7 @@ hero_image_spacing: Standard (gap-12)
   </div>
 
   <!-- Content Container -->
-  <div class="relative z-10 w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-16 py-10 lg:py-12 flex flex-col lg:flex-row items-center justify-between">
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-between">
     
     <!-- Left Column: Text Content -->
     <div class="w-full lg:w-[45%] text-white text-center lg:text-left mb-16 lg:mb-0">
