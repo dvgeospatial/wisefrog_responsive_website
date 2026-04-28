@@ -9,31 +9,37 @@
   <script src="https://d3js.org/d3.v7.min.js"></script>
   
   <svg id="network" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
-    <defs>
-      <!-- Renamed IDs to bypass ad-blockers -->
-      <g id="icon-user" stroke="#3C8F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="0" cy="-18" r="16" fill="white" />
-        <path d="M -32 25 L -32 15 A 32 22 0 0 1 32 15 L 32 25 Z" fill="white" />
-      </g>
-      
-      <g id="icon-phone" stroke="#3C8F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="-24" y="-45" width="48" height="90" rx="5" fill="white" />
-        <rect x="-18" y="-32" width="36" height="60" fill="white" stroke-width="2" />
-        <line x1="-6" y1="-38.5" x2="6" y2="-38.5" stroke-width="3" />
-        <rect x="-6" y="34" width="12" height="4" rx="2" fill="white" stroke-width="2" />
-      </g>
-      
-      <g id="icon-laptop" stroke="#3C8F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M -48 20 L -48 -35 A 4 4 0 0 1 -44 -39 L 44 -39 A 4 4 0 0 1 48 -35 L 48 20 Z" fill="white" />
-        <rect x="-40" y="-31" width="80" height="45" fill="white" stroke-width="2" />
-        <path d="M -54 20 L 54 20 L 66 30 L -66 30 Z" fill="white" />
-        <path d="M -12 30 L -10 25 L 10 25 L 12 30 Z" fill="white" />
-      </g>
-    </defs>
+    <!-- Defs removed! We will inject the paths directly via D3 -->
   </svg>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // SVG Paths as raw HTML strings
+      const laptopHTML = `
+        <g stroke="#3C8F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M -48 20 L -48 -35 A 4 4 0 0 1 -44 -39 L 44 -39 A 4 4 0 0 1 48 -35 L 48 20 Z" fill="white" />
+          <rect x="-40" y="-31" width="80" height="45" fill="white" stroke-width="2" />
+          <path d="M -54 20 L 54 20 L 66 30 L -66 30 Z" fill="white" />
+          <path d="M -12 30 L -10 25 L 10 25 L 12 30 Z" fill="white" />
+        </g>
+      `;
+      
+      const phoneHTML = `
+        <g stroke="#3C8F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="-24" y="-45" width="48" height="90" rx="5" fill="white" />
+          <rect x="-18" y="-32" width="36" height="60" fill="white" stroke-width="2" />
+          <line x1="-6" y1="-38.5" x2="6" y2="-38.5" stroke-width="3" />
+          <rect x="-6" y="34" width="12" height="4" rx="2" fill="white" stroke-width="2" />
+        </g>
+      `;
+
+      const userHTML = `
+        <g stroke="#3C8F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="0" cy="-18" r="16" fill="white" />
+          <path d="M -32 25 L -32 15 A 32 22 0 0 1 32 15 L 32 25 Z" fill="white" />
+        </g>
+      `;
+
       const numLaptops = 2;
       const numPhones = 4;
       const numUsers = 6;
@@ -44,10 +50,9 @@
       const nodes = [];
       const laptops = [], phones = [], users = [];
 
-      // Updated to match the new ad-blocker safe IDs
-      for(let i=0; i<numLaptops; i++) { let n = { id: 'l'+i, iconType: 'icon-laptop' }; nodes.push(n); laptops.push(n); }
-      for(let i=0; i<numPhones; i++) { let n = { id: 'p'+i, iconType: 'icon-phone' }; nodes.push(n); phones.push(n); }
-      for(let i=0; i<numUsers; i++) { let n = { id: 'u'+i, iconType: 'icon-user' }; nodes.push(n); users.push(n); }
+      for(let i=0; i<numLaptops; i++) { let n = { id: 'l'+i, html: laptopHTML }; nodes.push(n); laptops.push(n); }
+      for(let i=0; i<numPhones; i++) { let n = { id: 'p'+i, html: phoneHTML }; nodes.push(n); phones.push(n); }
+      for(let i=0; i<numUsers; i++) { let n = { id: 'u'+i, html: userHTML }; nodes.push(n); users.push(n); }
 
       const links = [];
       for(let i=1; i<laptops.length; i++) {
@@ -100,10 +105,8 @@
         .attr("class", "node-group") 
         .call(drag(simulation));
 
-      // Append shapes safely for both Modern and Legacy browsers
-      node.append("use")
-        .attr("href", d => "#" + d.iconType)
-        .attr("xlink:href", d => "#" + d.iconType); 
+      // Inject the raw SVG HTML directly into the node! Bulletproof!
+      node.html(d => d.html);
 
       simulation.on("tick", () => {
         node.attr("transform", d => {
