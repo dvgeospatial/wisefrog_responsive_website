@@ -9,7 +9,7 @@ hero_image_scale: Full Width (w-full)
 layout: layouts/base.njk
 permalink: /index.html
 hero_layout: Stacked Centered
-hero_image_spacing: Flush (gap-0)
+hero_image_spacing: Overlap (-mt-12)
 ---
 
 <!-- Set up dynamic classes based on CMS selections -->
