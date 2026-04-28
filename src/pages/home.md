@@ -38,13 +38,14 @@ hero_image_spacing: Overlap (-mt-12)
   {% set gapClass = "gap-20" %}
 {% endif %}
 
-{% set scaleClass = "max-w-md" %}
-{% if hero_image_scale == "Small (max-w-sm)" %}{% set scaleClass = "max-w-sm" %}
-{% elif hero_image_scale == "Large (max-w-lg)" %}{% set scaleClass = "max-w-lg" %}
-{% elif hero_image_scale == "Full Width (w-full)" %}{% set scaleClass = "w-full" %}{% endif %}
+{% set scaleClass = "max-w-md 2xl:max-w-lg" %}
+{% if hero_image_scale == "Small (max-w-sm)" %}{% set scaleClass = "max-w-sm 2xl:max-w-md" %}
+{% elif hero_image_scale == "Large (max-w-lg)" %}{% set scaleClass = "max-w-lg 2xl:max-w-2xl" %}
+{% elif hero_image_scale == "Full Width (w-full)" %}{% set scaleClass = "w-full" %}
+{% endif %}
 
 <!-- Hero Section -->
-<section class="relative w-full overflow-hidden flex flex-col lg:flex-row  bg-white">
+<section class="relative w-full overflow-hidden flex flex-col lg:flex-row  bg-white 2xl:min-h-[85vh]">
   
   <!-- Dynamic Background Color & SVG Curve (Desktop) -->
   <div class="absolute inset-0 w-full lg:w-1/2 h-full z-0" style="background-color: {{ hero_bg_color }};">
@@ -58,7 +59,7 @@ hero_image_spacing: Overlap (-mt-12)
     
     <!-- Left Column: Text Content -->
     <div class="w-full lg:-mt-24 lg:w-[45%] text-white text-center lg:text-left mb-8 lg:mb-0">
-      <h1 class="text-4xl md:text-3xl lg:text-4xl font-bold leading-tight">
+      <h1 class="text-4xl md:text-3xl lg:text-4xl 2xl:text-6xl 2xl:leading-tight font-bold leading-tight">
         {{ hero_text }}
       </h1>
     </div>
