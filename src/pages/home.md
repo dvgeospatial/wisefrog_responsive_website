@@ -45,7 +45,7 @@ hero_image_spacing: "Standard (gap-12)"
   </div>
 
   <!-- Content Container -->
-  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-between">
+  <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-16 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-between">
     
     <!-- Left Column: Text Content -->
     <div class="w-full lg:w-[45%] text-white text-center lg:text-left mb-16 lg:mb-0">
