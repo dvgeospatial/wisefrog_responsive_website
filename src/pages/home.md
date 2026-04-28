@@ -25,11 +25,11 @@ hero_image_spacing: Tight (gap-4)
   {% set layoutClass = "flex flex-col lg:flex-row items-center justify-center" %}
 {% endif %}
 
-{% set gapClass = "gap-4" %}
+{% set gapClass = "gap-12" %}
 {% if hero_image_spacing == "Tight (gap-4)" %}{% set gapClass = "gap-4" %}
 {% elif hero_image_spacing == "Loose (gap-20)" %}{% set gapClass = "gap-20" %}{% endif %}
 
-{% set scaleClass = "max-w-xs" %}
+{% set scaleClass = "max-w-md" %}
 {% if hero_image_scale == "Small (max-w-sm)" %}{% set scaleClass = "max-w-sm" %}
 {% elif hero_image_scale == "Large (max-w-lg)" %}{% set scaleClass = "max-w-lg" %}
 {% elif hero_image_scale == "Full Width (w-full)" %}{% set scaleClass = "w-full" %}{% endif %}
@@ -49,7 +49,7 @@ hero_image_spacing: Tight (gap-4)
     
     <!-- Left Column: Text Content -->
     <div class="w-full lg:w-[45%] text-white text-center lg:text-left mb-8 lg:mb-0">
-      <h1 class="text-3xl md:text-4xl lg:text-4xl font-bold leading-tight">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
         {{ hero_text }}
       </h1>
     </div>
