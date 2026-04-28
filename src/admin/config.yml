@@ -53,6 +53,6 @@ collections:
           - label: "Hero Image Spacing (Gap)"
             name: "hero_image_spacing"
             widget: "select"
-            options: ["Tight (gap-4)", "Standard (gap-12)", "Loose (gap-20)"]
+            options: ["Overlap (-mt-12)", "Flush (gap-0)", "Tight (gap-4)", "Standard (gap-12)", "Loose (gap-20)"]
             default: "Standard (gap-12)"
           - {label: "Layout Content (Do Not Edit)", name: "body", widget: "markdown", required: false}

@@ -26,8 +26,17 @@ hero_image_spacing: Tight (gap-4)
 {% endif %}
 
 {% set gapClass = "gap-12" %}
-{% if hero_image_spacing == "Tight (gap-4)" %}{% set gapClass = "gap-4" %}
-{% elif hero_image_spacing == "Loose (gap-20)" %}{% set gapClass = "gap-20" %}{% endif %}
+{% set overlapClass = "" %}
+{% if hero_image_spacing == "Overlap (-mt-12)" %}
+  {% set gapClass = "gap-0" %}
+  {% set overlapClass = "-mt-12 lg:-mt-24 z-0 relative" %}
+{% elif hero_image_spacing == "Flush (gap-0)" %}
+  {% set gapClass = "gap-0" %}
+{% elif hero_image_spacing == "Tight (gap-4)" %}
+  {% set gapClass = "gap-4" %}
+{% elif hero_image_spacing == "Loose (gap-20)" %}
+  {% set gapClass = "gap-20" %}
+{% endif %}
 
 {% set scaleClass = "max-w-md" %}
 {% if hero_image_scale == "Small (max-w-sm)" %}{% set scaleClass = "max-w-sm" %}
@@ -65,7 +74,7 @@ hero_image_spacing: Tight (gap-4)
     {% endif %}
       
       {% if hero_image_2 %}
-        <img src="{{ hero_image_2 }}" alt="Hero Image 2" class="w-full {{ scaleClass }} h-auto {{ staggerClass2 }}">
+        <img src="{{ hero_image_2 }}" alt="Hero Image 2" class="w-full {{ scaleClass }} h-auto {{ staggerClass2 }} {{ overlapClass }}">
       {% endif %}
     </div>
 
