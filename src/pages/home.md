@@ -29,7 +29,7 @@ hero_image_spacing: Overlap (-mt-12)
 {% set overlapClass = "" %}
 {% if hero_image_spacing == "Overlap (-mt-12)" %}
   {% set gapClass = "gap-0" %}
-  {% set overlapClass = "-mt-12 lg:-mt-24 z-0 relative" %}
+  {% set overlapClass = "-mt-12 lg:-mt-24 2xl:-mt-0 z-0 relative" %}
 {% elif hero_image_spacing == "Flush (gap-0)" %}
   {% set gapClass = "gap-0" %}
 {% elif hero_image_spacing == "Tight (gap-4)" %}
@@ -45,7 +45,7 @@ hero_image_spacing: Overlap (-mt-12)
 {% endif %}
 
 <!-- Hero Section -->
-<section class="relative w-full overflow-hidden flex flex-col lg:flex-row  bg-white 2xl:min-h-[85vh]">
+<section class="relative w-full overflow-hidden flex flex-col lg:flex-row  bg-white min-[1000px]:min-h-[85vh]">
   
   <!-- Dynamic Background Color & SVG Curve (Desktop) -->
   <div class="absolute inset-0 w-full lg:w-1/2 h-full z-0" style="background-color: {{ hero_bg_color }};">
@@ -58,7 +58,7 @@ hero_image_spacing: Overlap (-mt-12)
   <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-8 flex flex-col lg:flex-row items-center justify-between">
     
     <!-- Left Column: Text Content -->
-    <div class="w-full lg:-mt-24 lg:w-[45%] text-white text-center lg:text-left mb-8 lg:mb-0">
+    <div class="w-full lg:-mt-24 2xl:-mt-0 lg:w-[45%] text-white text-center lg:text-left mb-8 lg:mb-0">
       <h1 class="text-4xl md:text-3xl lg:text-4xl 2xl:text-6xl 2xl:leading-tight font-bold leading-tight">
         {{ hero_text }}
       </h1>
