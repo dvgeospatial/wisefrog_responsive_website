@@ -9,7 +9,7 @@ hero_image_scale: Standard (max-w-md)
 layout: layouts/base.njk
 permalink: /index.html
 hero_layout: Stacked Centered
-hero_image_spacing: Standard (gap-12)
+hero_image_spacing: Tight (gap-4)
 ---
 
 <!-- Set up dynamic classes based on CMS selections -->
