@@ -56,9 +56,13 @@ hero_image_spacing: Tight (gap-4)
 
     <!-- Right Column: Dynamic Images -->
     <div class="w-full lg:w-1/2 {{ layoutClass }} {{ gapClass }} relative z-10">
-      {% if hero_image_1 %}
-        <img src="{{ hero_image_1 }}" alt="Hero Image 1" class="w-full {{ scaleClass }} h-auto {{ staggerClass1 }}">
-      {% endif %}
+      {% if hero_image_1 == "/assets/images/communications_nodes_graph_transparent.png" %}
+      <div class="w-full {{ scaleClass }} h-auto {{ staggerClass1 }} relative z-20 hover:cursor-grab active:cursor-grabbing">
+        {% include "components/d3-network.njk" %}
+      </div>
+    {% elif hero_image_1 %}
+      <img src="{{ hero_image_1 }}" alt="Hero Image 1" class="w-full {{ scaleClass }} h-auto {{ staggerClass1 }} relative z-20">
+    {% endif %}
       
       {% if hero_image_2 %}
         <img src="{{ hero_image_2 }}" alt="Hero Image 2" class="w-full {{ scaleClass }} h-auto {{ staggerClass2 }}">

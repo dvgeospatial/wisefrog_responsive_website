@@ -1,0 +1,164 @@
+<style>
+  #network-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* Clean transparent background */
+    background: transparent;
+  }
+  #network {
+    width: 100%;
+    height: 100%;
+    /* Allow mobile users to scroll vertically if they swipe the background */
+    touch-action: pan-y; 
+    cursor: grab;
+    overflow: visible;
+  }
+  #network:active {
+    cursor: grabbing;
+  }
+  .node-group {
+    /* Prevent scrolling when specifically dragging a node */
+    touch-action: none; 
+  }
+</style>
+
+<div id="network-container">
+  <!-- Load D3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  
+  <!-- The Responsive SVG Canvas -->
+  <svg id="network" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <g id="user" stroke="#3C8F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="0" cy="-18" r="16" fill="white" />
+        <path d="M -32 25 L -32 15 A 32 22 0 0 1 32 15 L 32 25 Z" fill="white" />
+      </g>
+      
+      <g id="phone" stroke="#3C8F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="-24" y="-45" width="48" height="90" rx="5" fill="white" />
+        <rect x="-18" y="-32" width="36" height="60" fill="white" stroke-width="2" />
+        <line x1="-6" y1="-38.5" x2="6" y2="-38.5" stroke-width="3" />
+        <rect x="-6" y="34" width="12" height="4" rx="2" fill="white" stroke-width="2" />
+      </g>
+      
+      <g id="laptop" stroke="#3C8F9E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M -48 20 L -48 -35 A 4 4 0 0 1 -44 -39 L 44 -39 A 4 4 0 0 1 48 -35 L 48 20 Z" fill="white" />
+        <rect x="-40" y="-31" width="80" height="45" fill="white" stroke-width="2" />
+        <path d="M -54 20 L 54 20 L 66 30 L -66 30 Z" fill="white" />
+        <path d="M -12 30 L -10 25 L 10 25 L 12 30 Z" fill="white" />
+      </g>
+    </defs>
+  </svg>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Adjusted numbers slightly for the perfect hero banner density
+      const numLaptops = 2;
+      const numPhones = 4;
+      const numUsers = 6;
+
+      const minNodeSpacing = 80;  
+      const linkDistance = 140;   
+      const repelStrength = -400; 
+
+      const nodes = [];
+      const laptops = [], phones = [], users = [];
+
+      for(let i=0; i<numLaptops; i++) { let n = { id: 'l'+i, type: 'laptop' }; nodes.push(n); laptops.push(n); }
+      for(let i=0; i<numPhones; i++) { let n = { id: 'p'+i, type: 'phone' }; nodes.push(n); phones.push(n); }
+      for(let i=0; i<numUsers; i++) { let n = { id: 'u'+i, type: 'user' }; nodes.push(n); users.push(n); }
+
+      const links = [];
+      for(let i=1; i<laptops.length; i++) {
+        let randomLaptop = laptops[Math.floor(Math.random() * i)];
+        links.push({ source: laptops[i].id, target: randomLaptop.id });
+      }
+      phones.forEach((p, i) => {
+        let targets = laptops.length > 0 ? laptops : phones.slice(0, i);
+        if (targets.length > 0) {
+          let t = targets[Math.floor(Math.random() * targets.length)];
+          links.push({ source: p.id, target: t.id });
+        }
+      });
+      let accessPoints = [...laptops, ...phones];
+      users.forEach((u, i) => {
+        let targets = accessPoints.length > 0 ? accessPoints : users.slice(0, i);
+        if (targets.length > 0) {
+          let t1 = targets[Math.floor(Math.random() * targets.length)];
+          links.push({ source: u.id, target: t1.id });
+          if (Math.random() > 0.5 && targets.length > 1) {
+            let t2 = targets[Math.floor(Math.random() * targets.length)];
+            if (t1.id !== t2.id) links.push({ source: u.id, target: t2.id });
+          }
+        }
+      });
+
+      // Internal resolution for the responsive SVG
+      const width = 800;
+      const height = 800;
+      const svg = d3.select("#network");
+
+      const simulation = d3.forceSimulation(nodes)
+        .force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance))
+        .force("charge", d3.forceManyBody().strength(repelStrength))
+        .force("center", d3.forceCenter(width / 2, height / 2))
+        .force("collide", d3.forceCollide(minNodeSpacing))
+        .alphaDecay(0.04); // Allows physics to cool down and save battery
+
+      const link = svg.append("g")
+        .selectAll("line")
+        .data(links)
+        .join("line")
+        .attr("stroke", "#3C8F9E")
+        .attr("stroke-width", 3)
+        .attr("stroke-linecap", "round");
+
+      const node = svg.append("g")
+        .selectAll("g")
+        .data(nodes)
+        .join("g")
+        .attr("class", "node-group") // Applied for touch protection
+        .call(drag(simulation));
+
+      node.append("use").attr("href", d => "#" + d.type);
+
+      simulation.on("tick", () => {
+        node.attr("transform", d => {
+          const padding = 60;
+          d.x = Math.max(padding, Math.min(width - padding, d.x));
+          d.y = Math.max(padding, Math.min(height - padding, d.y));
+          return `translate(${d.x},${d.y})`;
+        });
+
+        link
+          .attr("x1", d => d.source.x)
+          .attr("y1", d => d.source.y)
+          .attr("x2", d => d.target.x)
+          .attr("y2", d => d.target.y);
+      });
+
+      function drag(simulation) {
+        function dragstarted(event) {
+          if (!event.active) simulation.alphaTarget(0.3).restart();
+          event.subject.fx = event.subject.x;
+          event.subject.fy = event.subject.y;
+        }
+        function dragged(event) {
+          event.subject.fx = event.x;
+          event.subject.fy = event.y;
+        }
+        function dragended(event) {
+          if (!event.active) simulation.alphaTarget(0);
+          event.subject.fx = null;
+          event.subject.fy = null;
+        }
+        return d3.drag()
+          .filter(event => !event.button && event.touches ? event.touches.length === 1 : true)
+          .on("start", dragstarted)
+          .on("drag", dragged)
+          .on("end", dragended);
+      }
+    });
+  </script>
+</div>
