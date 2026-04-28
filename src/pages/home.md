@@ -5,10 +5,10 @@ hero_bg_color: "#114B5F"
 hero_svg_path: M0,0 L85,0 Q3.950000000000003,47 100,100 L0,100 Z
 hero_image_1: /assets/images/communications_nodes_graph_transparent.png
 hero_image_2: /assets/images/mapstack_2.png
-hero_image_scale: Full Width (w-full)
+hero_image_scale: Small (max-w-sm)
 layout: layouts/base.njk
 permalink: /index.html
-hero_layout: Stacked Centered
+hero_layout: Diagonal Stagger
 hero_image_spacing: Tight (gap-4)
 ---
 
