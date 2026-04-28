@@ -48,7 +48,7 @@ hero_image_spacing: Tight (gap-4)
   <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-between">
     
     <!-- Left Column: Text Content -->
-    <div class="w-full lg:w-[45%] text-white text-center lg:text-left mb-16 lg:mb-0">
+    <div class="w-full lg:w-[45%] text-white text-center lg:text-left mb-8 lg:mb-0">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
         {{ hero_text }}
       </h1>
