@@ -7,8 +7,8 @@ hero_bg_color: "#114B5F"
 hero_svg_path: "M0,0 Q100,50 0,100 Z"
 hero_image_1: "/assets/images/communications_nodes_graph_transparent.png"
 hero_image_2: "/assets/images/mapstack_2.png"
-hero_layout: "Stacked Centered"
-hero_image_scale: "Standard (max-w-md)"
+hero_layout: "Diagonal Stagger"
+hero_image_scale: "Large (max-w-lg)"
 hero_image_spacing: "Standard (gap-12)"
 ---
 
