@@ -8,7 +8,7 @@ hero_image_2: /assets/images/mapstack_2.png
 hero_image_scale: Full Width (w-full)
 layout: layouts/base.njk
 permalink: /index.html
-hero_layout: Diagonal Stagger
+hero_layout: Stacked Centered
 hero_image_spacing: Tight (gap-4)
 ---
 
