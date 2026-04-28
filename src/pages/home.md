@@ -1,15 +1,15 @@
 ---
-layout: layouts/base.njk
 title: Home
-permalink: /index.html
-hero_text: "Expert mapping and communications for a greener and more sustainable future."
+hero_text: Expert mapping and communications for a greener and more sustainable future.
 hero_bg_color: "#114B5F"
-hero_svg_path: "M0,0 Q100,50 0,100 Z"
-hero_image_1: "/assets/images/communications_nodes_graph_transparent.png"
-hero_image_2: "/assets/images/mapstack_2.png"
-hero_layout: "Diagonal Stagger"
-hero_image_scale: "Large (max-w-lg)"
-hero_image_spacing: "Standard (gap-12)"
+hero_svg_path: M0,0 L72,0 Q1.7199999999999989,51 100,100 L0,100 Z
+hero_image_1: /assets/images/communications_nodes_graph_transparent.png
+hero_image_2: /assets/images/mapstack_2.png
+hero_image_scale: Large (max-w-lg)
+layout: layouts/base.njk
+permalink: /index.html
+hero_layout: Diagonal Stagger
+hero_image_spacing: Standard (gap-12)
 ---
 
 <!-- Set up dynamic classes based on CMS selections -->
