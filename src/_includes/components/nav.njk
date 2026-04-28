@@ -1,19 +1,19 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 <nav class="bg-white shadow-md relative z-10" x-data="{ mobileMenuOpen: false }">
-  <div class="max-w-full pl-4 lg:pl-8 pr-4 lg:pr-0 py-3">
+  <div class="max-w-full pl-4 lg:pl-8 pr-4 lg:pr-0 py-2">
     <!-- Added justify-between to naturally separate logo and hamburger on mobile -->
-    <!-- Reduced height on mobile (h-7) while keeping it tall on desktop (md:h-32) -->
-    <div class="flex justify-between items-center h-7 md:h-32 relative w-full">
+    <!-- Reduced height on mobile (h-10) while keeping it tall on desktop (md:h-32) -->
+    <div class="flex justify-between items-center h-10 md:h-32 relative w-full">
       
       <!-- Side-by-Side Logo Container -->
       <div class="flex-shrink-0 flex items-center z-20">
         <!-- Reduced gap on mobile (gap-3) vs desktop (md:gap-6) -->
         <a href="/" class="flex items-center gap-3 md:gap-6">
-          <!-- Scaled down for mobile (h-7) / Kept massive for desktop (md:h-28) -->
-          <img class="h-7 w-auto  md: w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
-          <!-- Scaled down for mobile (h-7) / Kept massive for desktop (md:h-7) -->
-          <img class="h-7 w-auto  md: w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
+          <!-- Scaled down for mobile (h-10) / Kept massive for desktop (md:h-28) -->
+          <img class="h-10 w-auto  md: w-auto" src="/assets/logos/frog_best.svg" alt="Wisefrog Icon">
+          <!-- Scaled down for mobile (h-10) / Kept massive for desktop (md:h-10) -->
+          <img class="h-10 w-auto  md: w-auto" src="/assets/logos/wisefrog_text.svg" alt="Wisefrog Name">
         </a>
       </div>
 
@@ -32,7 +32,7 @@
       <!-- Mobile Hamburger (Removed absolute positioning so it flows naturally) -->
       <div class="flex items-center md:hidden z-20">
         <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-gray-500 hover:text-blue-900 focus:outline-none">
-          <svg class="h-7 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke- d="M4 6h16M4 12h16M4 18h16" />
             <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke- d="M6 18L18 6M6 6l12 12" style="display: none;" />
           </svg>
