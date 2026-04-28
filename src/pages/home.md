@@ -35,7 +35,7 @@ hero_image_spacing: Tight (gap-4)
 {% elif hero_image_scale == "Full Width (w-full)" %}{% set scaleClass = "w-full" %}{% endif %}
 
 <!-- Hero Section -->
-<section class="relative w-full overflow-hidden flex flex-col lg:flex-row min-h-[80vh] bg-white">
+<section class="relative w-full overflow-hidden flex flex-col lg:flex-row  bg-white">
   
   <!-- Dynamic Background Color & SVG Curve (Desktop) -->
   <div class="absolute inset-0 w-full lg:w-1/2 h-full z-0" style="background-color: {{ hero_bg_color }};">
@@ -45,7 +45,7 @@ hero_image_spacing: Tight (gap-4)
   </div>
 
   <!-- Content Container -->
-  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 flex flex-col lg:flex-row items-center justify-between">
+  <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-8 flex flex-col lg:flex-row items-center justify-between">
     
     <!-- Left Column: Text Content -->
     <div class="w-full lg:w-[45%] text-white text-center lg:text-left mb-8 lg:mb-0">
