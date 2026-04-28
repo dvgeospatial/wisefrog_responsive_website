@@ -4,7 +4,7 @@ hero_text: Expert mapping and communications for a greener and more sustainable 
 hero_image_1: /assets/images/communications_nodes_graph_transparent.png
 hero_image_2: /assets/images/mapstack_2.png
 hero_bg_color: "#114B5F"
-hero_svg_path: M0,0 L100,0 Q-9,50 142,100 L0,100 Z
+hero_svg_path: M0,0 L67,0 Q11,50 83,100 L0,100 Z
 layout: layouts/base.njk
 permalink: /index.html
 ---
