@@ -58,7 +58,7 @@ hero_image_spacing: Flush (gap-0)
   <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-2 2xl:py-12 flex flex-col lg:flex-row items-center justify-between">
     
     <!-- Left Column: Text Content -->
-    <div class="w-full lg:-mt-12 2xl:-mt-0 2xl:-mt-0 lg:w-[45%] text-white text-center lg:text-left mb-4 lg:mb-0">
+    <div class="w-full lg:-mt-12 2xl:-mt-0 2xl:-mt-0 lg:w-[45%] text-white text-center lg:text-left mb-16 lg:mb-0">
       <h1 class="text-4xl md:text-3xl lg:text-4xl 2xl:text-6xl 2xl:leading-tight font-bold leading-tight">
         {{ hero_text }}
       </h1>
