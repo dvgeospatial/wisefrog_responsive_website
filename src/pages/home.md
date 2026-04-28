@@ -59,7 +59,7 @@ hero_image_spacing: Flush (gap-0)
     
     <!-- Left Column: Text Content -->
     <div class="w-full lg:-mt-12 2xl:-mt-0 2xl:-mt-0 lg:w-[45%] text-white text-center lg:text-left mb-16 lg:mb-0">
-      <h1 class="text-4xl md:text-3xl lg:text-4xl 2xl:text-6xl 2xl:leading-tight font-bold leading-tight">
+      <h1 class="text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl 2xl:leading-snug md:leading-tight font-bold leading-snug md:leading-tight">
         {{ hero_text }}
       </h1>
     </div>
