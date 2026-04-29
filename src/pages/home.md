@@ -97,7 +97,25 @@ permalink: /index.html
     <!-- Carousel Heading -->
     <div class="max-w-5xl mb-12">
       <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
-        {{ carousel_heading | default("Smart mapping that delivers practical insight, informs decisions, promotes collaboration, and helps deliver effective nature recovery measures on the ground") }}
+        {{ carousel_heading | default("{{ carousel_section.heading }}
+
+<!-- Dynamic CMS Carousel Grid -->
+{% if carousel_section and carousel_section.items %}
+<div class="carousel-wrapper" style="margin-top: 2rem;">
+  <div class="carousel-grid" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px;">
+    {% for item in carousel_section.items %}
+      <div class="carousel-card" style="min-width: 300px; position: relative; flex-shrink: 0;">
+        <a href="{{ item.url }}" style="text-decoration: none;">
+          <img src="{{ item.image }}" alt="{{ item.text }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+          <div class="carousel-overlay" style="position: absolute; bottom: 0; background: rgba(0,0,0,0.7); color: white; width: 100%; padding: 15px; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; box-sizing: border-box;">
+            <h3 style="margin: 0; font-size: 1.1rem;">{{ item.text }}</h3>
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}") }}
       </h2>
     </div>
 
