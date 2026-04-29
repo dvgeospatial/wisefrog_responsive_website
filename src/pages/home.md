@@ -11,12 +11,11 @@ hero_image_spacing: Flush (gap-0)
 carousel_section:
   items:
     - image: /assets/images/mapstack_2.png
-      text: stack of maps bbbg
+      text: stack of maps
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
     - image: /assets/images/communications_nodes_graph_transparent.png
-      text: network bbb
+      text: network
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-  heading: smart mapping
 layout: layouts/base.njk
 permalink: /index.html
 ---
