@@ -68,6 +68,12 @@ collections:
         default: Smart mapping that delivers practical insight, informs 
           decisions, promotes collaboration, and helps deliver effective nature 
           recovery measures on the ground
+      - label: Global Card Shadow Intensity
+        name: global_shadow_intensity
+        widget: select
+        options: ["Heavy", "Medium", "Light", "None"]
+        default: "Medium"
+        hint: Controls the darkness of the gradient behind the text on ALL cards
       - label: Carousel Items
         name: items
         widget: list

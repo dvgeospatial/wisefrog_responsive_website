@@ -118,7 +118,16 @@ permalink: /index.html
           <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
           
           <!-- Dark Gradient Overlay for text readability -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+          <!-- Global Shadow Overlay based on CMS selection -->
+          {% set shadowClass = "from-black/60 via-black/20" %}
+          {% if carousel_section.global_shadow_intensity == "Heavy" %}
+            {% set shadowClass = "from-black/90 via-black/40" %}
+          {% elif carousel_section.global_shadow_intensity == "Light" %}
+            {% set shadowClass = "from-black/30 via-transparent" %}
+          {% elif carousel_section.global_shadow_intensity == "None" %}
+            {% set shadowClass = "from-transparent via-transparent" %}
+          {% endif %}
+          <div class="absolute inset-0 bg-gradient-to-t {{ shadowClass }} to-transparent pointer-events-none"></div>
           
           <!-- Overlay Text -->
           <div class="absolute bottom-0 left-0 right-0 p-6">
