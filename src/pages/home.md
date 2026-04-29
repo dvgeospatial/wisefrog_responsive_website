@@ -5,11 +5,19 @@ hero_bg_color: "#114B5F"
 hero_svg_path: M0,0 L48,0 Q-47.08,46 46,100 L0,100 Z
 hero_image_1: /assets/images/communications_nodes_graph_transparent.png
 hero_image_2: /assets/images/mapstack_2.png
+hero_layout: Stacked Centered
 hero_image_scale: Large (max-w-lg)
+hero_image_spacing: Flush (gap-0)
+carousel_section:
+  items:
+    - image: /assets/images/mapstack_2.png
+      text: stack of maps
+      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+    - image: /assets/images/communications_nodes_graph_transparent.png
+      text: network
+      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
 layout: layouts/base.njk
 permalink: /index.html
-hero_layout: Stacked Centered
-hero_image_spacing: Flush (gap-0)
 ---
 
 <!-- Set up dynamic classes based on CMS selections -->
