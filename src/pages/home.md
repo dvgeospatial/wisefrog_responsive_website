@@ -24,6 +24,9 @@ carousel_section:
     - image: /assets/images/screenshot_2026-03-19_16-47-36_sam3_overlay-portrait.webp
       text: tree
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+    - image: /assets/images/screenshot_2026-04-20_21-19-24.png
+      text: hgfd
+      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   global_shadow_intensity: Light
   heading: Mapping for insight, evidence based decisions, and effective collaboration
 communications_section:
