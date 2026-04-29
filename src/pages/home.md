@@ -1,7 +1,7 @@
 ---
 title: Home
 hero_text: Expert mapping and communications for a greener and more sustainable future.
-hero_bg_style: Subtle Gradient (Color 1 to Color 2)
+hero_bg_style: Solid Color 1
 hero_bg_color: "#114B5F"
 hero_bg_color_2: "#31c2da"
 hero_svg_path: M0,0 L48,0 Q-47.08,46 46,100 L0,100 Z
