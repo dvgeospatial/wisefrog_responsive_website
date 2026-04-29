@@ -22,7 +22,7 @@ carousel_section:
       text: Norwich city
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   global_shadow_intensity: Light
-  heading: Digital mapping that delivers insight, informs decisions, and promotes
+  heading: Digital mapping for insight, evidence based decisions, and effective
     collaboration
 communications_section:
   heading: Communications
