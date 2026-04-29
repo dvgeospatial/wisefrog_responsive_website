@@ -20,7 +20,8 @@ carousel_section:
       text: Norwich city
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   global_shadow_intensity: Light
-  heading: what heading
+  heading: Smart mapping that delivers insight, informs decisions, and promotes
+    collaboration
 layout: layouts/base.njk
 permalink: /index.html
 hero_layout: Stacked Centered
