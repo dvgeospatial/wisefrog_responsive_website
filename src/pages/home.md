@@ -61,7 +61,15 @@ permalink: /index.html
 <section class="relative w-full overflow-hidden flex flex-col lg:flex-row  bg-white  2xl:min-h-[calc(100vh-64px)]">
   
   <!-- Dynamic Background Color & SVG Curve (Desktop) -->
-  <div class="absolute inset-0 w-full lg:w-1/2 h-full z-0" style="background-color: {{ hero_bg_color }};">
+  <!-- 2-Color Dynamic Hero Background -->
+  {% set heroStyle = "background-color: " ~ hero_bg_color ~ ";" %}
+  {% if hero_bg_style == "Pure White (No Gradient)" %}
+    {% set heroStyle = "background-color: #ffffff;" %}
+  {% elif hero_bg_style == "Subtle Gradient (Color 1 to Color 2)" %}
+    {% set endColor = hero_bg_color_2 | default("#ffffff") %}
+    {% set heroStyle = "background: linear-gradient(135deg, " ~ hero_bg_color ~ " 0%, " ~ endColor ~ " 100%);" %}
+  {% endif %}
+  <div class="absolute inset-0 w-full lg:w-1/2 h-full z-0" style="{{ heroStyle }}">
     <svg class="hidden lg:block absolute top-0 left-full h-full w-[200px] xl:w-[300px]" preserveAspectRatio="none" viewBox="0 0 100 100" fill="currentColor" style="color: {{ hero_bg_color }};">
       <path d="{{ hero_svg_path }}" />
     </svg>

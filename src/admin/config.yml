@@ -37,7 +37,20 @@ collections:
     - {label: "Title", name: "title", widget: "string"}
     - {label: "Hero Text", name: "hero_text", widget: "text", default: "Expert mapping
         and communications for a greener and more sustainable future."}
-    - {label: "Hero Background Color", name: "hero_bg_color", widget: "color", 
+    - label: "Hero Background Style"
+      name: "hero_bg_style"
+      widget: "select"
+      options: ["Pure White (No Gradient)", "Solid Color 1", "Subtle Gradient (Color 1 to Color 2)"]
+      default: "Solid Color 1"
+    - label: "Hero Background Color 1 (Start)"
+      name: "hero_bg_color"
+      widget: "color"
+      default: "#114B5F"
+    - label: "Hero Background Color 2 (End)"
+      name: "hero_bg_color_2"
+      widget: "color"
+      default: "#f3f4f6"
+
         default: "#114B5F"}
     - {label: "Hero SVG Curve Path (Paste from Tool)", name: "hero_svg_path", 
         widget: "string", default: "M0,0 Q100,50 0,100 Z"}
