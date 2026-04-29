@@ -19,6 +19,8 @@ carousel_section:
     - image: /assets/images/screenshot_2026-04-03_14-30-20-portrait.webp
       text: Norwich city
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+  global_shadow_intensity: Light
+  heading: what heading
 layout: layouts/base.njk
 permalink: /index.html
 ---
