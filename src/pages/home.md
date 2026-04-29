@@ -106,8 +106,8 @@ permalink: /index.html
     <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
       
       <!-- Loop through the CMS items -->
-      {% if carousel_items %}
-        {% for item in carousel_items %}
+      {% if carousel_section and carousel_section.items %}
+        {% for item in carousel_section.items %}
         <!-- Individual Card (Portrait Aspect Ratio) -->
         <a href="{{ item.url }}" class="group relative flex-none w-72 md:w-80 lg:w-96 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
           
