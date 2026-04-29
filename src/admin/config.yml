@@ -51,4 +51,18 @@ collections:
             options: ["Small (max-w-sm)", "Standard (max-w-md)", "Large (max-w-lg)", "Full Width (w-full)"]
             default: "Standard (max-w-md)"
           - label: "Hero Image Spacing (Gap)"
-            name: "hero_image_spacing"
+            name: "hero_image_spacing"          - label: "Carousel Section"
+            name: "carousel_section"
+            widget: "object"
+            fields:
+              - label: "Heading"
+                name: "heading"
+                widget: "string"
+                default: "Smart mapping that delivers practical insight, informs decisions, promotes collaboration, and helps deliver effective nature recovery measures on the ground"
+              - label: "Carousel Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Overlay Text", name: "text", widget: "string"}
+                  - {label: "Link URL", name: "url", widget: "string", hint: "e.g., /portfolio/project-name/"}
