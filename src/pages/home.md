@@ -131,7 +131,7 @@ permalink: /index.html
       {% if carousel_section and carousel_section.items %}
         {% for item in carousel_section.items %}
         <!-- Individual Card (Portrait Aspect Ratio) -->
-        <a href="{{ item.url }}" class="group relative flex-none w-[42vw] sm:w-48 md:w-60 lg:w-72 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
+        <a href="{{ item.url }}" class="group relative flex-none w-[calc(50vw-16px)] sm:w-48 md:w-60 lg:w-72 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
           
           <!-- Background Image -->
           <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -182,7 +182,7 @@ permalink: /index.html
       {% if communications_section and communications_section.items %}
         {% for item in communications_section.items %}
         <!-- Individual Card (Portrait Aspect Ratio) -->
-        <a href="{{ item.url }}" class="group relative flex-none w-[42vw] sm:w-48 md:w-60 lg:w-72 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
+        <a href="{{ item.url }}" class="group relative flex-none w-[calc(50vw-16px)] sm:w-48 md:w-60 lg:w-72 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
           
           <!-- Background Image -->
           <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
