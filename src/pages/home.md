@@ -125,13 +125,13 @@ permalink: /index.html
 
     <!-- The Swipeable Container -->
     <!-- Native horizontal scrolling, snapping, and hidden scrollbars for app-like swiping -->
-    <div class="grid grid-cols-2 gap-4 sm:flex sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:gap-6 pb-8 hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-3 px-4 pb-8 hide-scrollbar sm:gap-6 sm:px-0" style="scrollbar-width: none; -ms-overflow-style: none;">
       
       <!-- Loop through the CMS items -->
       {% if carousel_section and carousel_section.items %}
         {% for item in carousel_section.items %}
         <!-- Individual Card (Portrait Aspect Ratio) -->
-        <a href="{{ item.url }}" class="group relative block sm:flex-none w-full sm:w-48 md:w-60 lg:w-72 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
+        <a href="{{ item.url }}" class="group relative flex-none w-[calc((100vw-2rem-0.75rem)/2)] sm:w-48 md:w-60 lg:w-72 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
           
           <!-- Background Image -->
           <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -176,13 +176,13 @@ permalink: /index.html
 
     <!-- The Swipeable Container -->
     <!-- Native horizontal scrolling, snapping, and hidden scrollbars for app-like swiping -->
-    <div class="grid grid-cols-2 gap-4 sm:flex sm:overflow-x-auto sm:snap-x sm:snap-mandatory sm:gap-6 pb-8 hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-3 px-4 pb-8 hide-scrollbar sm:gap-6 sm:px-0" style="scrollbar-width: none; -ms-overflow-style: none;">
       
       <!-- Loop through the CMS items -->
       {% if communications_section and communications_section.items %}
         {% for item in communications_section.items %}
         <!-- Individual Card (Portrait Aspect Ratio) -->
-        <a href="{{ item.url }}" class="group relative block sm:flex-none w-full sm:w-48 md:w-60 lg:w-72 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
+        <a href="{{ item.url }}" class="group relative flex-none w-[calc((100vw-2rem-0.75rem)/2)] sm:w-48 md:w-60 lg:w-72 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
           
           <!-- Background Image -->
           <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
