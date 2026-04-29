@@ -125,7 +125,7 @@ permalink: /index.html
 
     <!-- The Swipeable Container -->
     <!-- Native horizontal scrolling, snapping, and hidden scrollbars for app-like swiping -->
-    <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 pb-8 hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 pb-8 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
       
       <!-- Loop through the CMS items -->
       {% if carousel_section and carousel_section.items %}
@@ -176,7 +176,7 @@ permalink: /index.html
 
     <!-- The Swipeable Container -->
     <!-- Native horizontal scrolling, snapping, and hidden scrollbars for app-like swiping -->
-    <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 pb-8 hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 pb-8 -mx-4 px-4 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8 hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
       
       <!-- Loop through the CMS items -->
       {% if communications_section and communications_section.items %}
