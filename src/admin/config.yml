@@ -6,63 +6,79 @@ media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
 collections:
-  - name: "services"
-    label: "Services"
-    folder: "src/services"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "hidden", default: "services"}
-      - {label: "Body", name: "body", widget: "markdown"}
+- name: "services"
+  label: "Services"
+  folder: "src/services"
+  create: true
+  slug: "{{slug}}"
+  fields:
+  - {label: "Title", name: "title", widget: "string"}
+  - {label: "Tags", name: "tags", widget: "hidden", default: "services"}
+  - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "portfolio"
-    label: "Portfolio"
-    folder: "src/portfolio"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Tags", name: "tags", widget: "hidden", default: "portfolio"}
-      - {label: "Featured Image", name: "image", widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
+- name: "portfolio"
+  label: "Portfolio"
+  folder: "src/portfolio"
+  create: true
+  slug: "{{slug}}"
+  fields:
+  - {label: "Title", name: "title", widget: "string"}
+  - {label: "Tags", name: "tags", widget: "hidden", default: "portfolio"}
+  - {label: "Featured Image", name: "image", widget: "image", required: false}
+  - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "pages"
-    label: "Pages"
-    files:
-      - label: "Home Page"
-        name: "home"
-        file: "src/pages/home.md"
+- name: "pages"
+  label: "Pages"
+  files:
+  - label: "Home Page"
+    name: "home"
+    file: "src/pages/home.md"
+    fields:
+    - {label: "Title", name: "title", widget: "string"}
+    - {label: "Hero Text", name: "hero_text", widget: "text", default: "Expert mapping
+        and communications for a greener and more sustainable future."}
+    - {label: "Hero Background Color", name: "hero_bg_color", widget: "color", 
+        default: "#114B5F"}
+    - {label: "Hero SVG Curve Path (Paste from Tool)", name: "hero_svg_path", 
+        widget: "string", default: "M0,0 Q100,50 0,100 Z"}
+    - {label: "Hero Image 1", name: "hero_image_1", widget: "image", required: 
+        false}
+    - {label: "Hero Image 2", name: "hero_image_2", widget: "image", required: 
+        false}
+    - label: "Hero Image Layout Style"
+      name: "hero_layout"
+      widget: "select"
+      options: ["Stacked Centered", "Diagonal Stagger", "Side-by-Side (Desktop)"]
+      default: "Stacked Centered"
+    - label: "Hero Image Scale (Max Width)"
+      name: "hero_image_scale"
+      widget: "select"
+      options: ["Small (max-w-sm)", "Standard (max-w-md)", "Large (max-w-lg)", "Full
+          Width (w-full)"]
+      default: "Standard (max-w-md)"
+    - label: "Hero Image Spacing (Gap)"
+      name: "hero_image_spacing"
+    - label: Carousel Section
+      name: carousel_section
+      widget: object
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+        default: Smart mapping that delivers practical insight, informs 
+          decisions, promotes collaboration, and helps deliver effective nature 
+          recovery measures on the ground
+      - label: Carousel Items
+        name: items
+        widget: list
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Hero Text", name: "hero_text", widget: "text", default: "Expert mapping and communications for a greener and more sustainable future."}
-          - {label: "Hero Background Color", name: "hero_bg_color", widget: "color", default: "#114B5F"}
-          - {label: "Hero SVG Curve Path (Paste from Tool)", name: "hero_svg_path", widget: "string", default: "M0,0 Q100,50 0,100 Z"}
-          - {label: "Hero Image 1", name: "hero_image_1", widget: "image", required: false}
-          - {label: "Hero Image 2", name: "hero_image_2", widget: "image", required: false}
-          - label: "Hero Image Layout Style"
-            name: "hero_layout"
-            widget: "select"
-            options: ["Stacked Centered", "Diagonal Stagger", "Side-by-Side (Desktop)"]
-            default: "Stacked Centered"
-          - label: "Hero Image Scale (Max Width)"
-            name: "hero_image_scale"
-            widget: "select"
-            options: ["Small (max-w-sm)", "Standard (max-w-md)", "Large (max-w-lg)", "Full Width (w-full)"]
-            default: "Standard (max-w-md)"
-          - label: "Hero Image Spacing (Gap)"
-            name: "hero_image_spacing"          - label: "Carousel Section"
-            name: "carousel_section"
-            widget: "object"
-            fields:
-              - label: "Heading"
-                name: "heading"
-                widget: "string"
-                default: "Smart mapping that delivers practical insight, informs decisions, promotes collaboration, and helps deliver effective nature recovery measures on the ground"
-              - label: "Carousel Items"
-                name: "items"
-                widget: "list"
-                fields:
-                  - {label: "Image", name: "image", widget: "image"}
-                  - {label: "Overlay Text", name: "text", widget: "string"}
-                  - {label: "Link URL", name: "url", widget: "string", hint: "e.g., /portfolio/project-name/"}
+        - label: Image
+          name: image
+          widget: image
+        - label: Overlay Text
+          name: text
+          widget: string
+        - label: Link URL
+          name: url
+          widget: string
+          hint: e.g., /portfolio/project-name/
