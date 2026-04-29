@@ -89,3 +89,33 @@ collections:
           name: url
           widget: string
           hint: e.g., /portfolio/project-name/
+
+
+    - label: Communications Section
+      name: communications_section
+      widget: object
+      fields:
+      - label: Heading
+        name: heading
+        widget: string
+        default: "Effective communications to share your vision, inform stakeholders, and drive meaningful engagement"
+      - label: Global Card Shadow Intensity
+        name: global_shadow_intensity
+        widget: select
+        options: ["Heavy", "Medium", "Light", "None"]
+        default: "Medium"
+        hint: Controls the darkness of the gradient behind the text on ALL cards
+      - label: Communications Items
+        name: items
+        widget: list
+        fields:
+        - label: Image
+          name: image
+          widget: image
+        - label: Overlay Text
+          name: text
+          widget: string
+        - label: Link URL
+          name: url
+          widget: string
+          hint: e.g., /portfolio/project-name/

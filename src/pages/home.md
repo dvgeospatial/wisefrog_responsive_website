@@ -157,6 +157,57 @@ hero_image_spacing: Flush (gap-0)
   </div>
 </section>
 
+<!-- Dynamic Card Communications Section -->
+<section class="w-full bg-white py-16 lg:py-24 overflow-hidden border-t border-gray-100">
+  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Carousel Heading -->
+    <div class="max-w-5xl mb-12">
+      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
+        {{ communications_section.heading | default("Effective communications to share your vision, inform stakeholders, and drive meaningful engagement") }}
+      </h2>
+    </div>
+
+    <!-- The Swipeable Container -->
+    <!-- Native horizontal scrolling, snapping, and hidden scrollbars for app-like swiping -->
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
+      
+      <!-- Loop through the CMS items -->
+      {% if communications_section and communications_section.items %}
+        {% for item in communications_section.items %}
+        <!-- Individual Card (Portrait Aspect Ratio) -->
+        <a href="{{ item.url }}" class="group relative flex-none w-72 md:w-80 lg:w-96 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
+          
+          <!-- Background Image -->
+          <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+          
+          <!-- Dark Gradient Overlay for text readability -->
+          <!-- Global Shadow Overlay based on CMS selection -->
+          {% set shadowClass = "from-black/60 via-black/20" %}
+          {% if communications_section.global_shadow_intensity == "Heavy" %}
+            {% set shadowClass = "from-black/90 via-black/40" %}
+          {% elif communications_section.global_shadow_intensity == "Light" %}
+            {% set shadowClass = "from-black/30 via-transparent" %}
+          {% elif communications_section.global_shadow_intensity == "None" %}
+            {% set shadowClass = "from-transparent via-transparent" %}
+          {% endif %}
+          <div class="absolute inset-0 bg-gradient-to-t {{ shadowClass }} to-transparent pointer-events-none"></div>
+          
+          <!-- Overlay Text -->
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <h3 class="text-white text-xl md:text-2xl font-bold leading-tight">{{ item.text }}</h3>
+          </div>
+        </a>
+        {% endfor %}
+      {% else %}
+        <!-- Fallback if CMS is empty -->
+        <div class="text-gray-500 italic py-12">Log into the CMS to add your first Carousel Item!</div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+
 <style>
 /* Hide scrollbar for Chrome, Safari and Opera */
 .hide-scrollbar::-webkit-scrollbar {
