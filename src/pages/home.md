@@ -22,8 +22,7 @@ carousel_section:
       text: Norwich city
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   global_shadow_intensity: Light
-  heading: Digital mapping for insight, evidence based decisions, and effective
-    collaboration
+  heading: Mapping for insight, evidence based decisions, and effective collaboration
 communications_section:
   heading: Communications
   global_shadow_intensity: Light
@@ -132,7 +131,7 @@ permalink: /index.html
       {% if carousel_section and carousel_section.items %}
         {% for item in carousel_section.items %}
         <!-- Individual Card (Portrait Aspect Ratio) -->
-        <a href="{{ item.url }}" class="group relative flex-none w-36 md:w-40 lg:w-48 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
+        <a href="{{ item.url }}" class="group relative flex-none w-72 md:w-80 lg:w-96 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
           
           <!-- Background Image -->
           <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -150,8 +149,8 @@ permalink: /index.html
           <div class="absolute inset-0 bg-gradient-to-t {{ shadowClass }} to-transparent pointer-events-none"></div>
           
           <!-- Overlay Text -->
-          <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-            <h3 class="text-white text-base md:text-lg font-bold leading-tight">{{ item.text }}</h3>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <h3 class="text-white text-xl md:text-2xl font-bold leading-tight">{{ item.text }}</h3>
           </div>
         </a>
         {% endfor %}
@@ -183,7 +182,7 @@ permalink: /index.html
       {% if communications_section and communications_section.items %}
         {% for item in communications_section.items %}
         <!-- Individual Card (Portrait Aspect Ratio) -->
-        <a href="{{ item.url }}" class="group relative flex-none w-36 md:w-40 lg:w-48 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
+        <a href="{{ item.url }}" class="group relative flex-none w-72 md:w-80 lg:w-96 aspect-[3/4] snap-start rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
           
           <!-- Background Image -->
           <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
@@ -201,8 +200,8 @@ permalink: /index.html
           <div class="absolute inset-0 bg-gradient-to-t {{ shadowClass }} to-transparent pointer-events-none"></div>
           
           <!-- Overlay Text -->
-          <div class="absolute bottom-0 left-0 right-0 p-3 md:p-4">
-            <h3 class="text-white text-base md:text-lg font-bold leading-tight">{{ item.text }}</h3>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <h3 class="text-white text-xl md:text-2xl font-bold leading-tight">{{ item.text }}</h3>
           </div>
         </a>
         {% endfor %}
