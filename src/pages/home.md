@@ -16,6 +16,9 @@ carousel_section:
     - image: /assets/images/communications_nodes_graph_transparent.png
       text: network
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+    - image: /assets/images/screenshot_2026-04-03_14-30-20-portrait.webp
+      text: Norwich city
+      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
 layout: layouts/base.njk
 permalink: /index.html
 ---
