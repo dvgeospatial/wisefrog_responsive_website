@@ -52,6 +52,18 @@ collections:
             default: "Standard (max-w-md)"
           - label: "Hero Image Spacing (Gap)"
             name: "hero_image_spacing"
+
+      - label: "Carousel Heading"
+        name: "carousel_heading"
+        widget: "string"
+        default: "Smart mapping that delivers practical insight, informs decisions, promotes collaboration, and helps deliver effective nature recovery measures on the ground"
+      - label: "Carousel Items"
+        name: "carousel_items"
+        widget: "list"
+        fields:
+          - {label: "Image", name: "image", widget: "image"}
+          - {label: "Overlay Text", name: "text", widget: "string"}
+          - {label: "Link URL", name: "url", widget: "string", hint: "e.g., /portfolio/project-name/"}
             widget: "select"
             options: ["Overlap (-mt-12)", "Flush (gap-0)", "Tight (gap-4)", "Standard (gap-12)", "Loose (gap-20)"]
             default: "Standard (gap-12)"
