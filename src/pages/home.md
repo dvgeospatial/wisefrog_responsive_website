@@ -19,15 +19,15 @@ carousel_section:
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   global_shadow_intensity: Light
   heading: Mapping for insight, evidence based decisions, and effective collaboration
-  bg_color: "#45958d"
+  bg_color: "#cd2a38"
 communications_section:
-  heading: Communications
+  heading: Communications - spread the word
   global_shadow_intensity: Light
   items:
     - image: /assets/images/largerthantigersds.png
       text: Larger than Tigers
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-  bg_color: "#cbe6e6"
+  bg_color: "#180cf3"
 title: Home
 layout: layouts/home.njk
 permalink: /
