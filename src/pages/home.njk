@@ -1,424 +1,48 @@
 ---
-title: Home
-hero_text: Digital mapping and communications for a greener and more sustainable future.
-hero_bg_style: Solid Color 1
-hero_bg_color: "#114B5F"
-hero_bg_color_2: "#31c2da"
-hero_svg_path: M0,0 L48,0 Q-47.08,46 46,100 L0,100 Z
-hero_image_1: /assets/images/communications_nodes_graph_transparent.png
-hero_image_2: /assets/images/mapstack_2.png
-hero_layout: Stacked Centered
-hero_image_scale: Large (max-w-lg)
-hero_image_spacing: Flush (gap-0)
-carousel_section:
-  items:
-    - image: /assets/images/mapstack_2.png
-      text: stack of maps
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-    - image: /assets/images/communications_nodes_graph_transparent.png
-      text: network
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-    - image: /assets/images/screenshot_2026-04-03_14-30-20-portrait.webp
-      text: Norwich city
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-    - image: /assets/images/screenshot_2026-03-19_16-47-36_sam3_overlay-portrait.webp
-      text: tree
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-    - image: /assets/images/screenshot_2026-04-20_21-19-24.png
-      text: hgfd
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-  global_shadow_intensity: Light
-  heading: Mapping for insight, evidence based decisions, and effective collaboration
-communications_section:
-  heading: Communications
-  global_shadow_intensity: Light
-  items:
-    - image: /assets/images/largerthantigersds.png
-      text: Larger than Tigers
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-layout: layouts/base.njk
-permalink: /index.html
+permalink: /
 ---
 
+{% extends "layouts/base.njk" %}
 
-<!-- Set up dynamic classes based on CMS selections -->
-{% set layoutClass = "flex flex-col items-center justify-center" %}
-{% set staggerClass1 = "" %}
-{% set staggerClass2 = "" %}
-
-{% if hero_layout == "Diagonal Stagger" %}
-  {% set layoutClass = "grid grid-cols-2 items-center" %}
-  {% set staggerClass1 = "transform lg:-translate-y-12" %}
-  {% set staggerClass2 = "transform lg:translate-y-12" %}
-{% elif hero_layout == "Side-by-Side (Desktop)" %}
-  {% set layoutClass = "flex flex-col lg:flex-row items-center justify-center" %}
-{% endif %}
-
-{% set gapClass = "gap-12" %}
-{% set overlapClass = "" %}
-{% if hero_image_spacing == "Overlap (-mt-12)" %}
-  {% set gapClass = "gap-0" %}
-  {% set overlapClass = "-mt-12 lg:-mt-12 2xl:-mt-0 2xl:-mt-0 z-0 relative" %}
-{% elif hero_image_spacing == "Flush (gap-0)" %}
-  {% set gapClass = "gap-0" %}
-{% elif hero_image_spacing == "Tight (gap-4)" %}
-  {% set gapClass = "gap-4" %}
-{% elif hero_image_spacing == "Loose (gap-20)" %}
-  {% set gapClass = "gap-20" %}
-{% endif %}
-
-{% set scaleClass = "max-w-xs md:max-w-sm lg:max-w-xs 2xl:max-w-lg" %}
-{% if hero_image_scale == "Small (max-w-sm)" %}{% set scaleClass = "max-w-xs md:max-w-xs lg:max-w-xs 2xl:max-w-md" %}
-{% elif hero_image_scale == "Large (max-w-lg)" %}{% set scaleClass = "max-w-sm md:max-w-md lg:max-w-sm 2xl:max-w-xl" %}
-{% elif hero_image_scale == "Full Width (w-full)" %}{% set scaleClass = "w-full" %}
-{% endif %}
-
-<!-- Hero Section -->
-<section class="relative w-full overflow-hidden flex flex-col lg:flex-row  bg-white  2xl:min-h-[calc(100vh-64px)]">
-  
-  <!-- Dynamic Background Color & SVG Curve (Desktop) -->
-  <!-- 2-Color Dynamic Hero Background -->
-  {% set heroStyle = "background-color: " ~ hero_bg_color ~ ";" %}
-  {% if hero_bg_style == "Pure White (No Gradient)" %}
-    {% set heroStyle = "background-color: #ffffff;" %}
-  {% elif hero_bg_style == "Subtle Gradient (Color 1 to Color 2)" %}
-    {% set endColor = hero_bg_color_2 | default("#ffffff") %}
-    {% set heroStyle = "background: linear-gradient(135deg, " ~ hero_bg_color ~ " 0%, " ~ endColor ~ " 100%);" %}
-  {% endif %}
-  <div class="absolute inset-0 w-full lg:w-1/2 h-full z-0" style="{{ heroStyle }}">
-    <svg class="hidden lg:block absolute top-0 left-full h-full w-[200px] xl:w-[300px]" preserveAspectRatio="none" viewBox="0 0 100 100" fill="currentColor" style="color: {{ hero_bg_color }};">
-      <path d="{{ hero_svg_path }}" />
-    </svg>
-  </div>
-
-  <!-- Content Container -->
-  <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-2 2xl:py-12 flex flex-col lg:flex-row items-center justify-between">
-    
-    <!-- Left Column: Text Content -->
-    <div class="w-full lg:-mt-12 2xl:-mt-0 2xl:-mt-0 lg:w-[45%] text-white text-center lg:text-left mb-16 lg:mb-0">
-      <h1 class="text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl 2xl:leading-snug md:leading-tight font-bold leading-snug md:leading-tight">
-        {{ hero_text }}
-      </h1>
-    </div>
-
-    <!-- Right Column: Dynamic Images -->
-    <div class="w-full lg:w-1/2 {{ layoutClass }} {{ gapClass }} relative z-10">
-      {% if hero_image_1 == "/assets/images/communications_nodes_graph_transparent.png" %}
-      <div class="w-full {{ scaleClass }} h-auto {{ staggerClass1 }} relative z-20 hover:cursor-grab active:cursor-grabbing">
-        {% include "components/d3-network.njk" %}
-      </div>
-    {% elif hero_image_1 %}
-      <img src="{{ hero_image_1 }}" alt="Hero Image 1" class="w-full {{ scaleClass }} h-auto {{ staggerClass1 }} relative z-20">
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <h1>{{ hero_heading or title }}</h1>
+    {% if hero_intro %}
+      <p>{{ hero_intro }}</p>
     {% endif %}
-      
-      {% if hero_image_2 %}
-        <img src="{{ hero_image_2 }}" alt="Hero Image 2" class="w-full {{ scaleClass }} h-auto {{ staggerClass2 }} {{ overlapClass }}">
-      {% endif %}
-    </div>
-
   </div>
 </section>
 
-<!-- Dynamic Card Carousel Section -->
-<section class="w-full bg-white py-16 lg:py-24 overflow-hidden border-t border-gray-100">
-  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mb-12">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
-        {{ carousel_section.heading | default("Mapping for insight, evidence based decisions, and effective collaboration") }}
-      </h2>
-    </div>
+{% if slides and slides.length %}
+<section class="carousel">
+  <div class="container">
+    <div class="carousel-track">
+      {% for slide in slides %}
+        <article class="carousel-slide">
+          <h2>{{ slide.title }}</h2>
+          {% if slide.body %}
+            <p>{{ slide.body }}</p>
+          {% endif %}
+          {% if slide.cta_label and slide.cta_url %}
+            <p><a href="{{ slide.cta_url }}">{{ slide.cta_label }}</a></p>
+          {% endif %}
+        </article>
+      {% endfor %}
 
-    <div class="wf-carousel" data-wf-carousel>
-      <button class="wf-carousel-btn wf-carousel-btn-prev" type="button" aria-label="Previous cards">
-        ❮
-      </button>
-
-      <div class="wf-carousel-track hide-scrollbar" data-wf-carousel-track>
-        {% if carousel_section and carousel_section.items %}
-          {% for item in carousel_section.items %}
-          <a href="{{ item.url }}" class="wf-carousel-card group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
-            <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-
-            {% set shadowClass = "from-black/60 via-black/20" %}
-            {% if carousel_section.global_shadow_intensity == "Heavy" %}
-              {% set shadowClass = "from-black/90 via-black/40" %}
-            {% elif carousel_section.global_shadow_intensity == "Light" %}
-              {% set shadowClass = "from-black/30 via-transparent" %}
-            {% elif carousel_section.global_shadow_intensity == "None" %}
-              {% set shadowClass = "from-transparent via-transparent" %}
-            {% endif %}
-
-            <div class="absolute inset-0 bg-gradient-to-t {{ shadowClass }} to-transparent pointer-events-none"></div>
-
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <h3 class="text-white text-xl md:text-2xl font-bold leading-tight">{{ item.text }}</h3>
-            </div>
-          </a>
-          {% endfor %}
-        {% else %}
-          <div class="text-gray-500 italic py-12">Log into the CMS to add your first Carousel Item!</div>
-        {% endif %}
-      </div>
-
-      <button class="wf-carousel-btn wf-carousel-btn-next" type="button" aria-label="Next cards">
-        ❯
-      </button>
+      {% for slide in slides %}
+        <article class="carousel-slide" aria-hidden="true">
+          <h2>{{ slide.title }}</h2>
+          {% if slide.body %}
+            <p>{{ slide.body }}</p>
+          {% endif %}
+          {% if slide.cta_label and slide.cta_url %}
+            <p><a href="{{ slide.cta_url }}">{{ slide.cta_label }}</a></p>
+          {% endif %}
+        </article>
+      {% endfor %}
     </div>
   </div>
 </section>
-
-<!-- Dynamic Card Communications Section -->
-<section class="w-full bg-white py-16 lg:py-24 overflow-hidden border-t border-gray-100">
-  <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mb-12">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
-        {{ communications_section.heading | default("Communications") }}
-      </h2>
-    </div>
-
-    <div class="wf-carousel" data-wf-carousel>
-      <button class="wf-carousel-btn wf-carousel-btn-prev" type="button" aria-label="Previous cards">
-        ❮
-      </button>
-
-      <div class="wf-carousel-track hide-scrollbar" data-wf-carousel-track>
-        {% if communications_section and communications_section.items %}
-          {% for item in communications_section.items %}
-          <a href="{{ item.url }}" class="wf-carousel-card group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
-            <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-
-            {% set shadowClass = "from-black/60 via-black/20" %}
-            {% if communications_section.global_shadow_intensity == "Heavy" %}
-              {% set shadowClass = "from-black/90 via-black/40" %}
-            {% elif communications_section.global_shadow_intensity == "Light" %}
-              {% set shadowClass = "from-black/30 via-transparent" %}
-            {% elif communications_section.global_shadow_intensity == "None" %}
-              {% set shadowClass = "from-transparent via-transparent" %}
-            {% endif %}
-
-            <div class="absolute inset-0 bg-gradient-to-t {{ shadowClass }} to-transparent pointer-events-none"></div>
-
-            <div class="absolute bottom-0 left-0 right-0 p-6">
-              <h3 class="text-white text-xl md:text-2xl font-bold leading-tight">{{ item.text }}</h3>
-            </div>
-          </a>
-          {% endfor %}
-        {% else %}
-          <div class="text-gray-500 italic py-12">Log into the CMS to add your first Communications Item!</div>
-        {% endif %}
-      </div>
-
-      <button class="wf-carousel-btn wf-carousel-btn-next" type="button" aria-label="Next cards">
-        ❯
-      </button>
-    </div>
-  </div>
-</section>
-
-
-
-<style>
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.wf-carousel {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.wf-carousel-track {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  width: 100%;
-  padding: 10px 0 32px 0;
-  margin: 0;
-  list-style: none;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  touch-action: pan-y;
-  cursor: grab;
-}
-
-.wf-carousel-track.no-smooth {
-  scroll-behavior: auto !important;
-  scroll-snap-type: none !important;
-}
-
-.wf-carousel-track.is-dragging {
-  cursor: grabbing;
-}
-
-.wf-carousel-card {
-  box-sizing: border-box;
-  scroll-snap-align: start;
-  flex: 0 0 calc((100% - 16px) / 2);
-  max-width: calc((100% - 16px) / 2);
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-user-drag: none;
-}
-
-.wf-carousel-card img,
-.wf-carousel-card h3 {
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.wf-carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  width: 44px;
-  height: 44px;
-  border-radius: 9999px;
-  background: rgba(255,255,255,0.92);
-  color: #111827;
-  border: 1px solid rgba(17,24,39,0.08);
-  font-size: 24px;
-  line-height: 1;
-  font-weight: 700;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-}
-
-.wf-carousel-btn-prev {
-  left: -8px;
-}
-
-.wf-carousel-btn-next {
-  right: -8px;
-}
-
-@media (min-width: 640px) {
-  .wf-carousel-btn {
-    display: flex;
-  }
-}
-
-@media (min-width: 1024px) {
-  .wf-carousel-card {
-    flex: 0 0 calc((100% - 48px) / 4);
-    max-width: calc((100% - 48px) / 4);
-  }
-}
-</style>
-
-
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("[data-wf-carousel]").forEach((carousel) => {
-    const track = carousel.querySelector("[data-wf-carousel-track]");
-    const prevBtn = carousel.querySelector(".wf-carousel-btn-prev");
-    const nextBtn = carousel.querySelector(".wf-carousel-btn-next");
-
-    if (!track) return;
-
-    const originalCards = Array.from(track.children);
-    if (!originalCards.length) return;
-
-    let isDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-    let scrollTimeout;
-
-    const getMetrics = () => {
-      const card = track.querySelector(".wf-carousel-card");
-      const gap = parseFloat(getComputedStyle(track).gap) || 16;
-      const cardWidth = card.offsetWidth + gap;
-      const setWidth = originalCards.length * cardWidth;
-      return { cardWidth, setWidth };
-    };
-
-    originalCards.slice().reverse().forEach((card) => {
-      track.prepend(card.cloneNode(true));
-    });
-
-    originalCards.forEach((card) => {
-      track.appendChild(card.cloneNode(true));
-    });
-
-    setTimeout(() => {
-      const { setWidth } = getMetrics();
-      track.classList.add("no-smooth");
-      track.scrollLeft = setWidth;
-      track.offsetHeight;
-      track.classList.remove("no-smooth");
-    }, 10);
-
-    track.addEventListener("pointerdown", (e) => {
-      isDown = true;
-      track.classList.add("no-smooth", "is-dragging");
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-      try { track.setPointerCapture(e.pointerId); } catch (err) {}
-    });
-
-    track.addEventListener("pointermove", (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const walk = e.pageX - track.offsetLeft - startX;
-      track.scrollLeft = scrollLeft - walk;
-    });
-
-    const checkLoop = () => {
-      if (isDown) return;
-
-      const { cardWidth, setWidth } = getMetrics();
-      const buffer = cardWidth * 1.5;
-
-      if (track.scrollLeft <= buffer) {
-        track.classList.add("no-smooth");
-        track.scrollLeft += setWidth;
-        track.offsetHeight;
-        track.classList.remove("no-smooth");
-      } else if (track.scrollLeft >= track.scrollWidth - track.clientWidth - buffer) {
-        track.classList.add("no-smooth");
-        track.scrollLeft -= setWidth;
-        track.offsetHeight;
-        track.classList.remove("no-smooth");
-      }
-    };
-
-    const stopDrag = (e) => {
-      if (!isDown) return;
-      isDown = false;
-      track.classList.remove("no-smooth", "is-dragging");
-      try { track.releasePointerCapture(e.pointerId); } catch (err) {}
-      checkLoop();
-    };
-
-    track.addEventListener("pointerup", stopDrag);
-    track.addEventListener("pointercancel", stopDrag);
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        track.scrollBy({ left: getMetrics().cardWidth, behavior: "smooth" });
-      });
-    }
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        track.scrollBy({ left: -getMetrics().cardWidth, behavior: "smooth" });
-      });
-    }
-
-    track.addEventListener("scroll", () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(checkLoop, 150);
-    });
-  });
-});
-</script>
-
-
-
-
+{% endif %}
+{% endblock %}
