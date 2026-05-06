@@ -13,68 +13,60 @@ collections:
         label: "Home Page"
         file: "src/pages/home.md"
         fields:
+          - { label: "Page Title", name: "title", widget: "hidden", default: "Home" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/home.njk" }
+          - { label: "Permalink", name: "permalink", widget: "hidden", default: "/" }
+
           - label: "Hero Tagline"
             name: "hero_text"
             widget: "text"
+
+          - { label: "Hero Background Style", name: "hero_bg_style", widget: "hidden", default: "Solid Color 1" }
+          - { label: "Hero Background Color 1", name: "hero_bg_color", widget: "hidden", default: "#114B5F" }
+          - { label: "Hero Background Color 2", name: "hero_bg_color_2", widget: "hidden", default: "#31c2da" }
+          - { label: "Hero SVG Path", name: "hero_svg_path", widget: "hidden", default: "M0,0 L48,0 Q-47.08,46 46,100 L0,100 Z" }
+          - { label: "Hero Image 1", name: "hero_image_1", widget: "hidden", default: "/assets/images/communications_nodes_graph_transparent.png" }
+          - { label: "Hero Image 2", name: "hero_image_2", widget: "hidden", default: "/assets/images/mapstack_2.png" }
+          - { label: "Hero Layout", name: "hero_layout", widget: "hidden", default: "Stacked Centered" }
+          - { label: "Hero Image Scale", name: "hero_image_scale", widget: "hidden", default: "Large (max-w-lg)" }
+          - { label: "Hero Image Spacing", name: "hero_image_spacing", widget: "hidden", default: "Flush (gap-0)" }
 
           - label: "Main Carousel Section"
             name: "carousel_section"
             widget: "object"
             fields:
-              - label: "Carousel Heading"
+              - label: "Carousel Title"
                 name: "heading"
                 widget: "string"
-                default: "Mapping for insight, evidence based decisions, and effective collaboration"
-              
               - label: "Background Colour"
                 name: "bg_color"
                 widget: "color"
                 default: "#ffffff"
-              
-              - { name: "global_shadow_intensity", widget: "hidden", default: "Light" }
-              
+              - { label: "Shadow Intensity", name: "global_shadow_intensity", widget: "hidden", default: "Light" }
               - label: "Cards"
                 name: "items"
                 widget: "list"
                 fields:
-                  - { label: "Card Image", name: "image", widget: "image" }
-                  - { label: "Overlay Text", name: "text", widget: "string" }
-                  - { label: "Link URL", name: "url", widget: "string", hint: "e.g., /services/" }
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Link URL", name: "url", widget: "string" }
 
           - label: "Communications Carousel Section"
             name: "communications_section"
             widget: "object"
             fields:
-              - label: "Carousel Heading"
+              - label: "Carousel Title"
                 name: "heading"
                 widget: "string"
-                default: "Communications"
-                
               - label: "Background Colour"
                 name: "bg_color"
                 widget: "color"
                 default: "#ffffff"
-                
-              - { name: "global_shadow_intensity", widget: "hidden", default: "Light" }
-              
+              - { label: "Shadow Intensity", name: "global_shadow_intensity", widget: "hidden", default: "Light" }
               - label: "Cards"
                 name: "items"
                 widget: "list"
                 fields:
-                  - { label: "Card Image", name: "image", widget: "image" }
-                  - { label: "Overlay Text", name: "text", widget: "string" }
-                  - { label: "Link URL", name: "url", widget: "string", hint: "e.g., /portfolio/" }
-
-          # --- HIDDEN FIELDS (Protects your visual layout from being erased) ---
-          - { name: "title", widget: "hidden", default: "Home" }
-          - { name: "layout", widget: "hidden", default: "layouts/home.njk" }
-          - { name: "permalink", widget: "hidden", default: "/" }
-          - { name: "hero_bg_style", widget: "hidden", default: "Solid Color 1" }
-          - { name: "hero_bg_color", widget: "hidden", default: "#114B5F" }
-          - { name: "hero_bg_color_2", widget: "hidden", default: "#31c2da" }
-          - { name: "hero_svg_path", widget: "hidden", default: "M0,0 L48,0 Q-47.08,46 46,100 L0,100 Z" }
-          - { name: "hero_image_1", widget: "hidden", default: "/assets/images/communications_nodes_graph_transparent.png" }
-          - { name: "hero_image_2", widget: "hidden", default: "/assets/images/mapstack_2.png" }
-          - { name: "hero_layout", widget: "hidden", default: "Stacked Centered" }
-          - { name: "hero_image_scale", widget: "hidden", default: "Large (max-w-lg)" }
-          - { name: "hero_image_spacing", widget: "hidden", default: "Flush (gap-0)" }
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Link URL", name: "url", widget: "string" }
