@@ -1,17 +1,5 @@
 ---
-layout: layouts/home.njk
-permalink: /
-title: Home
 hero_text: Digital mapping and communications for a greener and more sustainable future.
-hero_bg_style: Solid Color 1
-hero_bg_color: "#114B5F"
-hero_bg_color_2: "#31c2da"
-hero_svg_path: M0,0 L48,0 Q-47.08,46 46,100 L0,100 Z
-hero_image_1: /assets/images/communications_nodes_graph_transparent.png
-hero_image_2: /assets/images/mapstack_2.png
-hero_layout: Stacked Centered
-hero_image_scale: Large (max-w-lg)
-hero_image_spacing: Flush (gap-0)
 carousel_section:
   items:
     - image: /assets/images/mapstack_2.png
@@ -31,6 +19,7 @@ carousel_section:
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   global_shadow_intensity: Light
   heading: Mapping for insight, evidence based decisions, and effective collaboration
+  bg_color: "#45958d"
 communications_section:
   heading: Communications
   global_shadow_intensity: Light
@@ -38,4 +27,17 @@ communications_section:
     - image: /assets/images/largerthantigersds.png
       text: Larger than Tigers
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+  bg_color: "#cbe6e6"
+title: Home
+layout: layouts/home.njk
+permalink: /
+hero_bg_style: Solid Color 1
+hero_bg_color: "#114B5F"
+hero_bg_color_2: "#31c2da"
+hero_svg_path: M0,0 L48,0 Q-47.08,46 46,100 L0,100 Z
+hero_image_1: /assets/images/communications_nodes_graph_transparent.png
+hero_image_2: /assets/images/mapstack_2.png
+hero_layout: Stacked Centered
+hero_image_scale: Large (max-w-lg)
+hero_image_spacing: Flush (gap-0)
 ---
