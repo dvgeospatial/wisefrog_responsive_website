@@ -39,5 +39,11 @@ communications_section:
     - image: /assets/images/largerthantigersds.png
       text: Larger than Tigers
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+    - image: /assets/images/group.png
+      text: Group
+      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+    - image: /assets/images/mapstack_2.png
+      text: bjkjk
+      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   bg_color: "#180cf3"
 ---
