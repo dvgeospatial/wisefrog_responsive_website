@@ -1,5 +1,5 @@
 ---
-layout: home.njk
+layout: layouts/home.njk
 title: "WiseFrog Geospatial"
 hero_heading: "Geospatial intelligence for better decisions"
 hero_intro: "WiseFrog turns spatial data into clear, actionable insights."

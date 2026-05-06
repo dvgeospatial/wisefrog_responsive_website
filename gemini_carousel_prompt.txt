@@ -1,0 +1,244 @@
+I want you to take the exact architecture and behavior of the following “Infinite Vanilla JS Carousel” demo and implement it for the two CMS-driven carousels on the Wisefrog website.
+
+DEMO CODE (REFERENCE IMPLEMENTATION)
+The demo uses:
+
+HTML structure:
+- .carousel-container wrapper
+- two buttons .carousel-btn.prev-btn and .carousel-btn.next-btn
+- a horizontal <ul class="carousel-track" id="track">
+- <li class="card"> items inside the track
+
+CSS structure:
+- .carousel-track:
+  - display: flex;
+  - gap: 16px;
+  - overflow-x: auto;
+  - scroll-behavior: smooth;
+  - scroll-snap-type: x mandatory;
+  - width: 100%;
+  - padding: 10px 0;
+  - hides scrollbars;
+  - touch-action: pan-y;
+- .card:
+  - box-sizing: border-box;
+  - scroll-snap-align: start;
+  - flex-basis on desktop: flex: 0 0 calc((100% - 48px) / 4);
+    → exactly 4 whole cards across, with 3 gaps of 16px.
+  - flex-basis on mobile (@media max-width:768px):
+    flex: 0 0 calc((100% - 16px) / 2);
+    → exactly 2 whole cards across, with 1 gap of 16px.
+- .carousel-track.no-smooth:
+  - scroll-behavior: auto;
+  - scroll-snap-type: none;
+- .carousel-track.is-dragging:
+  - cursor: grabbing;
+
+JavaScript behavior:
+- Grabs track, prevBtn, nextBtn, originalCards.
+- getMetrics():
+  - reads the first .card
+  - reads track gap from computed style
+  - computes cardWidth = card.offsetWidth + gap
+  - computes setWidth = originalCards.length * cardWidth
+- Infinite loop setup:
+  - Clones originalCards in reverse order and prepends them.
+  - Clones originalCards in normal order and appends them.
+  - After a short timeout, centers the scroll position on the middle set:
+    - adds .no-smooth
+    - sets track.scrollLeft = setWidth
+    - forces reflow with track.offsetHeight
+    - removes .no-smooth
+- Pointer dragging:
+  - pointerdown:
+    - isDown = true
+    - adds .no-smooth and .is-dragging
+    - stores startX and scrollLeft
+    - setPointerCapture
+  - pointermove:
+    - if isDown, prevents default and updates scrollLeft based on drag distance
+  - pointerup/pointercancel:
+    - isDown = false
+    - removes .no-smooth and .is-dragging
+    - releasePointerCapture
+    - calls checkLoop()
+- Arrow navigation:
+  - nextBtn: scrollBy({ left: cardWidth, behavior: 'smooth' })
+  - prevBtn: scrollBy({ left: -cardWidth, behavior: 'smooth' })
+- Infinite loop correction:
+  - checkLoop():
+    - if dragging (isDown) → return
+    - recomputes { cardWidth, setWidth }
+    - buffer = cardWidth * 1.5
+    - if track.scrollLeft <= buffer:
+        - add .no-smooth
+        - track.scrollLeft += setWidth
+        - force reflow
+        - remove .no-smooth
+      else if track.scrollLeft >= track.scrollWidth - track.clientWidth - buffer:
+        - add .no-smooth
+        - track.scrollLeft -= setWidth
+        - force reflow
+        - remove .no-smooth
+  - scroll listener:
+    - debounces with setTimeout(checkLoop, 150)
+
+This demo produces:
+- Desktop: exactly 4 whole cards visible.
+- Mobile: exactly 2 whole cards visible.
+- Infinite looping in both directions for drag and button scroll.
+- No hard left/right edge, thanks to clones and jump logic.
+
+WISFROG PROJECT CONTEXT
+- Repo/project: wisefrog_responsive_website
+- Stack: Eleventy (11ty) with Nunjucks templates, Tailwind CSS via utility classes, Decap (Netlify) CMS, deployed to Netlify.
+- Home page template: src/pages/home.njk
+- Two carousel sections on the home page:
+  1. carousel_section
+  2. communications_section
+- Each section’s front matter / data has:
+  - heading
+  - items (an array)
+  - global_shadow_intensity
+- Each item has:
+  - item.url
+  - item.image
+  - item.text
+- The current carousels are CMS-driven and already render:
+  - a section wrapper
+  - a heading
+  - a horizontally scrollable row of cards
+  - cards with:
+    - <a href="{{ item.url }}">
+    - <img src="{{ item.image }}" ...>
+    - a gradient overlay controlled by global_shadow_intensity
+    - text title {{ item.text }}
+
+TASK
+Replace the current home-page carousel implementations with a Wisefrog-adapted version of the demo above, for BOTH:
+- carousel_section
+- communications_section
+
+Do NOT approximate the behavior; follow the demo’s architecture and logic very closely, adjusting only where needed for:
+- multiple independent carousels on one page
+- CMS-driven content
+- existing Wisefrog card design
+
+SPECIFIC REQUIREMENTS
+
+1. Visible card count
+- Desktop / larger screens:
+  - Show exactly 4 whole cards at a time in each carousel, as the demo does with:
+    flex: 0 0 calc((100% - 48px) / 4)
+- Mobile (<= 768px):
+  - Show exactly 2 whole cards at a time, as the demo does with:
+    flex: 0 0 calc((100% - 16px) / 2)
+- On all breakpoints:
+  - No cropped partial cards in the standard viewport position.
+  - The spacing between cards is determined by the track gap (16px) and the flex-basis formulas above.
+
+2. Infinite loop in both directions
+- Implement the same infinite loop behavior as the demo:
+  - Clone the original card set:
+    - cloned reverse set prepended to the track
+    - cloned forward set appended to the track
+  - Center the scroll position on the middle set on load using the same no-smooth + scrollLeft + reflow pattern.
+  - Implement bidirectional infinite scrolling:
+    - Drag, swipe, or button scroll near the left edge → immediate jump forward by one setWidth.
+    - Drag, swipe, or button scroll near the right edge → immediate jump backward by one setWidth.
+  - Use a buffer region like in the demo (cardWidth * 1.5) so the jump feels natural.
+
+3. Interaction model
+- Pointer / touch:
+  - Implement pointerdown / pointermove / pointerup / pointercancel exactly as in the demo:
+    - pointer capture
+    - is-dragging state
+    - no-smooth state during drag
+- Buttons:
+  - Provide prev/next buttons per carousel:
+    - previous: scrollBy(-cardWidth)
+    - next: scrollBy(+cardWidth)
+- Scroll snap:
+  - Retain scroll-snap on the track when not in the no-smooth state so cards align nicely.
+
+4. CMS integration and markup
+- Use Eleventy/Nunjucks to render the cards:
+  - For carousel_section:
+    - loop over carousel_section.items
+  - For communications_section:
+    - loop over communications_section.items
+  - For each item:
+    - wrap card markup in <a href="{{ item.url }}">...</a>
+    - use {{ item.image }} for src
+    - use {{ item.text }} for alt and text content
+- Preserve the gradient overlay logic based on global_shadow_intensity exactly as it works now.
+- Keep existing card visuals:
+  - aspect ratio (aspect-[3/4])
+  - rounded corners
+  - shadows
+  - hover translate/zoom behavior
+- Use appropriate classes/attributes to differentiate multiple carousels:
+  - e.g. data-wf-carousel, data-wf-carousel-track, data-wf-carousel-card
+  - or unique IDs per instance, but prefer data attributes so the same script can initialize all carousels.
+
+5. CSS integration
+- Add a CSS block (in home.njk or a shared stylesheet) that adapts the demo’s CSS:
+  - .wf-carousel-container (based on .carousel-container)
+  - .wf-carousel-track (based on .carousel-track)
+  - .wf-carousel-card (based on .card)
+  - .wf-carousel-btn, .wf-carousel-btn-prev, .wf-carousel-btn-next (based on .carousel-btn, .prev-btn, .next-btn)
+- Keep:
+  - display:flex; gap:16px; overflow-x:auto; scroll-behavior: smooth; scroll-snap-type: x mandatory; width:100%; padding:10px 0; touch-action:pan-y; scrollbar hidden.
+- Use the same flex-basis formulas for card widths at desktop and mobile as the demo, adjusted only as needed to match the existing Wisefrog design tokens.
+
+6. JavaScript integration
+- Implement a reusable script that:
+  - Finds all carousels with a data-wf-carousel attribute.
+  - For each carousel:
+    - Identifies its track and buttons.
+    - Collects its original card elements.
+    - Clones cards and sets up the infinite loop exactly as in the demo:
+      - reverse clone prepended
+      - forward clone appended
+      - center scrollLeft to one setWidth on load
+    - Implements:
+      - getMetrics() with cardWidth + gap and setWidth based on ORIGINAL cards.
+      - pointer drag behavior.
+      - prev/next button behavior.
+      - scroll listener that debounces and calls checkLoop().
+      - checkLoop() that:
+        - uses buffer = cardWidth * 1.5
+        - jumps forward at left boundary
+        - jumps backward at right boundary
+        - toggles .no-smooth appropriately.
+- Make sure the script is resilient to:
+  - multiple carousels on the page
+  - carousels with different numbers of cards.
+
+7. Eleventy / template considerations
+- All implementation goes in src/pages/home.njk (or in partials/macro files you include there).
+- The home page is already a Nunjucks template, so you don’t need Markdown workarounds.
+- Ensure the script runs after the HTML is present (e.g. DOMContentLoaded).
+
+Acceptance criteria
+The change is only acceptable if ALL of the following are true:
+
+- On mobile widths:
+  - I see exactly 2 whole cards in each carousel at a time.
+  - Drag and swipe move through cards smoothly.
+  - The carousel loops infinitely, with no visible hard edges.
+
+- On desktop widths:
+  - I see exactly 4 whole cards in each carousel at a time.
+  - Clicking next/prev moves the carousel by exactly one card width (plus gap) per click.
+  - Dragging and button navigation both participate in the infinite loop.
+
+- Both carousels (carousel_section and communications_section) share the same underlying JS behavior and CSS, and both are fed by Decap CMS.
+
+- The overlay gradient and global_shadow_intensity behavior remain unchanged, only the carousel structure and behavior are updated.
+
+Deliverable
+1. Exact updated code for src/pages/home.njk (or any included partials).
+2. The new CSS block implementing the demo-style carousel classes.
+3. The JS block that realizes the infinite loop behavior for multiple carousels.
+4. A brief explanation of how the clone and jump logic works, and any differences from the original demo (only if necessary for multi-carousel support).
