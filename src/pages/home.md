@@ -52,7 +52,7 @@ communications_section:
     - image: /assets/images/mapstack_2.png
       text: bjkjk
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-    - image: /assets/images/screenshot_2026-03-19_16-47-36_sam3_overlay-portrait.webp
+    - image: /assets/images/communications_nodes_graph_transparent.png
       text: " A map"
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   body: Develop communication networks to promote nature recovery initiatives
