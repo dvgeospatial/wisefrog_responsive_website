@@ -62,5 +62,5 @@ communications_section:
   global_shadow_intensity: Light
   show_divider: false
   heading_size: lg
-  body_size: md
+  body_size: lg
 ---
