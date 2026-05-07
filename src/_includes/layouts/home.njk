@@ -81,7 +81,7 @@ layout: layouts/base.njk
 </section>
 
 <!-- Dynamic Card Carousel Section -->
-<section class="w-full bg-white py-16 lg:py-24 overflow-hidden border-t border-gray-100">
+<section style="background-color: {{ carousel_section.bg_color | default('#ffffff') }};" class="w-full py-16 lg:py-24 overflow-hidden border-t border-gray-100">
   <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mb-12">
       <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
@@ -97,7 +97,8 @@ layout: layouts/base.njk
       <div class="wf-carousel-track hide-scrollbar" data-wf-carousel-track>
         {% if carousel_section and carousel_section.items %}
           {% for item in carousel_section.items %}
-          <a href="{{ item.url }}" class="wf-carousel-card group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
+          <div class="wf-carousel-card group relative aspect-[3/4] block cursor-pointer">
+            <a href="{{ item.url }}" class="absolute inset-0 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl bg-gray-200">
             <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
 
             {% set shadowClass = "from-black/60 via-black/20" %}
@@ -115,6 +116,7 @@ layout: layouts/base.njk
               <h3 class="text-white text-xl md:text-2xl font-bold leading-tight">{{ item.text }}</h3>
             </div>
           </a>
+          </div>
           {% endfor %}
         {% else %}
           <div class="text-gray-500 italic py-12">Log into the CMS to add your first Carousel Item!</div>
@@ -129,7 +131,7 @@ layout: layouts/base.njk
 </section>
 
 <!-- Dynamic Card Communications Section -->
-<section class="w-full bg-white py-16 lg:py-24 overflow-hidden border-t border-gray-100">
+<section style="background-color: {{ communications_section.bg_color | default('#ffffff') }};" class="w-full py-16 lg:py-24 overflow-hidden border-t border-gray-100">
   <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="max-w-5xl mb-12">
       <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
@@ -145,7 +147,8 @@ layout: layouts/base.njk
       <div class="wf-carousel-track hide-scrollbar" data-wf-carousel-track>
         {% if communications_section and communications_section.items %}
           {% for item in communications_section.items %}
-          <a href="{{ item.url }}" class="wf-carousel-card group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gray-200">
+          <div class="wf-carousel-card group relative aspect-[3/4] block cursor-pointer">
+            <a href="{{ item.url }}" class="absolute inset-0 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl bg-gray-200">
             <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
 
             {% set shadowClass = "from-black/60 via-black/20" %}
@@ -163,6 +166,7 @@ layout: layouts/base.njk
               <h3 class="text-white text-xl md:text-2xl font-bold leading-tight">{{ item.text }}</h3>
             </div>
           </a>
+          </div>
           {% endfor %}
         {% else %}
           <div class="text-gray-500 italic py-12">Log into the CMS to add your first Communications Item!</div>
