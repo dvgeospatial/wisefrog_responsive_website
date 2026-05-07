@@ -33,10 +33,10 @@ carousel_section:
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   body: maps visualisations and much more bbbbbbbbbbbbbbbbbbbbbbb
   heading: Mapping for insight, evidence based decisions, and effective collaboration
-  alignment: center
+  alignment: right
   bg_color: "#e8f2f0"
   global_shadow_intensity: Light
-  show_divider: true
+  show_divider: false
   heading_size: lg
   body_size: lg
 communications_section:
