@@ -31,7 +31,7 @@ carousel_section:
     - image: /assets/images/screenshot_2026-04-20_21-19-24.png
       text: hgfd
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-  body: maps visualisations and much more bbbbbbbbbbbbbbbbbbbbbbb
+  body: "maps visualisations and so much more "
   heading: Mapping for insight, evidence based decisions, and effective collaboration
   alignment: right
   bg_color: "#e8f2f0"
