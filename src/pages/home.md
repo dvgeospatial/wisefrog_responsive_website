@@ -31,9 +31,11 @@ carousel_section:
     - image: /assets/images/screenshot_2026-04-20_21-19-24.png
       text: hgfd
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-  body: "maps visualisations and so much more "
-  heading: Mapping for insight, evidence based decisions, and effective collaboration
-  alignment: right
+  body: Mapping and 3d visualisations for insight, evidence based decisions, and
+    effective collaboration, to deliver nature recovery and wider environmental
+    benefits in Norfolk and Suffolk.
+  heading: Digital Maps
+  alignment: center
   bg_color: "#e8f2f0"
   global_shadow_intensity: Light
   show_divider: false
@@ -50,12 +52,15 @@ communications_section:
     - image: /assets/images/mapstack_2.png
       text: bjkjk
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-  body: blah blah blah
-  heading: Communications - spread the word - again
+    - image: /assets/images/screenshot_2026-03-19_16-47-36_sam3_overlay-portrait.webp
+      text: " A map"
+      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+  body: Develop digital networks to promote nature recovery initiatives
+  heading: Communications
   alignment: center
   bg_color: "#fefeff"
   global_shadow_intensity: Light
-  show_divider: true
+  show_divider: false
   heading_size: lg
   body_size: md
 ---
