@@ -1,6 +1,6 @@
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-<nav class="bg-white shadow-md relative z-10" x-data="{ mobileMenuOpen: false }">
+<nav id="smart-header" class="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out translate-y-0" x-data="{ mobileMenuOpen: false }">
   <div class="max-w-full pl-4 lg:pl-8 pr-4 lg:pr-0 py-2">
     <!-- SLASHED HEIGHT: Desktop header container reduced from 128px (h-32) to 64px (h-16) -->
     <div class="flex justify-between items-center h-12 md:h-16 relative w-full">
@@ -49,3 +49,53 @@
     </div>
   </div>
 </nav>
+
+
+<!-- Smart Sticky Header Logic -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('smart-header');
+    if (!header) return;
+
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    // By default, the threshold is the height of the hero section.
+    // If we can't find a hero section, fallback to 300px.
+    const getThreshold = () => {
+        const heroSection = document.querySelector('main > section:first-of-type');
+        return heroSection ? heroSection.offsetHeight : 300;
+    };
+
+    const updateHeader = () => {
+        const currentScrollY = window.scrollY;
+        const threshold = getThreshold();
+
+        // If we are near the top (inside the hero section), always show the header.
+        if (currentScrollY < threshold) {
+            header.classList.remove('-translate-y-full');
+            header.classList.add('translate-y-0');
+        } 
+        // If we scrolled down past the hero section, hide it.
+        else if (currentScrollY > lastScrollY) {
+            header.classList.remove('translate-y-0');
+            header.classList.add('-translate-y-full');
+        } 
+        // If we are scrolling up, show it.
+        else {
+            header.classList.remove('-translate-y-full');
+            header.classList.add('translate-y-0');
+        }
+
+        lastScrollY = currentScrollY;
+        ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }, { passive: true }); // passive: true is best practice for scroll events
+});
+</script>
