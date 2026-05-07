@@ -31,12 +31,15 @@ carousel_section:
     - image: /assets/images/screenshot_2026-04-20_21-19-24.png
       text: hgfd
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-  global_shadow_intensity: Light
+  body: maps visualisations and much more bbbbbbbbbbbbbbbbbbbbbbb
   heading: Mapping for insight, evidence based decisions, and effective collaboration
+  alignment: center
   bg_color: "#e8f2f0"
-communications_section:
-  heading: Communications - spread the word - again
   global_shadow_intensity: Light
+  show_divider: true
+  heading_size: lg
+  body_size: lg
+communications_section:
   items:
     - image: /assets/images/largerthantigersds.png
       text: Larger than Tigers
@@ -47,5 +50,12 @@ communications_section:
     - image: /assets/images/mapstack_2.png
       text: bjkjk
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+  body: blah blah blah
+  heading: Communications - spread the word - again
+  alignment: center
   bg_color: "#fefeff"
+  global_shadow_intensity: Light
+  show_divider: true
+  heading_size: lg
+  body_size: md
 ---

@@ -83,10 +83,43 @@ layout: layouts/base.njk
 <!-- Dynamic Card Carousel Section -->
 <section style="background-color: {{ carousel_section.bg_color | default('#ffffff') }};" class="w-full py-16 lg:py-24 overflow-hidden border-t border-gray-100">
   <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mb-12">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
+    {% set carouselHeadingSize = carousel_section.heading_size or "lg" %}
+    {% set carouselHeadingClass = "text-2xl md:text-3xl lg:text-4xl" %}
+    {% if carouselHeadingSize == "md" %}
+      {% set carouselHeadingClass = "text-xl md:text-2xl lg:text-3xl" %}
+    {% elif carouselHeadingSize == "xl" %}
+      {% set carouselHeadingClass = "text-3xl md:text-4xl lg:text-5xl" %}
+    {% endif %}
+
+    {% set carouselBodySize = carousel_section.body_size or "md" %}
+    {% if carouselBodySize == "sm" %}
+      {% set carouselBodyClass = "text-sm md:text-base" %}
+    {% elif carouselBodySize == "lg" %}
+      {% set carouselBodyClass = "text-2xl md:text-3xl" %}
+    {% else %}
+      {% set carouselBodyClass = "text-base md:text-lg" %}
+    {% endif %}
+
+    {% set carouselAlign = carousel_section.alignment or "left" %}
+    {% set carouselHeaderClass = "items-start text-left mr-auto" %}
+    {% if carouselAlign == "center" %}
+      {% set carouselHeaderClass = "items-center text-center mx-auto" %}
+    {% elif carouselAlign == "right" %}
+      {% set carouselHeaderClass = "items-end text-right ml-auto" %}
+    {% endif %}
+
+    <div class="max-w-5xl mb-12 flex flex-col gap-4 {{ carouselHeaderClass }}">
+      {% if carousel_section.show_divider %}
+        <span class="block h-1 w-24 bg-red-500" aria-hidden="true"></span>
+      {% endif %}
+      <h2 class="{{ carouselHeadingClass }} font-bold text-gray-900 leading-snug">
         {{ carousel_section.heading | default("Mapping for insight, evidence based decisions, and effective collaboration") }}
       </h2>
+      {% if carousel_section.body %}
+        <p class="max-w-2xl {{ carouselBodyClass }} text-gray-700 leading-relaxed">
+          {{ carousel_section.body }}
+        </p>
+      {% endif %}
     </div>
 
     <div class="wf-carousel" data-wf-carousel>
@@ -133,10 +166,43 @@ layout: layouts/base.njk
 <!-- Dynamic Card Communications Section -->
 <section style="background-color: {{ communications_section.bg_color | default('#ffffff') }};" class="w-full py-16 lg:py-24 overflow-hidden border-t border-gray-100">
   <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mb-12">
-      <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-snug">
+    {% set communicationsHeadingSize = communications_section.heading_size or "lg" %}
+    {% set communicationsHeadingClass = "text-2xl md:text-3xl lg:text-4xl" %}
+    {% if communicationsHeadingSize == "md" %}
+      {% set communicationsHeadingClass = "text-xl md:text-2xl lg:text-3xl" %}
+    {% elif communicationsHeadingSize == "xl" %}
+      {% set communicationsHeadingClass = "text-3xl md:text-4xl lg:text-5xl" %}
+    {% endif %}
+
+    {% set communicationsBodySize = communications_section.body_size or "md" %}
+    {% if communicationsBodySize == "sm" %}
+      {% set communicationsBodyClass = "text-sm md:text-base" %}
+    {% elif communicationsBodySize == "lg" %}
+      {% set communicationsBodyClass = "text-2xl md:text-3xl" %}
+    {% else %}
+      {% set communicationsBodyClass = "text-base md:text-lg" %}
+    {% endif %}
+
+    {% set communicationsAlign = communications_section.alignment or "left" %}
+    {% set communicationsHeaderClass = "items-start text-left mr-auto" %}
+    {% if communicationsAlign == "center" %}
+      {% set communicationsHeaderClass = "items-center text-center mx-auto" %}
+    {% elif communicationsAlign == "right" %}
+      {% set communicationsHeaderClass = "items-end text-right ml-auto" %}
+    {% endif %}
+
+    <div class="max-w-5xl mb-12 flex flex-col gap-4 {{ communicationsHeaderClass }}">
+      {% if communications_section.show_divider %}
+        <span class="block h-1 w-24 bg-red-500" aria-hidden="true"></span>
+      {% endif %}
+      <h2 class="{{ communicationsHeadingClass }} font-bold text-gray-900 leading-snug">
         {{ communications_section.heading | default("Communications") }}
       </h2>
+      {% if communications_section.body %}
+        <p class="max-w-2xl {{ communicationsBodyClass }} text-gray-700 leading-relaxed">
+          {{ communications_section.body }}
+        </p>
+      {% endif %}
     </div>
 
     <div class="wf-carousel" data-wf-carousel>
