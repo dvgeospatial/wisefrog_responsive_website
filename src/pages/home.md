@@ -31,7 +31,7 @@ carousel_section:
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   global_shadow_intensity: Light
   heading: Mapping for insight, evidence based decisions, and effective collaboration
-  bg_color: "#cd2a38"
+  bg_color: "#e8f2f0"
 communications_section:
   heading: Communications - spread the word - again
   global_shadow_intensity: Light
@@ -45,5 +45,5 @@ communications_section:
     - image: /assets/images/mapstack_2.png
       text: bjkjk
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-  bg_color: "#180cf3"
+  bg_color: "#fefeff"
 ---
