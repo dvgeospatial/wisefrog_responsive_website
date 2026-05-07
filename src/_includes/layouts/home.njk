@@ -393,6 +393,10 @@ document.addEventListener("DOMContentLoaded", () => {
       try { track.setPointerCapture(e.pointerId); } catch (err) {}
     });
 
+    track.querySelectorAll("img, a").forEach((el) => {
+      el.addEventListener("dragstart", (e) => e.preventDefault());
+    });
+
     track.addEventListener("pointermove", (e) => {
       if (!isDown) return;
       e.preventDefault();
@@ -429,6 +433,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     track.addEventListener("pointerup", stopDrag);
     track.addEventListener("pointercancel", stopDrag);
+    track.addEventListener("lostpointercapture", stopDrag);
 
     if (nextBtn) {
       nextBtn.addEventListener("click", () => {
