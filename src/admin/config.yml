@@ -138,3 +138,15 @@ collections:
                   - { label: "Image", name: "image", widget: "image" }
                   - { label: "Text", name: "text", widget: "string" }
                   - { label: "Link URL", name: "url", widget: "string" }
+  - name: "team"
+    label: "Team Page"
+    file: "src/pages/team.md"
+    fields:
+      - {label: "Title", name: "title", widget: "string", default: "Our Professionals"}
+      - label: "Team Members"
+        name: "members"
+        widget: "list"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
+          - {label: "Biography", name: "biography", widget: "text"}
+          - {label: "Photo", name: "photo", widget: "image", required: false}

@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+<section class="py-16 bg-white min-h-screen">
+  <div class="max-w-6xl mx-auto px-6">
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-16">{{ title }}</h1>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {% for member in members %}
+      <div class="flex flex-col bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        
+        {% if member.photo %}
+        <div class="w-full h-80 bg-gray-200">
+          <img src="{{ member.photo }}" alt="Photo of {{ member.name }}" class="w-full h-full object-cover object-center">
+        </div>
+        {% else %}
+        <div class="w-full h-80 bg-gray-200 flex items-center justify-center">
+          <span class="text-gray-400 font-medium">No photo available</span>
+        </div>
+        {% endif %}
+        
+        <div class="p-8 flex-grow flex flex-col">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4">{{ member.name }}</h2>
+          <p class="text-lg text-gray-600 leading-relaxed whitespace-pre-line">{{ member.biography }}</p>
+        </div>
+        
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
