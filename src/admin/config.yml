@@ -138,9 +138,6 @@ collections:
                   - { label: "Image", name: "image", widget: "image" }
                   - { label: "Text", name: "text", widget: "string" }
                   - { label: "Link URL", name: "url", widget: "string" }
-  - name: "pages"
-    label: "Pages"
-    files:
       - name: "team"
         label: "Team Page"
         file: "src/pages/team.md"
