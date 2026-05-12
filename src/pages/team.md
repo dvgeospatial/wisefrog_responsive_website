@@ -1,5 +1,5 @@
 ---
-title: Our Professionals
+title: About us
 layout: layouts/team.njk
 permalink: /team/
 members:
