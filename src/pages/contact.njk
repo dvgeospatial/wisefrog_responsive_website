@@ -1,0 +1,58 @@
+---
+layout: layouts/base.njk
+title: Contact
+permalink: /contact/
+---
+<section class="py-16 bg-white">
+  <div class="max-w-2xl mx-auto px-6">
+    <h1 class="text-4xl font-bold text-gray-900 mb-4">Contact Wise Frog</h1>
+    <p class="text-lg text-gray-600 mb-8">Send us a message and we’ll get back to you.</p>
+
+    <form name="wisefrog-contact" method="POST" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
+      <input type="hidden" name="form-name" value="wisefrog-contact">
+
+      <p class="absolute -left-[9999px]">
+        <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+      </p>
+
+      <div>
+        <label for="contact-name" class="block mb-2 font-semibold text-gray-800">Name</label>
+        <input id="contact-name" name="name" type="text" maxlength="100" autocomplete="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent">
+      </div>
+
+      <div>
+        <label for="contact-email" class="block mb-2 font-semibold text-gray-800">Email address</label>
+        <input id="contact-email" name="email" type="email" maxlength="254" autocomplete="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent">
+      </div>
+
+      <div>
+        <label for="contact-message" class="block mb-2 font-semibold text-gray-800">Message</label>
+        <textarea id="contact-message" name="message" rows="8" maxlength="500" aria-describedby="message-help message-count" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-transparent resize-y min-h-[12rem]"></textarea>
+        <div class="flex justify-between mt-2 text-sm text-gray-500">
+          <p id="message-help">Maximum 500 characters.</p>
+          <p id="message-count" aria-live="polite">0 / 500</p>
+        </div>
+      </div>
+
+      <button type="submit" class="px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors cursor-pointer">
+        Send message
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const messageField = document.getElementById('contact-message');
+    const counter = document.getElementById('message-count');
+
+    if (messageField && counter) {
+      const updateCount = () => {
+        counter.textContent = `${messageField.value.length} / 500`;
+      };
+
+      messageField.addEventListener('input', updateCount);
+      updateCount();
+    }
+  });
+</script>
