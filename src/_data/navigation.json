@@ -1,0 +1,26 @@
+{
+  "services_dropdown": [
+    {
+      "heading": "Mapping",
+      "items": [
+        {
+          "label": "Make a Map",
+          "url": "/services/make-a-map/"
+        },
+        {
+          "label": "story map",
+          "url": "/services/make-a-map/"
+        }
+      ]
+    },
+    {
+      "heading": "Communications",
+      "items": [
+        {
+          "label": "edit documents",
+          "url": "/services/make-a-map/"
+        }
+      ]
+    }
+  ]
+}

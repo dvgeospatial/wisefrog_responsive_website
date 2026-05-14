@@ -138,6 +138,22 @@ collections:
                   - { label: "Image", name: "image", widget: "image" }
                   - { label: "Text", name: "text", widget: "string" }
                   - { label: "Link URL", name: "url", widget: "string" }
+
+      - name: "navigation"
+        label: "Navigation"
+        file: "src/_data/navigation.json"
+        fields:
+          - label: "Services Dropdown Groups"
+            name: "services_dropdown"
+            widget: "list"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Item Label", name: "label", widget: "string" }
+                  - { label: "Link URL", name: "url", widget: "string" }
       - name: "team"
         label: "Team Page"
         file: "src/pages/team.md"
