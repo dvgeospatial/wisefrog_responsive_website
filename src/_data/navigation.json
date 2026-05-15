@@ -4,11 +4,11 @@
       "heading": "Mapping",
       "items": [
         {
-          "label": "Make a Map",
+          "label": "Mapping Bureau",
           "url": "/services/make-a-map/"
         },
         {
-          "label": "story map",
+          "label": "Story Maps",
           "url": "/services/make-a-map/"
         }
       ]
@@ -17,7 +17,11 @@
       "heading": "Communications",
       "items": [
         {
-          "label": "edit documents",
+          "label": "Editorial",
+          "url": "/services/make-a-map/"
+        },
+        {
+          "label": "Proof Reading",
           "url": "/services/make-a-map/"
         }
       ]
