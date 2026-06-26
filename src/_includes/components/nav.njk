@@ -3,7 +3,52 @@
 <nav
   id="smart-header"
   class="bg-white shadow-md fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out translate-y-0"
-  x-data="{ mobileMenuOpen: false, servicesOpen: false, mobileServicesOpen: false }"
+  x-data="{
+    mobileMenuOpen: false,
+    servicesOpen: false,
+    mobileServicesOpen: false,
+    openTimer: null,
+    closeTimer: null,
+    clearMenuTimers() {
+      clearTimeout(this.openTimer);
+      clearTimeout(this.closeTimer);
+    },
+    openServices() {
+      this.clearMenuTimers();
+      this.servicesOpen = true;
+    },
+    closeServices({ focusButton = false } = {}) {
+      this.clearMenuTimers();
+      this.servicesOpen = false;
+      if (focusButton) {
+        this.$nextTick(() => this.$refs.servicesButton?.focus());
+      }
+    },
+    scheduleOpen() {
+      this.clearMenuTimers();
+      this.openTimer = setTimeout(() => {
+        this.servicesOpen = true;
+      }, 250);
+    },
+    scheduleClose() {
+      this.clearMenuTimers();
+      this.closeTimer = setTimeout(() => {
+        this.servicesOpen = false;
+      }, 250);
+    },
+    toggleServices() {
+      this.clearMenuTimers();
+      this.servicesOpen = !this.servicesOpen;
+    },
+    toggleMobileServices() {
+      this.mobileServicesOpen = !this.mobileServicesOpen;
+    },
+    handleServicesFocusOut(event) {
+      if (!event.currentTarget.contains(event.relatedTarget)) {
+        this.closeServices();
+      }
+    }
+  }"
 >
   <div class="max-w-full pl-4 lg:pl-8 pr-4 lg:pr-0 py-2">
     <div class="flex justify-between items-center h-12 md:h-16 relative w-full">
@@ -20,31 +65,27 @@
           <a href="/" class="text-black hover:text-blue-900 px-3 py-2 text-lg lg:text-xl font-bold whitespace-nowrap">Home</a>
 
           <div
-            class="relative pb-2"
-            @mouseenter="clearTimeout(window.__wfServicesCloseTimer); servicesOpen = true"
-            @mouseleave="window.__wfServicesCloseTimer = setTimeout(() => { servicesOpen = false }, 250)"
-            @keydown.escape.window="servicesOpen = false"
+            class="relative"
+            @pointerenter="scheduleOpen()"
+            @pointerleave="scheduleClose()"
+            @focusin="openServices()"
+            @focusout="handleServicesFocusOut($event)"
+            @keydown.escape.prevent.stop="closeServices({ focusButton: true })"
           >
             <button
+              x-ref="servicesButton"
               type="button"
-              class="text-black hover:text-blue-900 px-3 py-2 text-lg lg:text-xl font-bold whitespace-nowrap flex items-center gap-2 transition-colors duration-200"
-              @click="servicesOpen = !servicesOpen"
+              class="text-black hover:text-blue-900 px-3 py-2 text-lg lg:text-xl font-bold whitespace-nowrap transition-colors duration-200 flex items-center"
+              @click="toggleServices()"
               :aria-expanded="servicesOpen.toString()"
+              aria-controls="services-dropdown-panel"
               aria-haspopup="true"
             >
               <span>Services</span>
-              <svg
-                class="h-4 w-4 transition-transform duration-200"
-                :class="{ 'rotate-180': servicesOpen }"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
             </button>
 
             <div
+              id="services-dropdown-panel"
               x-show="servicesOpen"
               x-transition:enter="transition ease-out duration-150"
               x-transition:enter-start="opacity-0 -translate-y-1"
@@ -52,24 +93,28 @@
               x-transition:leave="transition ease-in duration-100"
               x-transition:leave-start="opacity-100 translate-y-0"
               x-transition:leave-end="opacity-0 -translate-y-1"
-              @click.outside="servicesOpen = false"
-              class="absolute left-0 top-full w-[34rem] bg-white border border-black shadow-xl px-6 py-5"
+              @click.outside="closeServices()"
+              class="absolute left-0 top-full mt-2 w-[34rem] bg-white border border-black shadow-xl py-7"
               style="display: none;"
             >
-              <div class="flex flex-col gap-6 mt-2">
+              <div class="flex flex-col gap-8">
                 {% for group in navigation.services_dropdown %}
-                  <p class="px-0 text-[24px] font-bold uppercase tracking-[0.08em] text-black {% if not loop.first %}pt-6 border-t border-gray-100{% endif %}">
-                    {{ group.heading }}
-                  </p>
+                  <div class="flex flex-col gap-5 {% if not loop.first %}pt-6 border-t border-gray-200{% endif %}">
+                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-gray-600">
+                      {{ group.heading }}
+                    </p>
 
-                  {% for item in group.items %}
-                    <a
-                      href="{{ item.url }}"
-                      class="block px-0 py-2 text-[33px] font-medium leading-[1.8] text-black hover:bg-gray-50 hover:text-black transition-colors duration-150"
-                    >
-                      {{ item.label }}
-                    </a>
-                  {% endfor %}
+                    <div class="flex flex-col gap-3">
+                      {% for item in group.items %}
+                        <a
+                          href="{{ item.url }}"
+                          class="block text-[2rem] font-medium leading-tight text-black hover:text-blue-900 transition-colors duration-150"
+                        >
+                          {{ item.label }}
+                        </a>
+                      {% endfor %}
+                    </div>
+                  </div>
                 {% endfor %}
               </div>
             </div>
@@ -89,7 +134,7 @@
           :aria-expanded="mobileMenuOpen.toString()"
           aria-label="Toggle menu"
         >
-          <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" style="display: none;" />
           </svg>
@@ -104,30 +149,39 @@
 
       <div class="overflow-hidden">
         <button
-          @click="mobileServicesOpen = !mobileServicesOpen"
+          @click="toggleMobileServices()"
           type="button"
-          class="w-full flex items-center justify-between text-left text-black hover:bg-gray-50 px-3 py-3 text-2xl font-bold transition-colors duration-150"
+          class="w-full text-left text-black hover:bg-gray-50 py-3 text-2xl font-bold transition-colors duration-150"
           :aria-expanded="mobileServicesOpen.toString()"
+          aria-controls="mobile-services-dropdown-panel"
         >
           <span>Services</span>
         </button>
 
-        <div x-show="mobileServicesOpen" x-transition class="bg-gray-50 px-6 pb-5 pt-3" style="display: none;">
+        <div
+          id="mobile-services-dropdown-panel"
+          x-show="mobileServicesOpen"
+          x-transition
+          class="bg-gray-50 pb-5 pt-3"
+          style="display: none;"
+        >
           {% for group in navigation.services_dropdown %}
-            <div class="{% if not loop.first %}mt-4 pt-4 border-t border-gray-200{% else %}mt-2{% endif %}">
-              <div class="flex flex-col gap-6">
-                <p class="px-0 pb-0 text-[1.5rem] font-bold uppercase tracking-[0.08em] text-black">
+            <div class="{% if not loop.first %}mt-5 pt-5 border-t border-gray-200{% else %}mt-2{% endif %}">
+              <div class="flex flex-col gap-5">
+                <p class="text-sm font-bold uppercase tracking-[0.18em] text-gray-600">
                   {{ group.heading }}
                 </p>
 
-                {% for item in group.items %}
-                  <a
-                    href="{{ item.url }}"
-                    class="block px-0 py-2 text-[2.25rem] font-medium leading-[1.8] text-black hover:bg-white hover:text-black transition-colors duration-150"
-                  >
-                    {{ item.label }}
-                  </a>
-                {% endfor %}
+                <div class="flex flex-col gap-3">
+                  {% for item in group.items %}
+                    <a
+                      href="{{ item.url }}"
+                      class="block py-1 text-[2rem] font-medium leading-tight text-black hover:text-blue-900 transition-colors duration-150"
+                    >
+                      {{ item.label }}
+                    </a>
+                  {% endfor %}
+                </div>
               </div>
             </div>
           {% endfor %}
