@@ -11,7 +11,7 @@ members:
       environment policy. She is also the author of several popular travel
       guides to Bruges and Brussels, and continues to write articles for general
       media on a variety of topics.
-    photo: /assets/images/katharine.jpg
+    photo: /assets/images/k_portrait.jpg
   - name: Daniel Voisey
     biography: >-
       Daniel is a digital mapping expert who combines technical proficiency with
