@@ -58,7 +58,8 @@ communications_section:
     - image: /assets/images/communications_nodes_graph_transparent.png
       text: " A map"
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-  body: Develop communication networks to promote nature recovery initiatives
+  body: Develop communication networks to promote sustainable development and
+    nature recovery initiatives
   heading: Communications
   alignment: center
   bg_color: "#fefeff"
