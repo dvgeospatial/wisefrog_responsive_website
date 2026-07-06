@@ -100,7 +100,7 @@
               <div class="flex flex-col gap-8">
                 {% for group in navigation.services_dropdown %}
                   <div class="flex flex-col gap-5 {% if not loop.first %}pt-6 border-t border-gray-200{% endif %}">
-                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-gray-600">
+                    <p class="text-lg lg:text-xl font-bold tracking-[0.18em] text-gray-600 lowercase first-letter:uppercase">
                       {{ group.heading }}
                     </p>
 
@@ -108,7 +108,7 @@
                       {% for item in group.items %}
                         <a
                           href="{{ item.url }}"
-                          class="block text-[2rem] font-medium leading-tight text-black hover:text-blue-900 transition-colors duration-150"
+                          class="block text-lg lg:text-xl font-bold leading-tight text-black transition-colors duration-150 hover:bg-blue-900 hover:text-white px-3 py-2"
                         >
                           {{ item.label }}
                         </a>
@@ -168,7 +168,7 @@
           {% for group in navigation.services_dropdown %}
             <div class="{% if not loop.first %}mt-5 pt-5 border-t border-gray-200{% else %}mt-2{% endif %}">
               <div class="flex flex-col gap-5">
-                <p class="text-sm font-bold uppercase tracking-[0.18em] text-gray-600">
+                <p class="text-lg lg:text-xl font-bold tracking-[0.18em] text-gray-600 lowercase first-letter:uppercase">
                   {{ group.heading }}
                 </p>
 
@@ -176,7 +176,7 @@
                   {% for item in group.items %}
                     <a
                       href="{{ item.url }}"
-                      class="block py-1 text-[2rem] font-medium leading-tight text-black hover:text-blue-900 transition-colors duration-150"
+                      class="block text-lg lg:text-xl font-bold leading-tight text-black transition-colors duration-150 hover:bg-blue-900 hover:text-white px-3 py-2"
                     >
                       {{ item.label }}
                     </a>
