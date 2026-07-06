@@ -31,6 +31,9 @@ carousel_section:
     - image: /assets/images/screenshot_2026-04-20_21-19-24.png
       text: hgfd
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+    - image: /assets/images/k_portrait.jpg
+      text: Katharine
+      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
     environmental benefits across Norfolk and Suffolk.
