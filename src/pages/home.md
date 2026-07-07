@@ -29,7 +29,7 @@ carousel_section:
       text: Katharine
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
     - image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
-      text: Ghost pond. Nigel Jones / CC BY-SA 2.0
+      text: Ghost ponds
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
