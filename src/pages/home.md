@@ -19,12 +19,6 @@ carousel_section:
     - image: /assets/images/mapstack_2.png
       text: stack of maps
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-    - image: /assets/images/communications_nodes_graph_transparent.png
-      text: network
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
-    - image: /assets/images/screenshot_2026-04-03_14-30-20-portrait.webp
-      text: Norwich city
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
     - image: /assets/images/screenshot_2026-03-19_16-47-36_sam3_overlay-portrait.webp
       text: tree
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
@@ -33,6 +27,9 @@ carousel_section:
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
     - image: /assets/images/k_portrait.jpg
       text: Katharine
+      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+    - image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
+      text: Ghost pond. Nigel Jones / CC BY-SA 2.0
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
