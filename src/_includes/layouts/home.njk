@@ -388,6 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 10);
 
     track.addEventListener("pointerdown", (e) => {
+      if (e.target.closest("a")) return;
       isDown = true;
       track.classList.add("no-smooth", "is-dragging");
       startX = e.pageX - track.offsetLeft;

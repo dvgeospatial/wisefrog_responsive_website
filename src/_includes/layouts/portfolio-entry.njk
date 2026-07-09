@@ -4,12 +4,12 @@ layout: layouts/base.njk
 <div class="max-w-5xl mx-auto px-6 py-12 lg:py-16">
   <article class="space-y-12">
     <header class="space-y-6">
-      <h1 class="text-4xl lg:text-5xl font-bold text-blue-900 leading-tight">
+      <h1 class="text-4xl lg:text-5xl font-bold text-black leading-tight">
         {{ title }}
       </h1>
 
       {% if summary %}
-        <p class="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-3xl">
+        <p class="text-lg lg:text-xl text-black leading-relaxed max-w-3xl">
           {{ summary }}
         </p>
       {% endif %}
@@ -31,11 +31,11 @@ layout: layouts/base.njk
           {% if block.type == "text" %}
             <section class="space-y-4">
               {% if block.heading %}
-                <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">
+                <h2 class="text-2xl lg:text-3xl font-bold text-black">
                   {{ block.heading }}
                 </h2>
               {% endif %}
-              <div class="prose prose-lg prose-blue max-w-none">
+              <div class="prose prose-lg max-w-none text-black">
                 {{ block.body | safe }}
               </div>
             </section>
@@ -49,7 +49,7 @@ layout: layouts/base.njk
                 >
               </div>
               {% if block.caption %}
-                <figcaption class="text-sm text-gray-600">
+                <figcaption class="text-sm text-black">
                   {{ block.caption }}
                 </figcaption>
               {% endif %}
@@ -57,7 +57,7 @@ layout: layouts/base.njk
           {% elif block.type == "embed" %}
             <section class="space-y-4">
               {% if block.title %}
-                <h2 class="text-2xl lg:text-3xl font-bold text-gray-900">
+                <h2 class="text-2xl lg:text-3xl font-bold text-black">
                   {{ block.title }}
                 </h2>
               {% endif %}
@@ -72,13 +72,13 @@ layout: layouts/base.njk
                   ></iframe>
                 </div>
               {% elif block.embed_type == "include" and block.include_key %}
-                <div class="rounded-2xl border border-dashed border-gray-300 bg-gray-50 p-6 text-gray-600">
+                <div class="rounded-2xl border border-dashed border-gray-300 bg-gray-50 p-6 text-black">
                   Internal embed placeholder: {{ block.include_key }}
                 </div>
               {% endif %}
 
               {% if block.caption %}
-                <p class="text-sm text-gray-600">
+                <p class="text-sm text-black">
                   {{ block.caption }}
                 </p>
               {% endif %}
