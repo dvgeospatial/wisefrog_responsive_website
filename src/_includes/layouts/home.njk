@@ -362,6 +362,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let startX = 0;
     let scrollLeft = 0;
     let scrollTimeout;
+    let dragged = false;
+    const dragThreshold = 8;
 
     const getMetrics = () => {
       const card = track.querySelector(".wf-carousel-card");
@@ -388,8 +390,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 10);
 
     track.addEventListener("pointerdown", (e) => {
-      if (e.target.closest("a")) return;
       isDown = true;
+      dragged = false;
       track.classList.add("no-smooth", "is-dragging");
       startX = e.pageX - track.offsetLeft;
       scrollLeft = track.scrollLeft;
@@ -400,10 +402,22 @@ document.addEventListener("DOMContentLoaded", () => {
       el.addEventListener("dragstart", (e) => e.preventDefault());
     });
 
+    track.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        if (dragged) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      });
+    });
+
     track.addEventListener("pointermove", (e) => {
       if (!isDown) return;
-      e.preventDefault();
       const walk = e.pageX - track.offsetLeft - startX;
+      if (Math.abs(walk) > dragThreshold) {
+        dragged = true;
+        e.preventDefault();
+      }
       track.scrollLeft = scrollLeft - walk;
     });
 
@@ -432,6 +446,9 @@ document.addEventListener("DOMContentLoaded", () => {
       track.classList.remove("no-smooth", "is-dragging");
       try { track.releasePointerCapture(e.pointerId); } catch (err) {}
       checkLoop();
+      setTimeout(() => {
+        dragged = false;
+      }, 0);
     };
 
     track.addEventListener("pointerup", stopDrag);
