@@ -130,10 +130,9 @@ layout: layouts/base.njk
       <div class="wf-carousel-track hide-scrollbar" data-wf-carousel-track>
         {% if carousel_section and carousel_section.items %}
           {% for item in carousel_section.items %}
-          {% set cardLink = item.portfolio_entry or item.url %}
           <div class="wf-carousel-card group relative aspect-[3/4] block cursor-pointer">
-            <a href="{{ cardLink }}" draggable="false" class="absolute inset-0 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl bg-gray-200">
-            <img src="{{ item.image }}" alt="{{ item.text }}" draggable="false" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <a href="{{ item.url }}" class="absolute inset-0 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl bg-gray-200">
+            <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
 
             {% set shadowClass = "from-black/60 via-black/20" %}
             {% if carousel_section.global_shadow_intensity == "Heavy" %}
@@ -214,10 +213,9 @@ layout: layouts/base.njk
       <div class="wf-carousel-track hide-scrollbar" data-wf-carousel-track>
         {% if communications_section and communications_section.items %}
           {% for item in communications_section.items %}
-          {% set cardLink = item.portfolio_entry or item.url %}
           <div class="wf-carousel-card group relative aspect-[3/4] block cursor-pointer">
-            <a href="{{ cardLink }}" draggable="false" class="absolute inset-0 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl bg-gray-200">
-            <img src="{{ item.image }}" alt="{{ item.text }}" draggable="false" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            <a href="{{ item.url }}" class="absolute inset-0 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl bg-gray-200">
+            <img src="{{ item.image }}" alt="{{ item.text }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
 
             {% set shadowClass = "from-black/60 via-black/20" %}
             {% if communications_section.global_shadow_intensity == "Heavy" %}
@@ -362,8 +360,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let startX = 0;
     let scrollLeft = 0;
     let scrollTimeout;
-    let dragged = false;
-    const dragThreshold = 8;
 
     const getMetrics = () => {
       const card = track.querySelector(".wf-carousel-card");
@@ -391,7 +387,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     track.addEventListener("pointerdown", (e) => {
       isDown = true;
-      dragged = false;
       track.classList.add("no-smooth", "is-dragging");
       startX = e.pageX - track.offsetLeft;
       scrollLeft = track.scrollLeft;
@@ -402,22 +397,10 @@ document.addEventListener("DOMContentLoaded", () => {
       el.addEventListener("dragstart", (e) => e.preventDefault());
     });
 
-    track.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", (e) => {
-        if (dragged) {
-          e.preventDefault();
-          e.stopPropagation();
-        }
-      });
-    });
-
     track.addEventListener("pointermove", (e) => {
       if (!isDown) return;
+      e.preventDefault();
       const walk = e.pageX - track.offsetLeft - startX;
-      if (Math.abs(walk) > dragThreshold) {
-        dragged = true;
-        e.preventDefault();
-      }
       track.scrollLeft = scrollLeft - walk;
     });
 
@@ -443,12 +426,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const stopDrag = (e) => {
       if (!isDown) return;
       isDown = false;
-      try { track.releasePointerCapture(e.pointerId); } catch (err) {}
       track.classList.remove("no-smooth", "is-dragging");
+      try { track.releasePointerCapture(e.pointerId); } catch (err) {}
       checkLoop();
-      setTimeout(() => {
-        dragged = false;
-      }, 0);
     };
 
     track.addEventListener("pointerup", stopDrag);

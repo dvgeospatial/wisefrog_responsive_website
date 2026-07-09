@@ -18,20 +18,20 @@ carousel_section:
   items:
     - image: /assets/images/mapstack_2.png
       text: stack of maps
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+      url: /services/
     - image: /assets/images/screenshot_2026-03-19_16-47-36_sam3_overlay-portrait.webp
       text: tree
       portfolio_entry: /portfolio/ghost-ponds/
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+      url: /services/
     - image: /assets/images/screenshot_2026-04-20_21-19-24.png
       text: hgfd
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+      url: /services/
     - image: /assets/images/k_portrait.jpg
       text: Katharine
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+      url: /services/
     - image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
       text: Ghost ponds
-      url: https://tourmaline-pudding-0fce6c.netlify.app/portfolio/ghost-ponds/
+      url: /portfolio/ghost-ponds/
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
     environmental benefits across Norfolk and Suffolk.
@@ -46,16 +46,16 @@ communications_section:
   items:
     - image: /assets/images/largerthantigersds.png
       text: Larger than Tigers
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+      url: /services/
     - image: /assets/images/group.png
       text: Group
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+      url: /services/
     - image: /assets/images/mapstack_2.png
       text: bjkjk
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+      url: /services/
     - image: /assets/images/communications_nodes_graph_transparent.png
       text: " A map"
-      url: https://tourmaline-pudding-0fce6c.netlify.app/services/
+      url: /services/
   body: Develop communication networks to promote sustainable development and
     nature recovery initiatives
   heading: Communications
