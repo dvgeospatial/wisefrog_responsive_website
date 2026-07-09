@@ -84,7 +84,8 @@ collections:
                 fields:
                   - { label: "Image", name: "image", widget: "image" }
                   - { label: "Text", name: "text", widget: "string" }
-                  - { label: "Link URL", name: "url", widget: "string" }
+                  - { label: "Portfolio Page Path", name: "portfolio_entry", widget: "string", required: false, hint: "Example: /portfolio/ghost-ponds/" }
+                  - { label: "Link URL", name: "url", widget: "string", required: false, hint: "Optional fallback for external or legacy links" }
 
           - label: "Communications Carousel Section"
             name: "communications_section"
@@ -137,7 +138,8 @@ collections:
                 fields:
                   - { label: "Image", name: "image", widget: "image" }
                   - { label: "Text", name: "text", widget: "string" }
-                  - { label: "Link URL", name: "url", widget: "string" }
+                  - { label: "Portfolio Page Path", name: "portfolio_entry", widget: "string", required: false, hint: "Example: /portfolio/ghost-ponds/" }
+                  - { label: "Link URL", name: "url", widget: "string", required: false, hint: "Optional fallback for external or legacy links" }
 
       - name: "navigation"
         label: "Navigation"
@@ -154,15 +156,65 @@ collections:
                 fields:
                   - { label: "Item Label", name: "label", widget: "string" }
                   - { label: "Link URL", name: "url", widget: "string" }
+
       - name: "team"
         label: "Team Page"
         file: "src/pages/team.md"
         fields:
-          - {label: "Title", name: "title", widget: "string", default: "Our Professionals"}
+          - { label: "Title", name: "title", widget: "string", default: "Our Professionals" }
           - label: "Team Members"
             name: "members"
             widget: "list"
             fields:
-              - {label: "Name", name: "name", widget: "string"}
-              - {label: "Biography", name: "biography", widget: "text"}
-              - {label: "Photo", name: "photo", widget: "image", required: false}
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Biography", name: "biography", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+  - name: "portfolio_entries"
+    label: "Portfolio Pages"
+    label_singular: "Portfolio Page"
+    folder: "src/portfolio"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    preview_path: "portfolio/{{slug}}/"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/portfolio-entry.njk" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: ["portfolio"] }
+      - { label: "Permalink", name: "permalink", widget: "string", default: "/portfolio/{{slug}}/" }
+      - { label: "Summary", name: "summary", widget: "text", required: false }
+      - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+      - { label: "Teaser Image", name: "teaser_image", widget: "image", required: false }
+      - label: "Content Blocks"
+        name: "blocks"
+        widget: "list"
+        types:
+          - label: "Text"
+            name: "text"
+            widget: "object"
+            fields:
+              - { label: "Section Heading", name: "heading", widget: "string", required: false }
+              - { label: "Body", name: "body", widget: "markdown" }
+          - label: "Image"
+            name: "image"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+          - label: "Embed"
+            name: "embed"
+            widget: "object"
+            fields:
+              - label: "Embed Type"
+                name: "embed_type"
+                widget: "select"
+                options:
+                  - { label: "Iframe", value: "iframe" }
+                  - { label: "Internal Include Placeholder", value: "include" }
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Embed URL", name: "embed_url", widget: "string", required: false }
+              - { label: "Include Key", name: "include_key", widget: "string", required: false }
+              - { label: "Caption", name: "caption", widget: "string", required: false }

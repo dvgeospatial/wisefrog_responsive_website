@@ -8,6 +8,11 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/services/*.md");
   });
 
+  // Portfolio entries collection
+  eleventyConfig.addCollection("allPortfolioEntries", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/portfolio/*.md");
+  });
+
   return {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",

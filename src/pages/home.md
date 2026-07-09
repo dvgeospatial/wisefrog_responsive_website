@@ -21,6 +21,7 @@ carousel_section:
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
     - image: /assets/images/screenshot_2026-03-19_16-47-36_sam3_overlay-portrait.webp
       text: tree
+      portfolio_entry: /portfolio/ghost-ponds/
       url: https://tourmaline-pudding-0fce6c.netlify.app/services/
     - image: /assets/images/screenshot_2026-04-20_21-19-24.png
       text: hgfd
