@@ -19,7 +19,7 @@ blocks:
 
       These sites can sometimes be identified from historic mapping, field evidence, and modern spatial analysis.
   - type: image
-    image: /assets/images/mapstack_2.png
+    image: /assets/images/ghostponds_2.jpg
     alt: Example mapping image for a ghost pond project
     caption: Example mapping output supporting site interpretation.
   - type: embed
