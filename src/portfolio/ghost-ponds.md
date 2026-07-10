@@ -4,9 +4,17 @@ layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
 permalink: /portfolio/ghost-ponds/
-summary: ""
+summary: >+
+  "Ghost ponds" are historically filled-in agricultural ponds that can retain
+  dormant seeds and eggs, allowing for rapid biodiversity recovery when
+  re-excavated. By using automated computer vision to extract water features
+  from 1880s Ordnance Survey maps and comparing them against modern maps, these
+  buried habitats can be accurately located. Wise Frog can provide accurate
+  ghost pond locations in GeoJSON format, empowering conservation and
+  restoration efforts from individual farms to county-wide projects.
+
 hero_image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
-teaser_image: /assets/images/ghostponds_2.jpg
+teaser_image: ""
 blocks:
   - type: text
     heading: What is a ghost pond?
@@ -17,14 +25,14 @@ blocks:
       infilled during the twentieth century as agriculture intensified and
       fields were enlarged.
   - type: text
-    heading: "  fdsfds"
+    heading: ""
     body: Their disappearance matters. Historically, ponds were one of the most
       common freshwater habitats in East Anglia, supporting a rich mix of
       aquatic plants, insects, and amphibians. When they were filled in, much of
       that biodiversity vanished with them. What makes ghost ponds remarkable,
       however, is that they are not entirely lost. Seeds, spores, and even
-      dormant eggs can survive buried in the sediment for decades, sometimes
-      more than a century.
+      dormant invetebrate eggs can survive buried in the sediment for decades,
+      sometimes more than a century.
   - type: image_swipe
     alt_1: Before image
     alt_2: After image
