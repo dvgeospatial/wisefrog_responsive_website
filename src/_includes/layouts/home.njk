@@ -395,21 +395,18 @@ document.addEventListener("DOMContentLoaded", () => {
       track.classList.add("no-smooth", "is-dragging");
       startX = e.pageX - track.offsetLeft;
       scrollLeft = track.scrollLeft;
-      try { track.setPointerCapture(e.pointerId); } catch (err) {}
     });
 
     track.querySelectorAll("img, a").forEach((el) => {
       el.addEventListener("dragstart", (e) => e.preventDefault());
     });
 
-    track.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", (e) => {
-        if (dragged) {
-          e.preventDefault();
-          e.stopPropagation();
-        }
-      });
-    });
+    track.addEventListener("click", (e) => {
+      if (dragged) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
 
     track.addEventListener("pointermove", (e) => {
       if (!isDown) return;
@@ -443,12 +440,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const stopDrag = (e) => {
       if (!isDown) return;
       isDown = false;
-      try { track.releasePointerCapture(e.pointerId); } catch (err) {}
       track.classList.remove("no-smooth", "is-dragging");
       checkLoop();
       setTimeout(() => {
         dragged = false;
-      }, 0);
+      }, 50);
     };
 
     track.addEventListener("pointerup", stopDrag);
