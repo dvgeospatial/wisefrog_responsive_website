@@ -5,30 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }} | Wisefrog</title>
   <link rel="stylesheet" href="/assets/css/styles.css">
-  <!-- This script catches email confirmation tokens on the homepage -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  
+  <!-- Image Comparison Slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+
   <!-- Netlify Identity Script -->
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen pt-16 md:pt-20">
   {% include "components/nav.njk" %}
+  
   <main class="flex-grow">
     {{ content | safe }}
   </main>
-  {% include "components/footer.njk" %}
   
-  <!-- This script handles the redirect to the admin panel after login -->
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
+  {% include "components/footer.njk" %}
+
   <!-- Netlify Admin Redirect Script -->
   <script>
     if (window.netlifyIdentity) {

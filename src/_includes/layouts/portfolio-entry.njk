@@ -83,6 +83,17 @@ layout: layouts/base.njk
                 </p>
               {% endif %}
             </section>
+          {% elif block.type == "image_swipe" %}
+            <section class="space-y-4 w-full">
+              <img-comparison-slider class="w-full rounded-2xl shadow-[0_10px_30px_rgba(0,0,0,0.35)] overflow-hidden outline-none" style="--divider-width: 3px; --divider-color: rgba(255, 255, 255, 0.95);" value="50" hover="false" tabindex="0">
+                <img slot="first" src="{{ block.image_1 }}" alt="{{ block.alt_1 }}" class="block w-full h-auto object-contain bg-gray-100">
+                <img slot="second" src="{{ block.image_2 }}" alt="{{ block.alt_2 }}" class="block w-full h-auto object-contain bg-gray-100">
+                
+                <div slot="handle" class="w-[60px] h-[60px] sm:w-[72px] sm:h-[72px] flex items-center justify-center rounded-full bg-black/72 border-[3px] border-white backdrop-blur-[4px] pointer-events-none transition-all duration-200 ease-out shadow-[0_0_0_6px_rgba(255,255,255,0.18),0_8px_24px_rgba(0,0,0,0.45)] group-hover:scale-108 group-hover:bg-black/90 group-hover:shadow-[0_0_0_8px_rgba(255,255,255,0.22),0_10px_28px_rgba(0,0,0,0.55)] group-focus-within:scale-108 group-focus-within:bg-black/90 group-focus-within:shadow-[0_0_0_8px_rgba(255,255,255,0.22),0_10px_28px_rgba(0,0,0,0.55)]" aria-hidden="true">
+                  <span class="text-white text-base sm:text-[1.15rem] font-bold tracking-[0.12em] leading-none">◀ ▶</span>
+                </div>
+              </img-comparison-slider>
+            </section>
           {% endif %}
         {% endfor %}
       </div>

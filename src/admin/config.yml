@@ -218,3 +218,11 @@ collections:
               - { label: "Embed URL", name: "embed_url", widget: "string", required: false }
               - { label: "Include Key", name: "include_key", widget: "string", required: false }
               - { label: "Caption", name: "caption", widget: "string", required: false }
+          - label: "Image Swipe"
+            name: "image_swipe"
+            widget: "object"
+            fields:
+              - { label: "First Image", name: "image_1", widget: "image" }
+              - { label: "First Image Alt Text", name: "alt_1", widget: "string", default: "Before image" }
+              - { label: "Second Image", name: "image_2", widget: "image" }
+              - { label: "Second Image Alt Text", name: "alt_2", widget: "string", default: "After image" }
