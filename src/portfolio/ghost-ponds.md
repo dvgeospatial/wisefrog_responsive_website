@@ -28,4 +28,9 @@ blocks:
     image: /assets/images/ghostponds_2.jpg
     alt: Example mapping image for a ghost pond project
     caption: Example mapping output supporting site interpretation.
+  - type: image_swipe
+    alt_1: Before image
+    alt_2: After image
+    image_1: /assets/images/ghostponds.jpg
+    image_2: /assets/images/ghostponds_2.jpg
 ---
