@@ -18,16 +18,6 @@ blocks:
 
 
       These sites can sometimes be identified from historic mapping, field evidence, and modern spatial analysis.
-  - type: embed
-    embed_type: include
-    title: Image comparison tool
-    include_key: image-overlay-swipe
-    caption: Placeholder for a reusable internal comparison widget.
-    embed_url: https://app.netlify.com/projects/ubgctwildfinder/overview
-  - type: image
-    image: /assets/images/ghostponds_2.jpg
-    alt: Example mapping image for a ghost pond project
-    caption: Example mapping output supporting site interpretation.
   - type: image_swipe
     alt_1: Before image
     alt_2: After image
