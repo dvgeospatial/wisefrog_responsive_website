@@ -2,9 +2,9 @@
 title: Home
 layout: layouts/home.njk
 permalink: /
-hero_text: |-
+hero_text: >-
   
-  Digital mapping and communications for a greener and more sustainable future.
+  Innovative digital mapping and effective communications for a greener and more sustainable future.
 hero_bg_style: Solid Color 1
 hero_bg_color: "#114B5F"
 hero_bg_color_2: "#31c2da"
