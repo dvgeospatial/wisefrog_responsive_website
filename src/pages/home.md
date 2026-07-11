@@ -23,12 +23,6 @@ carousel_section:
       text: tree
       portfolio_entry: /portfolio/ghost-ponds/
       url: /services/
-    - image: /assets/images/screenshot_2026-04-20_21-19-24.png
-      text: hgfd
-      url: /services/
-    - image: /assets/images/k_portrait.jpg
-      text: Katharine
-      url: /services/
     - image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
       text: Ghost ponds
       url: /portfolio/ghost-ponds/
