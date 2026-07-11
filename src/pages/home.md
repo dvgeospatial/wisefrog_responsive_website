@@ -28,6 +28,7 @@ carousel_section:
       url: /portfolio/ghost-ponds/
     - image: /assets/images/wildflower_corner_-_st_johns_field_-_geograph.org.uk_-_5292520.jpg
       text: Awkward corners
+      portfolio_entry: /portfolio/ghost-ponds/
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
     environmental benefits across Norfolk and Suffolk.
