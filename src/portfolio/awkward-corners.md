@@ -14,4 +14,5 @@ summary: Squaring up fields by taking awkward corners and obstacle-heavy patches
   way to hit environmental targets—like the SFI's CAHL3 option—by utilizing the
   exact areas where maneuvering equipment is already more trouble than it is
   worth.
+hero_image: /assets/images/wildflower_corner_-_st_johns_field_-_geograph.org.uk_-_5292520.jpg
 ---
