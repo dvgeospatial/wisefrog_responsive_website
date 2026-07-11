@@ -3,7 +3,7 @@ title: Awkward corners
 layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
-permalink: /portfolio/{{slug}}/
+permalink: /portfolio/awkward-corners/
 summary: Squaring up fields by taking awkward corners and obstacle-heavy patches
   out of production makes practical sense. Areas around telegraph poles or
   irregular boundaries are naturally inefficient to work, often costing more in
