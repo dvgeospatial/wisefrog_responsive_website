@@ -63,7 +63,7 @@ layout: layouts/base.njk
               {% endif %}
 
               {% if block.embed_type == "iframe" and block.embed_url %}
-                <div x-data="{ expanded: false }" @window.message="if($event.data.type === 'toggleMapExpansion') expanded = !expanded" :class="expanded ? 'fixed inset-4 z-50 bg-black rounded-2xl shadow-2xl' : 'aspect-video overflow-hidden rounded-2xl shadow-md bg-gray-100'">
+                <div x-data="{ expanded: false }" @message.window="if($event.data.type === 'toggleMapExpansion') expanded = !expanded" :class="expanded ? 'fixed inset-4 z-50 bg-black rounded-2xl shadow-2xl' : 'aspect-video overflow-hidden rounded-2xl shadow-md bg-gray-100'">
                   <iframe
                     src="{{ block.embed_url }}"
                     title="{{ block.title or title }}"
