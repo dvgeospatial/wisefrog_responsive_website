@@ -19,42 +19,13 @@
 
       
 
+      let isExpanded = false;
       container.onclick = function() {
-
-        if (!document.fullscreenElement) {
-
-          document.body.requestFullscreen().catch(err => {
-
-            console.error(`Error attempting to enable full-screen mode: ${err.message}`);
-
-          });
-
-        } else {
-
-          document.exitFullscreen();
-
-        }
-
+        isExpanded = !isExpanded;
+        container.innerHTML = isExpanded ? 'Close Map' : 'Expand Map';
+        window.parent.postMessage({ type: 'toggleMapExpansion' }, '*');
       };
-
-
-
-      document.addEventListener("fullscreenchange", () => {
-
-        if (document.fullscreenElement) {
-
-          container.innerHTML = "Close Full Screen";
-
-        } else {
-
-          container.innerHTML = "View Full Screen";
-
-        }
-
-      });
-
-
-
+      
       return container;
 
     }
