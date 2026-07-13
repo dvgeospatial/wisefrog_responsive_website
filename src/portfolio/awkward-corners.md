@@ -28,7 +28,7 @@ blocks:
       SFI's CAHL3 option—by utilizing the exact areas where maneuvering
       equipment is already more trouble than it is worth.
   - type: embed
-    embed_url: /assets/maps/awkward-corners-map.html
+    embed_url: /assets/maps/awkward-corners-map/
     embed_type: iframe
     title: awkward corner map
 ---
