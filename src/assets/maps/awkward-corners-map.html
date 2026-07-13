@@ -7,96 +7,9 @@
 
   <!-- Leaflet CSS & JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  // 6. Fullscreen Control Logic
-
-  L.Control.Fullscreen = L.Control.extend({
-
-    onAdd: function(map) {
-
-      const container = L.DomUtil.create("div", "leaflet-control-fullscreen");
-
-      container.innerHTML = "View Full Screen";
-
-      
-
-      let isExpanded = false;
-      container.onclick = function() {
-        isExpanded = !isExpanded;
-        container.innerHTML = isExpanded ? 'Close Map' : 'Expand Map';
-        window.parent.postMessage({ type: 'toggleMapExpansion' }, '*');
-      };
-      
-      return container;
-
-    }
-
-  });
-
-
-
-  new L.Control.Fullscreen({ position: "topright" }).addTo(map);
-
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <!-- Turf.js for geospatial math -->
-  // 6. Fullscreen Control Logic
-
-  L.Control.Fullscreen = L.Control.extend({
-
-    onAdd: function(map) {
-
-      const container = L.DomUtil.create("div", "leaflet-control-fullscreen");
-
-      container.innerHTML = "View Full Screen";
-
-      
-
-      container.onclick = function() {
-
-        if (!document.fullscreenElement) {
-
-          document.body.requestFullscreen().catch(err => {
-
-            console.error(`Error attempting to enable full-screen mode: ${err.message}`);
-
-          });
-
-        } else {
-
-          document.exitFullscreen();
-
-        }
-
-      };
-
-
-
-      document.addEventListener("fullscreenchange", () => {
-
-        if (document.fullscreenElement) {
-
-          container.innerHTML = "Close Full Screen";
-
-        } else {
-
-          container.innerHTML = "View Full Screen";
-
-        }
-
-      });
-
-
-
-      return container;
-
-    }
-
-  });
-
-
-
-  new L.Control.Fullscreen({ position: "topright" }).addTo(map);
-
   <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 
   <style>
@@ -118,37 +31,6 @@
     }
     .leaflet-control-fullscreen:hover {
       background: #f4f4f4;
-    }
-    /* Fullscreen Button Styles */
-
-    .leaflet-control-fullscreen {
-
-      background: white;
-
-      padding: 6px 10px;
-
-      border-radius: 4px;
-
-      box-shadow: 0 1px 5px rgba(0,0,0,0.4);
-
-      cursor: pointer;
-
-      font-family: Arial, sans-serif;
-
-      font-size: 13px;
-
-      font-weight: bold;
-
-      color: #333;
-
-      text-align: center;
-
-    }
-
-    .leaflet-control-fullscreen:hover {
-
-      background: #f4f4f4;
-
     }
   </style>
 </head>
@@ -373,94 +255,25 @@
     drawDirectionArrow(selectedFeature, optimalAngle);
   }
 
-  // 6. Fullscreen Control Logic
+  // 6. Viewport Expansion Control Logic
   L.Control.Fullscreen = L.Control.extend({
     onAdd: function(map) {
       const container = L.DomUtil.create('div', 'leaflet-control-fullscreen');
-      container.innerHTML = 'View Full Screen';
+      let isExpanded = false;
+      
+      container.innerHTML = 'Expand Map';
       
       container.onclick = function() {
-        if (!document.fullscreenElement) {
-          document.body.requestFullscreen().catch(err => {
-            console.error(`Error attempting to enable full-screen mode: ${err.message}`);
-          });
-        } else {
-          document.exitFullscreen();
-        }
+        isExpanded = !isExpanded;
+        container.innerHTML = isExpanded ? 'Close Map' : 'Expand Map';
+        window.parent.postMessage({ type: 'toggleMapExpansion' }, '*');
       };
-
-      // Listen for fullscreen changes to update button text
-      document.addEventListener('fullscreenchange', () => {
-        if (document.fullscreenElement) {
-          container.innerHTML = 'Close Full Screen';
-        } else {
-          container.innerHTML = 'View Full Screen';
-        }
-      });
 
       return container;
     }
   });
 
   new L.Control.Fullscreen({ position: 'topright' }).addTo(map);
-
-  // 6. Fullscreen Control Logic
-
-  L.Control.Fullscreen = L.Control.extend({
-
-    onAdd: function(map) {
-
-      const container = L.DomUtil.create("div", "leaflet-control-fullscreen");
-
-      container.innerHTML = "View Full Screen";
-
-      
-
-      container.onclick = function() {
-
-        if (!document.fullscreenElement) {
-
-          document.body.requestFullscreen().catch(err => {
-
-            console.error(`Error attempting to enable full-screen mode: ${err.message}`);
-
-          });
-
-        } else {
-
-          document.exitFullscreen();
-
-        }
-
-      };
-
-
-
-      document.addEventListener("fullscreenchange", () => {
-
-        if (document.fullscreenElement) {
-
-          container.innerHTML = "Close Full Screen";
-
-        } else {
-
-          container.innerHTML = "View Full Screen";
-
-        }
-
-      });
-
-
-
-      return container;
-
-    }
-
-  });
-
-
-
-  new L.Control.Fullscreen({ position: "topright" }).addTo(map);
 
 </script>
 </body>
