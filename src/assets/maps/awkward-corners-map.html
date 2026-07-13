@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Interactive Awkward Corners</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Turf.js for geospatial math -->
+  <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+
+  <style>
+    body { margin: 0; padding: 0; background: #111; }
+    #map { position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: #000; }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script>
+  // 1. Baked-in GeoJSON
+  const frenchParcels = {
+    "type": "FeatureCollection",
+    "features": [
+      {"id": "946a002930ab1b28b9e7da4fc93dfa94", "type": "Feature", "properties": {"fid": 1, "name": "Field 1", "area_ha": 11.4499}, "geometry": {"coordinates": [[[-0.9362276757995573, 49.28242636546719], [-0.9363830856529489, 49.282106631762844], [-0.9369927704640872, 49.27705300424955], [-0.9370764526926791, 49.27685022443865], [-0.936215721194543, 49.276780031232875], [-0.9358092646542104, 49.27663184524812], [-0.9358451284666103, 49.27706860266187], [-0.9341117108666879, 49.27755215100191], [-0.9342910299288292, 49.27942390633288], [-0.9327488859946698, 49.27936931447462], [-0.9327369313909628, 49.28092905804712], [-0.93359766288782, 49.281069432549], [-0.9353430350927283, 49.28120980665133], [-0.9351756706343224, 49.28228599482782], [-0.9362276757995573, 49.28242636546719]]], "type": "Polygon"}},
+      {"id": "8cb2b0d4a39022004d4011e9eb9878d1", "type": "Feature", "properties": {"fid": 2, "name": "Field 2", "area_ha": 4.8449}, "geometry": {"coordinates": [[[-0.9342905419474334, 49.2794229024247], [-0.930204315396395, 49.279261198594185], [-0.930190033904438, 49.27790557736287], [-0.9341350726635085, 49.27779269548711], [-0.9342905419474334, 49.2794229024247]]], "type": "Polygon"}},
+      {"id": "cb5c5bb586c6b4d4c9af14e575ea5341", "type": "Feature", "properties": {"fid": 3, "name": "Field 3", "area_ha": 2.0613}, "geometry": {"coordinates": [[[-0.9341319498840619, 49.27779442468392], [-0.934108749409603, 49.277548758265425], [-0.9337232646049358, 49.27746725728775], [-0.9339884201766324, 49.27678185662066], [-0.9318674306577464, 49.27666973483227], [-0.931403789621271, 49.2778710716467], [-0.9341319498840619, 49.27779442468392]]], "type": "Polygon"}},
+      {"id": "8e44209b1b7d078a0e76ae04f3ceca60", "type": "Feature", "properties": {"fid": 4, "name": "Field 4", "area_ha": 2.6739}, "geometry": {"coordinates": [[[-0.9318678332382717, 49.27667016749214], [-0.9319219653690425, 49.27643258532353], [-0.931528277149539, 49.276357136692866], [-0.9317177396046645, 49.275902837178535], [-0.930384120764046, 49.27541321640945], [-0.9300950475842171, 49.277070520256814], [-0.9301897550479623, 49.27790545871301], [-0.9314028282614402, 49.27787085342263], [-0.9318678332382717, 49.27667016749214]]], "type": "Polygon"}},
+      {"id": "3742a788bd73eabb283f5cf3f77a6699", "type": "Feature", "properties": {"fid": 5, "name": "Field 5", "area_ha": 6.6772}, "geometry": {"coordinates": [[[-0.929949573223837, 49.28049625097279], [-0.9300846996501377, 49.27927594641267], [-0.9301088149589134, 49.278663694699475], [-0.9299784182364306, 49.27714659472531], [-0.9287980903151549, 49.27686430297291], [-0.9278368487822206, 49.27684286302693], [-0.927598857184222, 49.27841166914092], [-0.9275666961577258, 49.27959500251134], [-0.9276117215959232, 49.28033771852833], [-0.9285653525490432, 49.28027843709813], [-0.9287634344031801, 49.280370737400176], [-0.929949573223837, 49.28049625097279]]], "type": "Polygon"}},
+      {"id": "afad937a2168efa7ec7b02552ac03f33", "type": "Feature", "properties": {"fid": 6, "name": "Field 6", "area_ha": 9.0169}, "geometry": {"coordinates": [[[-0.9277618715564699, 49.275585431650114], [-0.925901121617585, 49.27567692796265], [-0.9256176553843432, 49.27569084810722], [-0.9248041448494462, 49.27642353202674], [-0.9245753096149372, 49.27770890422312], [-0.9245058362417637, 49.279307217899884], [-0.9275718293255011, 49.279477658033244], [-0.9275972050760117, 49.278400367314845], [-0.9278316384603045, 49.27685714412641], [-0.9277618715564699, 49.275585431650114]]], "type": "Polygon"}},
+      {"id": "52a6292f67a37fa0a4b922257f0df010", "type": "Feature", "properties": {"fid": 7, "name": "Field 7", "area_ha": 5.1358}, "geometry": {"coordinates": [[[-0.9270882898399293, 49.28214400900214], [-0.9276017737824134, 49.28196196336077], [-0.9278361903644736, 49.28177627611433], [-0.9278581804760506, 49.280322351541514], [-0.927612157054142, 49.280337148552604], [-0.9275676324981248, 49.27959478298209], [-0.9275710813628564, 49.27947754893057], [-0.924487382049108, 49.279304020466526], [-0.9242976162441892, 49.28098982826063], [-0.9268873613410165, 49.28117551846796], [-0.927049220410396, 49.28126654282448], [-0.9270882898399293, 49.28214400900214]]], "type": "Polygon"}}
+    ]
+  };
+
+  // 2. Setup Leaflet Map (Framed strictly to the bounding box)
+  // Calculate bounding box using Turf
+  const bbox = turf.bbox(frenchParcels);
+  const corner1 = L.latLng(bbox[1], bbox[0]);
+  const corner2 = L.latLng(bbox[3], bbox[2]);
+  const bounds = L.latLngBounds(corner1, corner2);
+
+  const map = L.map('map', { 
+      zoomControl: false,
+      maxBounds: bounds.pad(0.1), // Lock panning slightly outside the fields
+      maxBoundsViscosity: 1.0,
+      minZoom: 14 // Prevent zooming out too far
+  });
+  
+  L.control.zoom({ position: 'bottomleft' }).addTo(map);
+  
+  // Fit map exactly to the data bounds
+  map.fitBounds(bounds, { padding: [20, 20] });
+
+  // Mapbox Satellite Imagery
+  const mToken = 'pk.' + 'eyJ1Ijoid2lzZWZyb2dtYXBib3giLCJhIjoiY21sZ3R2a2JsMDI0MjNmb2cxbnNpZnVxbiJ9' + '.iFfxLC6MrpS-9I9A2w1DtA';
+  L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/{z}/{x}/{y}?access_token=' + mToken, {
+    attribution: '&copy; <a href="https://www.mapbox.com/about/maps/">Mapbox</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+    tileSize: 512,
+    zoomOffset: -1,
+    maxZoom: 19
+  }).addTo(map);
+
+  let selectedFeature = null;
+  const scanlinesLayer = L.layerGroup().addTo(map);
+
+  // 3. Render Parcels
+  const parcelsLayer = L.geoJSON(frenchParcels, {
+    style: function(feature) {
+      // Set fillOpacity to 0, keep fill: true so it registers pointer events internally
+      return { fillColor: '#a3b18a', color: '#1cfcf1', weight: 1.5, opacity: 0.8, fillOpacity: 0, fill: true };
+    },
+    onEachFeature: function(feature, layer) {
+      layer.on('click', function() {
+        // Reset styles
+        parcelsLayer.eachLayer(l => l.setStyle({ fillOpacity: 0, color: '#1cfcf1', weight: 1.5 }));
+        
+        // Highlight clicked
+        layer.setStyle({ fillOpacity: 0, color: '#60a5fa', weight: 3 });
+        layer.bringToFront();
+        
+        selectedFeature = feature;
+        runCalculation();
+      });
+      
+      // Cursor pointer to show interactivity
+      layer.on('mouseover', () => { layer.getElement().style.cursor = 'pointer'; });
+    }
+  }).addTo(map);
+
+  // 4. Spatial Math Core
+  function rotateCartesian(feature, angleDeg, pivot) {
+    const rad = angleDeg * (Math.PI / 180), cos = Math.cos(rad), sin = Math.sin(rad);
+    const cx = pivot[0], cy = pivot[1];
+    const clone = JSON.parse(JSON.stringify(feature));
+    turf.coordEach(clone, (coord) => {
+      const x = coord[0] - cx, y = coord[1] - cy;
+      coord[0] = x * cos - y * sin + cx;
+      coord[1] = x * sin + y * cos + cy;
+    });
+    return clone;
+  }
+
+  function getCartesianArea(feature) {
+    let area = 0;
+    turf.geomEach(feature, geom => {
+      if (geom.type === 'Polygon') {
+        let ring = geom.coordinates[0], a = 0;
+        for (let i = 0; i < ring.length - 1; i++) a += ring[i][0] * ring[i+1][1] - ring[i+1][0] * ring[i][1];
+        area += a / 2;
+      }
+    });
+    return Math.abs(area);
+  }
+
+  function getCartesianLength(lineFeature) {
+    let len = 0, coords = lineFeature.geometry.coordinates;
+    for (let i = 0; i < coords.length - 1; i++) {
+      let dx = coords[i+1][0] - coords[i][0], dy = coords[i+1][1] - coords[i][1];
+      len += Math.sqrt(dx*dx + dy*dy);
+    }
+    return len;
+  }
+
+  function drawDirectionArrow(wgs84Poly, optimalAngle) {
+    const centroid = turf.centroid(wgs84Poly);
+    const pBbox = turf.bbox(wgs84Poly);
+    const diagKm = turf.distance([pBbox[0], pBbox[1]], [pBbox[2], pBbox[3]]);
+    
+    const arrowLenKm = diagKm * 0.45;
+    const headLenKm = diagKm * 0.08;
+    
+    const bearing1 = 90 + optimalAngle;
+    const bearing2 = 270 + optimalAngle;
+
+    const cPt = centroid.geometry.coordinates;
+    const p1 = turf.destination(cPt, arrowLenKm / 2, bearing1).geometry.coordinates;
+    const p2 = turf.destination(cPt, arrowLenKm / 2, bearing2).geometry.coordinates;
+    
+    const ah1a = turf.destination(p1, headLenKm, bearing1 + 145).geometry.coordinates;
+    const ah1b = turf.destination(p1, headLenKm, bearing1 - 145).geometry.coordinates;
+    const ah2a = turf.destination(p2, headLenKm, bearing2 + 145).geometry.coordinates;
+    const ah2b = turf.destination(p2, headLenKm, bearing2 - 145).geometry.coordinates;
+
+    const flip = c => [c[1], c[0]];
+
+    // Shadow Outline
+    L.polyline([flip(p1), flip(p2)], { color: '#111', weight: 8, opacity: 0.9 }).addTo(scanlinesLayer);
+    L.polyline([flip(ah1a), flip(p1), flip(ah1b)], { color: '#111', weight: 8, opacity: 0.9, lineJoin: 'round' }).addTo(scanlinesLayer);
+    L.polyline([flip(ah2a), flip(p2), flip(ah2b)], { color: '#111', weight: 8, opacity: 0.9, lineJoin: 'round' }).addTo(scanlinesLayer);
+
+    // Yellow Core
+    L.polyline([flip(p1), flip(p2)], { color: '#facc15', weight: 4, opacity: 1 }).addTo(scanlinesLayer);
+    L.polyline([flip(ah1a), flip(p1), flip(ah1b)], { color: '#facc15', weight: 4, opacity: 1, lineJoin: 'round' }).addTo(scanlinesLayer);
+    L.polyline([flip(ah2a), flip(p2), flip(ah2b)], { color: '#facc15', weight: 4, opacity: 1, lineJoin: 'round' }).addTo(scanlinesLayer);
+  }
+
+  // 5. Awkward Corners Engine
+  function runCalculation() {
+    scanlinesLayer.clearLayers();
+    
+    // Hardcoded spacing since the UI control was removed
+    const spacing = 10; 
+
+    let cartesianPoly = turf.toMercator(selectedFeature);
+    let bboxOrig = turf.bbox(cartesianPoly);
+    let center = [(bboxOrig[0] + bboxOrig[2]) / 2, (bboxOrig[1] + bboxOrig[3]) / 2];
+
+    let optimalAngle = 0;
+    let bestScore = -Infinity;
+
+    for (let angle = 0; angle < 180; angle += 4) {
+      let rotated = rotateCartesian(cartesianPoly, angle, center);
+      let pBbox = turf.bbox(rotated);
+      let heightM = pBbox[3] - pBbox[1];
+      if (heightM === 0) continue;
+
+      let areaSqM = getCartesianArea(rotated);
+      let passCount = Math.floor(heightM / spacing);
+      if (passCount === 0) continue;
+
+      let avgPassWidth = areaSqM / heightM;
+      let score = (avgPassWidth * passCount) - (passCount * spacing * 3);
+      if (score > bestScore) { bestScore = score; optimalAngle = angle; }
+    }
+
+    const anglesToTest = [ { name: 'optimal', angle: optimalAngle }, { name: 'ninetyDegrees', angle: (optimalAngle + 90) % 180 } ];
+    let allLinesCartesian = [];
+
+    anglesToTest.forEach(orientation => {
+      let rotatedPoly = rotateCartesian(cartesianPoly, orientation.angle, center);
+      turf.flattenEach(rotatedPoly, function(simplePoly) {
+        let pBbox = turf.bbox(simplePoly);
+        let scanYCoords = [];
+        for (let y = pBbox[1]; y <= pBbox[3]; y += spacing) scanYCoords.push(y);
+        if (scanYCoords.length === 0 || (pBbox[3] - scanYCoords[scanYCoords.length - 1] > 0.05)) scanYCoords.push(pBbox[3]);
+
+        scanYCoords.forEach(yPos => {
+          let thickScanPoly = turf.polygon([[
+            [pBbox[0] - 1000, yPos - 0.005], [pBbox[2] + 1000, yPos - 0.005],
+            [pBbox[2] + 1000, yPos + 0.005], [pBbox[0] - 1000, yPos + 0.005],
+            [pBbox[0] - 1000, yPos - 0.005]
+          ]]);
+
+          try {
+            let intersection = turf.intersect(thickScanPoly, simplePoly);
+            if (intersection) {
+              turf.flattenEach(intersection, function(intersectedPart) {
+                if (intersectedPart.geometry.type === 'Polygon') {
+                  let iBbox = turf.bbox(intersectedPart);
+                  if (iBbox[2] - iBbox[0] > 0.05) { 
+                    let segment = turf.lineString([[iBbox[0], yPos], [iBbox[2], yPos]]);
+                    let finalLine = rotateCartesian(segment, -orientation.angle, center);
+                    finalLine.properties = { orientation: orientation.name, length: getCartesianLength(finalLine) };
+                    allLinesCartesian.push(finalLine);
+                  }
+                }
+              });
+            }
+          } catch (e) {} 
+        });
+      });
+    });
+
+    if (allLinesCartesian.length === 0) return;
+
+    let groups = {};
+    allLinesCartesian.forEach(line => {
+      let key = line.properties.orientation;
+      if (!groups[key]) groups[key] = { totalLen: 0, count: 0 };
+      groups[key].totalLen += line.properties.length;
+      groups[key].count += 1;
+    });
+
+    let deviations = [];
+    allLinesCartesian.forEach(line => {
+      let mean = groups[line.properties.orientation].totalLen / groups[line.properties.orientation].count;
+      line.properties.deviation = line.properties.length - mean;
+      deviations.push(line.properties.deviation);
+    });
+
+    deviations.sort((a, b) => a - b);
+    let p20Index = Math.floor(deviations.length * 0.20);
+    let thresholdDeviation = deviations[Math.max(0, p20Index)];
+
+    allLinesCartesian.forEach(cartLine => {
+      cartLine.properties.is_awkward = (cartLine.properties.deviation <= thresholdDeviation);
+      
+      let wgs84Line = turf.toWgs84(cartLine);
+      let leafletCoords = wgs84Line.geometry.coordinates.map(c => [c[1], c[0]]);
+      let isAwkward = wgs84Line.properties.is_awkward;
+      
+      L.polyline(leafletCoords, { 
+        color: isAwkward ? '#ef4444' : '#f9fafb', 
+        weight: isAwkward ? 3 : 1.5, 
+        dashArray: isAwkward ? '4,4' : null,
+        opacity: isAwkward ? 1.0 : 0.6
+      }).addTo(scanlinesLayer);
+    });
+
+    drawDirectionArrow(selectedFeature, optimalAngle);
+  }
+</script>
+</body>
+</html>

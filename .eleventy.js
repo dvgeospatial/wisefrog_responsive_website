@@ -1,6 +1,7 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/logos");
+  eleventyConfig.addPassthroughCopy("src/assets/maps");
   eleventyConfig.addPassthroughCopy("src/admin");
 
   // Create a foolproof custom collection that grabs everything in the services folder
