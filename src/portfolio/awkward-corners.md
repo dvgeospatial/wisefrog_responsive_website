@@ -17,7 +17,7 @@ blocks:
       passes in awkward corners burn more fuel, waste more time, and accumulate
       more overlapping inputs compared to the long straight runs within the
       productive core of the field."
-    heading: Awkward Corners
+    heading: ""
   - type: text
     body: "DEFRA's SFI26 scheme includes CAHL3: Grassy Field Corners or Blocks — is
       a funded action designed for exactly this situation. Take those
@@ -27,19 +27,20 @@ blocks:
       genuine contribution to farmland wildlife — tussocky, undisturbed habitat
       that delivers for nature while the productive core of the field continues
       to do what it does best."
-    heading: Funded Habitat Creation
+    heading: ""
   - type: text
     body: Every farmer knows their land like the back of their hand, but manually
       measuring and mapping those awkward corners across an entire holding takes
-      valuable time. To automate this process, Wisefrog developed the Wilder
-      Margin Mapper. Using digital map data from the Rural Payments Agency, the
-      Wilder Margin Mapper inspects each parcel to calculate the optimal working
+      valuable time. To automate this process, Wisefrog have developed the
+      **Wilder Margin Mapper**. Using digital map data from the Rural Payments
+      Agency that details every arable field parcel in the country, the **Wilder
+      Margin Mapper** inspects each parcel to calculate the optimal working
       layout for the longest tractor runs. It then mathematically pinpoints
       exactly where those efficient lines break down into short, fuel-wasting
       corners. This creates a solid, ready-to-use evidence base of mapped
       marginal zones that can easily be transitioned into funded nature recovery
       areas.
-    heading: Wilder Margin Mapper
+    heading: ""
   - type: text
     body: The interactive demo below illustrates how the Wilder Margin Mapper works.
       Click on the light blue outlined field parcels and see the optimal
