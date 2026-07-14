@@ -13,9 +13,10 @@ blocks:
       out of room, the irregular bites carved out by an ancient hedge line, the
       tight angles where the combine has to make a three-point turn.
       Agricultural fields are rarely perfect rectangles, and the awkward corners
-      of fields may cost more to farm than they return in yield: short,
-      constrained passes in awkward corners burn more fuel, waste more time, and
-      accumulate overlapping inputs."
+      of fields may cost more to farm than they return in yield: those short
+      passes in awkward corners burn more fuel, waste more time, and accumulate
+      more overlapping inputs compared to the long straight runs in the clear
+      body of the field."
   - type: text
     body: "DEFRA's SFI26 scheme includes CAHL3: Grassy Field Corners or Blocks — is
       a funded action designed for exactly this situation. Take those
