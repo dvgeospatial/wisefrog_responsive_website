@@ -5,15 +5,17 @@ layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
 permalink: /portfolio/awkward-corners/
-summary: "Farmers know them well  — those triangular wedges where the tractor
-  runs out of room, the irregular bites carved out by an ancient hedge line, the
-  tight angles where the combine has to make a three-point turn. Agricultural
-  fields are rarely perfect rectangles, and the awkward corners of fields may
-  cost more to farm than they return in yield: short, constrained passes in
-  awkward corners burn more fuel, waste more time, and accumulate overlapping
-  inputs."
+summary: ""
 hero_image: /assets/images/wildflower_corner_-_st_johns_field_-_geograph.org.uk_-_5292520.jpg
 blocks:
+  - type: text
+    body: "Farmers know them well  — those triangular wedges where the tractor runs
+      out of room, the irregular bites carved out by an ancient hedge line, the
+      tight angles where the combine has to make a three-point turn.
+      Agricultural fields are rarely perfect rectangles, and the awkward corners
+      of fields may cost more to farm than they return in yield: short,
+      constrained passes in awkward corners burn more fuel, waste more time, and
+      accumulate overlapping inputs."
   - type: text
     body: "DEFRA's SFI26 scheme includes CAHL3: Grassy Field Corners or Blocks — is
       a funded action designed for exactly this situation. Take those
