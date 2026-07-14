@@ -1,5 +1,6 @@
 ---
-title: Awkward corners
+title: "The Wilder Margin: Turning Inefficient Field Corners into Funded
+  Wildlife Habitat"
 layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
