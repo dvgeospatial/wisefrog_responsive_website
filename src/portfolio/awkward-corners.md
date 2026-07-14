@@ -30,4 +30,15 @@ blocks:
     embed_url: /assets/maps/awkward-corners-map/
     embed_type: iframe
     title: awkward corner map
+  - type: text
+    body: Every farmer knows their land like the back of their hand, but manually
+      measuring and mapping those awkward corners across an entire holding takes
+      valuable time. To automate this process, Wisefrog developed the Awkward
+      Corner Finder. Using digital map data from the Rural Payments Agency, the
+      tool inspects each parcel to calculate the optimal working layout for the
+      longest tractor runs. It then mathematically pinpoints exactly where those
+      efficient lines break down into short, fuel-wasting corners. This creates
+      a solid, ready-to-use evidence base of mapped marginal zones that can
+      easily be transitioned into funded nature recovery areas.
+    heading: Mapping Awkward Corners
 ---
