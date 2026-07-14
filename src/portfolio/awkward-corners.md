@@ -26,10 +26,6 @@ blocks:
       genuine contribution to farmland wildlife — tussocky, undisturbed habitat
       that delivers for nature while the productive core of the field continues
       to do what it does best."
-  - type: embed
-    embed_url: /assets/maps/awkward-corners-map/
-    embed_type: iframe
-    title: awkward corner map
   - type: text
     body: Every farmer knows their land like the back of their hand, but manually
       measuring and mapping those awkward corners across an entire holding takes
@@ -41,4 +37,8 @@ blocks:
       a solid, ready-to-use evidence base of mapped marginal zones that can
       easily be transitioned into funded nature recovery areas.
     heading: Mapping Awkward Corners
+  - type: embed
+    embed_url: /assets/maps/awkward-corners-map/
+    embed_type: iframe
+    title: awkward corner map
 ---
