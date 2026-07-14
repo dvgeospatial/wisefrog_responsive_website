@@ -15,16 +15,14 @@ summary: "Farmers know them well  — those triangular wedges where the tractor
 hero_image: /assets/images/wildflower_corner_-_st_johns_field_-_geograph.org.uk_-_5292520.jpg
 blocks:
   - type: text
-    body: Squaring up fields by taking awkward corners and obstacle-heavy patches
-      out of production makes practical sense. Areas around telegraph poles or
-      irregular boundaries are naturally inefficient to work, often costing more
-      in time, fuel, and overlapping inputs than they return in yield. By
-      dropping these tricky spots from the cultivation plan and converting them
-      into grassy blocks, you streamline your machinery passes while
-      effortlessly creating a network of wildlife refuges scattered across the
-      farm. It is a straightforward way to hit environmental targets—like the
-      SFI's CAHL3 option—by utilizing the exact areas where maneuvering
-      equipment is already more trouble than it is worth.
+    body: "DEFRA's SFI26 scheme includes CAHL3: Grassy Field Corners or Blocks — is
+      a funded action designed for exactly this situation. Take those
+      constrained, costly corners out of cultivation, establish a native grass
+      sward, and receive £590 per hectare per year for three years. What was a
+      marginal, loss-making strip of ground becomes a stable income line and a
+      genuine contribution to farmland wildlife — tussocky, undisturbed habitat
+      that delivers for nature while the productive core of the field continues
+      to do what it does best."
   - type: embed
     embed_url: /assets/maps/awkward-corners-map/
     embed_type: iframe
