@@ -41,9 +41,9 @@ blocks:
       areas.
     heading: Wilder Margin Mapper
   - type: text
-    body: The interactive demo illustrates how the Wilder Margin Mapper works. Click
-      on the light blue outined field parcels and see the optimal direction
-      arrow appear. The red shaded areas are those that fall below the
+    body: The interactive demo below illustrates how the Wilder Margin Mapper works.
+      Click on the light blue outlined field parcels and see the optimal
+      direction arrow appear. The red shaded areas are those that fall below the
       threshold.
   - type: embed
     embed_url: /assets/maps/awkward-corners-map/
