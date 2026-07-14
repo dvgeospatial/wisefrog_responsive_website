@@ -19,8 +19,8 @@ blocks:
       productive core of the field."
     heading: ""
   - type: text
-    body: "DEFRA's SFI26 scheme includes CAHL3: Grassy Field Corners or Blocks — is
-      a funded action designed for exactly this situation. Take those
+    body: "DEFRA's SFI26 scheme includes CAHL3: Grassy Field Corners or Blocks —
+      which is a funded action designed for exactly this situation. Take those
       constrained, costly corners out of cultivation, establish a native grass
       sward, and receive £590 per hectare per year for three years. What was a
       marginal, loss-making strip of ground becomes a stable income line and a
