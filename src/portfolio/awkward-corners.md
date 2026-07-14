@@ -15,8 +15,8 @@ blocks:
       Agricultural fields are rarely perfect rectangles, and the awkward corners
       of fields may cost more to farm than they return in yield: those short
       passes in awkward corners burn more fuel, waste more time, and accumulate
-      more overlapping inputs compared to the long straight runs in the clear
-      body of the field."
+      more overlapping inputs compared to the long straight runs within the
+      productive core of the field."
   - type: text
     body: "DEFRA's SFI26 scheme includes CAHL3: Grassy Field Corners or Blocks — is
       a funded action designed for exactly this situation. Take those
