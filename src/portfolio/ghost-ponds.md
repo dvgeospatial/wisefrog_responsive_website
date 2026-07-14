@@ -4,15 +4,7 @@ layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
 permalink: /portfolio/ghost-ponds/
-summary: >+
-  "Ghost ponds" are historically filled-in agricultural ponds that can retain
-  dormant seeds and eggs, allowing for rapid biodiversity recovery when
-  re-excavated. By using automated computer vision to extract water features
-  from 1880s Ordnance Survey maps and comparing them against modern maps, these
-  buried habitats can be accurately located. Wise Frog can provide accurate
-  ghost pond locations in GeoJSON format, empowering conservation and
-  restoration efforts from individual farms to county-wide projects.
-
+summary: "\n\n"
 hero_image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
 teaser_image: ""
 blocks:
