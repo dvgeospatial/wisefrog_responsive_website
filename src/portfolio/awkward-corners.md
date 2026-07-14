@@ -41,5 +41,5 @@ blocks:
   - type: embed
     embed_url: /assets/maps/awkward-corners-map/
     embed_type: iframe
-    title: awkward corner map
+    title: Wilder Margin Mapper Demo
 ---
