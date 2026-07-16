@@ -19,8 +19,8 @@ carousel_section:
     - image: /assets/images/mapstack_2.png
       text: stack of maps
       url: /services/
-    - image: /assets/images/screenshot_2026-03-19_16-47-36_sam3_overlay-portrait.webp
-      text: tree
+    - image: /assets/images/screenshot_2026-07-16_15-05-45.png
+      text: canopyMap
       portfolio_entry: /portfolio/ghost-ponds/
       url: /services/
     - image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
