@@ -3,6 +3,6 @@ title: Canopy Map
 layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
-permalink: /portfolio/{{slug}}/
+permalink: /portfolio/canopy-map
 summary: blah blah blah
 ---
