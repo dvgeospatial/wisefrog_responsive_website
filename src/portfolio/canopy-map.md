@@ -9,11 +9,11 @@ hero_image: /assets/images/screenshot_2026-07-16_15-05-45.png
 blocks:
   - type: text
     body: >-
-      Our canopyMap layer is a highly detailed 3D digital map of every tree,
-      hedge, and woodland in the landscape. Designed to support habitat
-      management and conservation, it provides land managers and environmental
-      projects with an at-a-glance view of vegetation structure within a land
-      holding or landscape. 
+      Our canopyMap layer is a detailed 3D digital map of every tree, hedge, and
+      woodland in the landscape. Designed to support habitat management and
+      conservation, it provides land managers and environmental projects with an
+      at-a-glance view of vegetation structure within a land holding or
+      landscape. 
 
 
       ## Practical Conservation Applications
