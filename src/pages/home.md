@@ -21,7 +21,7 @@ carousel_section:
       url: /services/
     - image: /assets/images/screenshot_2026-07-16_15-05-45.png
       text: canopyMap
-      portfolio_entry: /portfolio/ghost-ponds/
+      portfolio_entry: /portfolio/canopy-map/
       url: /services/
     - image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
       text: Ghost ponds
