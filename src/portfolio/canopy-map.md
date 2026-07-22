@@ -8,11 +8,12 @@ summary: ""
 hero_image: /assets/images/screenshot_2026-07-16_15-05-45.png
 blocks:
   - type: text
-    body: Our canopyMap layer is a detailed 3D digital map of every tree, hedge, and
-      woodland in the landscape. Designed to support habitat management and
-      conservation, it provides land managers and environmental projects with an
-      at-a-glance view of vegetation structure within a land holding or
-      landscape.
+    body: Our canopyMap layer captures height, location and canopy/crown extents of
+      all trees and hedges in urban and rural areas above 1m in height. Designed
+      to support habitat management and conservation, it provides land managers
+      and environmental projects with an at-a-glance view of vegetation
+      structure within a land holding or landscape.
+    heading: "Canopy Map: every tree and hedge mapped"
   - type: text
     body: >-
       The CanopyMap visualizes all vegetation over one meter in height using a
@@ -34,6 +35,7 @@ blocks:
       * Counting and measuring Trees Outside of Woodland (TOW) across a specific project area.
 
       * Providing detailed assessments of hedgerow network connectivity  to support local biodiversity and nature recovery strategies.
+    heading: Potential use cases
   - type: text
     body: >-
       The foundation of the CanopyMap is the Environment Agency’s National LiDAR
