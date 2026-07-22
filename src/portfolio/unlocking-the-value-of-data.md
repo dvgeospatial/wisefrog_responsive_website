@@ -1,5 +1,5 @@
 ---
-title: " "
+title: " Unlocking the Value of Data"
 layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
@@ -8,12 +8,12 @@ hero_image: /assets/images/mapstack_2.png
 blocks:
   - type: text
     body: Today, we have an incredible wealth of digital mapping data at our
-      fingertips. There has been an exponential growth in information about our
-      world, and it holds the potential to help us identify priorities and make
-      practical plans for action. However, raw data alone isn't enough. The true
-      value of this information must be unlocked, and it is by combining these
-      distinct datasets that real, actionable insight finally emerges.
-    heading: Unlocking the Value of Data
+      fingertips. While the exponential growth in spatial information holds
+      massive potential to help us with prioritising resources and planning
+      on-the-ground action, raw data alone is rarely enough. The true value of
+      this information must be unlocked, and it is by combining these distinct
+      spatial datasets that real, actionable insight emerges.
+    heading: An Abundance of Spatial Data
   - type: text
     body: Raw datasets alone only show isolated facts, but when we layer them
       together, actionable insights emerge right where they intersect. For
