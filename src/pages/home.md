@@ -17,7 +17,7 @@ hero_image_spacing: Flush (gap-0)
 carousel_section:
   items:
     - image: /assets/images/mapstack_2.png
-      text: stack of maps
+      text: Unlocking the Value of Data
       url: /services/
     - image: /assets/images/screenshot_2026-07-16_15-05-45.png
       text: canopyMap
