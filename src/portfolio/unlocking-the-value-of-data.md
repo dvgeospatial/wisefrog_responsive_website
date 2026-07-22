@@ -33,22 +33,21 @@ blocks:
     heading: Moving Past the Steep Learning Curve
     body: "The onward march of technology is allowing us to move beyond the
       traditional, one-size-fits-all approach and toward building responsive,
-      bespoke web tools designed for specific use cases. Everyone's requirements
-      are different, so a single, generic map is no longer the best solution.
-      Instead of requiring users to manage complex data layers, modern web
-      interfaces are becoming highly task-specific. For example, rather than
-      asking a landowner to manually overlay soil, hydrology, and vegetation
-      maps, a custom tool can be built to directly answer a practical question:
-      \"Where are the best areas on my land for nature recovery interventions?\"
-      The map only shows what you need it to show, tailored exactly to your area
-      of interest. This shift is all about giving people the user experience
-      they actually want. Customers want decision-ready outputs, not complex
-      analysis tasks. Ultimately, the digital mapping industry is shifting away
-      from a \"here is the data, sort yourself out\" mentality. Wisefrog are
-      positioned on the cutting edge of this new wave of focused, specific
-      workflow tools rather than general-purpose GIS, we can package complex
-      domain logic into simple, intuitive web maps ready to deliver the insight
-      you need to make confident decisions."
+      bespoke web mapping tools designed for specific use cases. Everyone's
+      requirements are different, so a single, generic map or tool set is no
+      longer the best solution. Instead of requiring users to manage complex
+      data layers, it is now viable to develop web tools tailored to a very
+      specific use case. For example, rather than asking a landowner to manually
+      overlay soil, hydrology, and designated area maps, a custom tool can be
+      built to directly answer a practical question: \"Where are the best areas
+      on my land for nature recovery interventions?\" The map only shows what
+      you need it to show, tailored exactly to your area of interest. This shift
+      is all about giving people the user experience they actually want.
+      Customers want decision-ready outputs, not complex analysis tasks.
+      Wisefrog are positioned on the cutting edge of this new wave of focused,
+      specific workflow tools rather than general-purpose GIS, we can package
+      complex domain logic into simple, intuitive web maps ready to deliver the
+      insight you need to make confident decisions."
   - type: text
     heading: Delivering Decision-Ready Insights
     body: "Fortunately, that picture is changing. The onward march of technology is
