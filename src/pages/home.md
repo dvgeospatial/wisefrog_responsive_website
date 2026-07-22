@@ -20,7 +20,7 @@ carousel_section:
       text: Unlocking the Value of Data
       url: /portfolio/unlocking-the-value-of-data/
     - image: /assets/images/screenshot_2026-07-16_15-05-45.png
-      text: canopyMap
+      text: Canopy Map; every tree and hedge mapped
       portfolio_entry: ""
       url: /portfolio/canopy-map/
     - image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
