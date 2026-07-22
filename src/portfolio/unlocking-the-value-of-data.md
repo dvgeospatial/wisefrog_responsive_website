@@ -3,7 +3,7 @@ title: Unlocking the Value of Data
 layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
-permalink: /portfolio/{{slug}}/
+permalink: /portfolio/unlocking-the-value-of-data/
 hero_image: /assets/images/mapstack_2.png
 blocks:
   - type: text
