@@ -31,7 +31,7 @@ carousel_section:
       portfolio_entry: /portfolio/awkward-corners/
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
-    environmental benefits across Norfolk and Suffolk.
+    environmental benefits.
   heading: Digital Maps
   alignment: center
   bg_color: "#e8f2f0"
