@@ -11,7 +11,7 @@ members:
       environment policy. She is also the author of several popular travel
       guides to Bruges and Brussels, and continues to write articles for general
       media on a variety of topics.
-    photo: /assets/images/k_portrait_2.png
+    photo: /assets/images/k_portrait_2.webp
   - name: Daniel Voisey
     biography: >-
       Daniel is a digital mapping expert who combines technical proficiency with
@@ -24,5 +24,5 @@ members:
 
 
       Using open-source GIS and AI, Daniel transforms digital mapping data into practical insights that inform the detailed design of nature recovery measures. To make this spatial data accessible to non-technical users like farmers, volunteers, and local partners, Daniel builds intuitive, custom web mapping applications. Ultimately, his location intelligence work drives better decision-making for environmental consulting, sustainable land management, and nature recovery across the East Anglia.
-    photo: /assets/images/d_portrait_2.jpg
+    photo: /assets/images/d_portrait_2.webp
 ---

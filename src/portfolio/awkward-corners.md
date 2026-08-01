@@ -6,7 +6,7 @@ tags:
   - portfolio
 permalink: /portfolio/awkward-corners/
 summary: ""
-hero_image: /assets/images/wildflower_corner_-_st_johns_field_-_geograph.org.uk_-_5292520.jpg
+hero_image: /assets/images/wildflower_corner_-_st_johns_field_-_geograph.org.uk_-_5292520.webp
 blocks:
   - type: text
     body: "Farmers know them well  — those triangular wedges where the tractor runs

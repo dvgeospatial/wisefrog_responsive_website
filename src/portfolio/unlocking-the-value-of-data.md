@@ -4,7 +4,7 @@ layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
 permalink: /portfolio/unlocking-the-value-of-data/
-hero_image: /assets/images/mapstack_2.png
+hero_image: /assets/images/mapstack_2.webp
 blocks:
   - type: text
     body: Today, we have an incredible wealth of digital mapping data at our

@@ -27,8 +27,8 @@ collections:
           - { label: "Hero Background Color 1", name: "hero_bg_color", widget: "hidden", default: "#114B5F" }
           - { label: "Hero Background Color 2", name: "hero_bg_color_2", widget: "hidden", default: "#31c2da" }
           - { label: "Hero SVG Path", name: "hero_svg_path", widget: "hidden", default: "M0,0 L48,0 Q-47.08,46 46,100 L0,100 Z" }
-          - { label: "Hero Image 1", name: "hero_image_1", widget: "hidden", default: "/assets/images/communications_nodes_graph_transparent.png" }
-          - { label: "Hero Image 2", name: "hero_image_2", widget: "hidden", default: "/assets/images/mapstack_2.png" }
+          - { label: "Hero Image 1", name: "hero_image_1", widget: "hidden", default: "/assets/images/communications_nodes_graph_transparent.webp" }
+          - { label: "Hero Image 2", name: "hero_image_2", widget: "hidden", default: "/assets/images/mapstack_2.webp" }
           - { label: "Hero Layout", name: "hero_layout", widget: "hidden", default: "Stacked Centered" }
           - { label: "Hero Image Scale", name: "hero_image_scale", widget: "hidden", default: "Large (max-w-lg)" }
           - { label: "Hero Image Spacing", name: "hero_image_spacing", widget: "hidden", default: "Flush (gap-0)" }

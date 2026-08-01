@@ -5,7 +5,7 @@ tags:
   - portfolio
 permalink: /portfolio/canopy-map/
 summary: ""
-hero_image: /assets/images/screenshot_2026-07-16_15-05-45.png
+hero_image: /assets/images/screenshot_2026-07-16_15-05-45.webp
 blocks:
   - type: text
     body: Our canopyMap layer captures height, location and canopy/crown extents of

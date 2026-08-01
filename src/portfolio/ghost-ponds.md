@@ -5,7 +5,7 @@ tags:
   - portfolio
 permalink: /portfolio/ghost-ponds/
 summary: "\n\n"
-hero_image: /assets/images/pond_-_geograph.org.uk_-_407745.jpg
+hero_image: /assets/images/pond_-_geograph.org.uk_-_407745.webp
 teaser_image: ""
 blocks:
   - type: text
@@ -28,8 +28,8 @@ blocks:
   - type: image_swipe
     alt_1: Before image
     alt_2: After image
-    image_1: /assets/images/ghostponds.jpg
-    image_2: /assets/images/ghostponds_2.jpg
+    image_1: /assets/images/ghostponds.webp
+    image_2: /assets/images/ghostponds_2.webp
     body: This is where restoration comes in. Pioneering work by Professor Carl
       Sayer at University College London, along with the Norfolk Ponds Project,
       has shown that excavating ghost ponds can bring them back to life with
