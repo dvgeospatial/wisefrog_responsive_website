@@ -32,7 +32,7 @@ carousel_section:
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
     environmental benefits.
-  heading: Digital Maps
+  heading: Mapping for Insight
   alignment: center
   bg_color: "#e8f2f0"
   global_shadow_intensity: Light
