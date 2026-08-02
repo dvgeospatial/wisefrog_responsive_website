@@ -53,8 +53,8 @@ communications_section:
     - image: /assets/images/communications_nodes_graph_transparent.webp
       text: " A map"
       url: /services/
-  body: Develop communication networks to promote sustainable development and
-    nature recovery initiatives
+  body: Communication networks to promote sustainable development and nature
+    recovery initiatives
   heading: Communications
   alignment: center
   bg_color: "#fefeff"
