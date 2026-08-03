@@ -8,11 +8,12 @@ summary: ""
 hero_image: /assets/images/wildFinderNorwich_with_text.webp
 blocks:
   - type: text
-    body: Wild Finder is a dynamic mapping tool designed to empower citizen science
-      by transforming scattered wildlife sightings into a clear, navigable
-      picture of local biodiversity. By turning abstract species lists into
-      concrete geographical data, it serves as an essential bridge between
-      public curiosity and grassroots conservation.
+    body: wildFinder is a dynamic mapping tool developed by wisefrog designed to
+      empower citizen science by presenting wildlife sightings captured using
+      iNaturalist into a clear, navigable picture of local biodiversity. By
+      framing biodiversity observation data for a defined 'local' area in an
+      easy engaging app wildFinder provides a bridge between between public
+      curiosity toward engagement and meaningful citizen science activity .
     heading: Promote citizen science with wildFinder
   - type: text
     body: The application makes biodiversity immediate and tangible for the public
