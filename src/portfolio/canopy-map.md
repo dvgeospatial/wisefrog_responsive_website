@@ -8,11 +8,12 @@ summary: ""
 hero_image: /assets/images/screenshot_2026-07-16_15-05-45.webp
 blocks:
   - type: text
-    body: Our canopyMap layer captures height, location and canopy/crown extents of
-      all trees and hedges in urban and rural areas above 1m in height. Designed
-      to support habitat management and conservation, it provides land managers
-      and environmental projects with an at-a-glance view of vegetation
-      structure within a land holding or landscape.
+    body: Wisefrog's canopyMap is a map layer that captures height, location and
+      canopy/crown extents of all trees and hedges in urban and rural areas
+      above 1m in height. Designed to support habitat management and
+      conservation, it provides land managers and environmental projects with an
+      at-a-glance view of vegetation structure within a land holding or
+      landscape.
     heading: "Canopy Map: every tree and hedge mapped"
   - type: text
     body: >-
