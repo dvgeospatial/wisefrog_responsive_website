@@ -1,10 +1,10 @@
 ---
-title: wildFinder
+title: " "
 layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
 permalink: /portfolio/wildfinder/
-summary: wildFinder is a map for community citizen science
+summary: ""
 hero_image: /assets/images/wildFinderNorwich_with_text.webp
 blocks:
   - type: text
