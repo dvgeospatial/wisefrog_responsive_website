@@ -7,12 +7,11 @@ permalink: /portfolio/unlocking-the-value-of-data/
 hero_image: /assets/images/mapstack_2.webp
 blocks:
   - type: text
-    body: Today, we have an incredible wealth of digital mapping data at our
-      fingertips. While the exponential growth in spatial information holds
-      massive potential to help us with prioritising resources and planning
-      on-the-ground action, raw data alone is rarely enough. The true value of
-      this information must be unlocked, and it is by combining these distinct
-      spatial datasets that real, actionable insight emerges.
+    body: Today, we have an incredible wealth of digital mapping data available to
+      us and this data holds massive potential to help us with prioritising
+      resources and planning on-the-ground action. However, raw data alone is
+      rarely enough; the true value of this information often only emerges when
+      we combine distinct spatial datasets.
     heading: An Abundance of Spatial Data
   - type: text
     body: Raw datasets alone only show isolated facts, but when we layer them
@@ -23,27 +22,26 @@ blocks:
       specific field abuts a highly protected SSSI, this exact location becomes
       a prime opportunity rather than just a standard field margin. By taking a
       single action here—planting a habitat buffer strip to resurrect the pond
-      from its historic sediment —you improve farming operations while
-      simultaneously linking a restored wetland directly to a critical wildlife
-      corridor. By highlighting where one intervention solves multiple problems
-      at once, combined data tells us exactly where to focus our efforts for the
-      maximum possible impact.
+      from its historic sediment —there is an opportunity to improve farming
+      operations while simultaneously linking a restored wetland directly to a
+      critical wildlife corridor. By highlighting where one intervention solves
+      multiple problems at once, combined data tells us exactly where to focus
+      our efforts for the maximum possible positive impact.
     heading: Insight at the intersection
   - type: text
     heading: Moving Past the Steep Learning Curve
-    body: "The onward march of technology is allowing us to move beyond the
-      traditional, one-size-fits-all approach and toward building responsive,
-      bespoke web mapping tools designed for specific use cases. Everyone's
-      requirements are different, so a single, generic map or tool set is no
-      longer the best solution. Instead of requiring users to manage complex
-      data layers, it is now viable to develop web tools tailored to a very
-      specific use case. For example, rather than asking a landowner to manually
-      overlay soil, hydrology, and designated area maps, a custom tool can be
-      built to directly answer a practical question: \"Where are the best areas
-      on my land for nature recovery interventions?\" The map only shows what
-      you need it to show, tailored exactly to your area of interest. This shift
-      is all about giving people the user experience they actually want.
-      Customers want decision-ready outputs, not complex analysis tasks.
+    body: "Digital mapping can be complex - and we have all seen mapping software
+      with long lists of obscure layers and a dazzling array of buttons. Tools
+      like this Everyone's requirements are different, so a single, generic map
+      or tool set is no longer the best solution. Instead of requiring users to
+      manage complex data layers, it is now viable to develop web tools tailored
+      to a very specific use case. For example, rather than asking a landowner
+      to manually overlay soil, hydrology, and designated area maps, a custom
+      tool can be built to directly answer a practical question: \"Where are the
+      best areas on my land for nature recovery interventions?\" The map only
+      shows what you need it to show, tailored exactly to your area of interest.
+      This shift is all about giving people the user experience they actually
+      want. Customers want decision-ready outputs, not complex analysis tasks.
       Wisefrog are positioned on the cutting edge of this new wave of focused,
       specific workflow tools rather than general-purpose GIS, we can package
       complex domain logic into simple, intuitive web maps ready to deliver the
