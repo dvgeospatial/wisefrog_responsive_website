@@ -16,9 +16,6 @@ hero_image_scale: Large (max-w-lg)
 hero_image_spacing: Flush (gap-0)
 carousel_section:
   items:
-    - image: /assets/images/mapstack_2.webp
-      text: Unlocking the Value of Data
-      url: /portfolio/unlocking-the-value-of-data/
     - image: /assets/images/screenshot_2026-07-16_15-05-45.webp
       text: Canopy Map
       portfolio_entry: ""
@@ -29,6 +26,8 @@ carousel_section:
     - image: /assets/images/wildflower_corner_-_st_johns_field_-_geograph.org.uk_-_5292520.webp
       text: Wilder Margins
       portfolio_entry: /portfolio/awkward-corners/
+    - image: /assets/images/wildFinderNorwich_with_text.webp
+      text: wildFinder
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
     environmental benefits.
