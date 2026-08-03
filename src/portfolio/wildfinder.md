@@ -1,5 +1,5 @@
 ---
-title: " wildFinder"
+title: " "
 layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
