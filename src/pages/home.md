@@ -28,6 +28,7 @@ carousel_section:
       portfolio_entry: /portfolio/awkward-corners/
     - image: /assets/images/wildFinderNorwich_with_text.webp
       text: wildFinder
+      portfolio_entry: /portfolio/wildfinder/
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
     environmental benefits.
