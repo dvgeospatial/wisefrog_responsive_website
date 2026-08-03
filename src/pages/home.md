@@ -27,7 +27,7 @@ carousel_section:
       text: Wilder margins
       portfolio_entry: /portfolio/awkward-corners/
     - image: /assets/images/wildFinderNorwich_with_text.webp
-      text: wildFinder
+      text: " "
       portfolio_entry: /portfolio/wildfinder/
   body: Mapping and 3D visualisation to support insight, inform evidence-based
     decisions, and enable effective collaboration for nature recovery and wider
