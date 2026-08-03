@@ -17,14 +17,14 @@ hero_image_spacing: Flush (gap-0)
 carousel_section:
   items:
     - image: /assets/images/screenshot_2026-07-16_15-05-45.webp
-      text: Canopy Map
+      text: Canopy map
       portfolio_entry: ""
       url: /portfolio/canopy-map/
     - image: /assets/images/pond_-_geograph.org.uk_-_407745.webp
       text: Ghost ponds
       url: /portfolio/ghost-ponds/
     - image: /assets/images/wildflower_corner_-_st_johns_field_-_geograph.org.uk_-_5292520.webp
-      text: Wilder Margins
+      text: Wilder margins
       portfolio_entry: /portfolio/awkward-corners/
     - image: /assets/images/wildFinderNorwich_with_text.webp
       text: wildFinder
