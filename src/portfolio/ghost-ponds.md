@@ -1,5 +1,5 @@
 ---
-title: " "
+title: " Ghost ponds"
 layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
