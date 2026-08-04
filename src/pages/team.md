@@ -13,16 +13,13 @@ members:
       media on a variety of topics.
     photo: /assets/images/k_portrait_2.webp
   - name: Daniel Voisey
-    biography: >-
+    biography: >
       Daniel is a digital mapping expert who combines technical proficiency with
-      deep environmental domain experience. He is well-versed in UK nature
-      recovery policy and practice and how to use digital mapping software and
-      data to plan for action on the ground. Recently, Daniel led the technical
-      design of the Norfolk and Suffolk Local Nature Recovery Strategy habitat
-      map, merging spatial modelling with stakeholder input to pinpoint wildlife
-      corridors and priority areas for restoration.
-
-
-      Using open-source GIS and AI, Daniel transforms digital mapping data into practical insights that inform the detailed design of nature recovery measures. To make this spatial data accessible to non-technical users like farmers, volunteers, and local partners, Daniel builds intuitive, custom web mapping applications. Ultimately, his location intelligence work drives better decision-making for environmental consulting, sustainable land management, and nature recovery across the East Anglia.
+      environmental domain experience. He is well-versed in UK nature recovery
+      policy and practice and how to use digital mapping software to deliver the
+      strategic insight to best inform action on the ground. Recently, Daniel
+      led the technical design of the Norfolk and Suffolk Local Nature Recovery
+      Strategy habitat map, merging spatial modelling with stakeholder input to
+      pinpoint wildlife corridors and priority areas for restoration.
     photo: /assets/images/d_portrait_2.webp
 ---
