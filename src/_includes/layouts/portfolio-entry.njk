@@ -1,4 +1,3 @@
----
 layout: layouts/base.njk
 ---
 <div class="max-w-5xl mx-auto px-6 py-12 lg:py-16">
@@ -17,7 +16,7 @@ layout: layouts/base.njk
       {% if hero_image %}
         <figure class="overflow-hidden rounded-2xl shadow-lg bg-gray-100">
           <img
-            src="{{ hero_image }}"
+            src="{{ hero_image }}
             alt="{{ title }}"
             class="w-full h-auto object-cover"
           >
@@ -43,8 +42,8 @@ layout: layouts/base.njk
             <figure class="space-y-4">
               <div class="overflow-hidden rounded-2xl shadow-md bg-gray-100">
                 <img
-                  src="{{ block.image }}"
-                  alt="{{ block.alt }}"
+                  src="{{ block.image }}
+                  alt="{{ block.alt }}
                   class="w-full h-auto object-cover"
                 >
               </div>
@@ -63,12 +62,18 @@ layout: layouts/base.njk
               {% endif %}
 
               {% if block.embed_type == "iframe" and block.embed_url %}
-                <div x-data="{ expanded: false }" @message.window="if($event.data.type === 'toggleMapExpansion') expanded = !expanded" :class="expanded ? 'fixed inset-4 z-50 bg-black rounded-2xl shadow-2xl' : 'aspect-video overflow-hidden rounded-2xl shadow-md bg-gray-100'">
+                <div
+                  x-data="{ expanded: false }"
+                  @message.window="if($event.data.type === 'toggleMapExpansion') expanded = !expanded"
+                  :class="expanded
+                    ? 'w-full h-[90vh] rounded-2xl shadow-2xl bg-black'
+                    : 'w-full h-[60vh] rounded-2xl shadow-md bg-gray-100 overflow-hidden'">
                   <iframe
                     src="{{ block.embed_url }}"
                     title="{{ block.title or title }}"
                     class="w-full h-full border-0"
-                    loading="lazy" allowfullscreen
+                    loading="lazy"
+                    allowfullscreen
                   ></iframe>
                 </div>
               {% elif block.embed_type == "include" and block.include_key %}
