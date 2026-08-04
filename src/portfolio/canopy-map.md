@@ -52,4 +52,7 @@ blocks:
 
       Explore our interactive demos below to see the CanopyMap in action, featuring 3D hedge profiles, pond shading analysis, and hedgerow classifications across sample field parcels.
     heading: How we built the Canopy Map
+  - type: embed
+    embed_type: iframe
+    embed_url: https://canopymapnorwich.netlify.app/
 ---
