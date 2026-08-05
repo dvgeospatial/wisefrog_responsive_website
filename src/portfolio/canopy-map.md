@@ -1,5 +1,5 @@
 ---
-title: canopyMap
+title: Canopy map
 layout: layouts/portfolio-entry.njk
 tags:
   - portfolio
