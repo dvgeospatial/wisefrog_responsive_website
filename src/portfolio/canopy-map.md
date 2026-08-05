@@ -19,21 +19,7 @@ blocks:
   - type: embed
     embed_type: iframe
     embed_url: https://canopymapnorwich.netlify.app/
-  - type: text
-    body: >-
-      The foundation of the CanopyMap is the Environment Agency’s National LiDAR
-      Programme data. Between 2017 and 2023, specially equipped planes flew
-      across England, bouncing laser pulses off the landscape to achieve
-      complete, 1-meter resolution coverage of the country. While the primary
-      goal was to help predict flood risks and manage coastal erosion, this rich
-      dataset has incredible value for conservation.
-
-
-      To isolate the vegetation, our mapping process compares two different digital layers: a map of the bare earth and a surface map showing the tops of everything sitting on the ground. By subtracting the ground level from the overall height, we effectively strip away the terrain to reveal the true heights of the objects above it. The data is then carefully filtered to focus entirely on plants and trees. Finally, a precise digital boundary is drawn around the leafy canopy of each tree, calculating the exact peak height to create a comprehensive landscape profile.
-
-
-      Explore our interactive demos below to see the CanopyMap in action, featuring 3D hedge profiles, pond shading analysis, and hedgerow classifications across sample field parcels.
-    heading: How we built the Canopy map
+    title: ""
   - body: >-
       Canopy map is derived from the Environment Agency’s National LIDAR
       Programme data which models the terrain and surface features for all of
