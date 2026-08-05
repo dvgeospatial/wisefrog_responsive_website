@@ -27,4 +27,13 @@ blocks:
 
 
       To isolate the vegetation for Canopy map, our mapping process compares two different digital layers: a map of the bare earth and a surface map showing the tops of everything sitting on the ground. By subtracting the ground level from the overall height, we effectively strip away the terrain to reveal the true heights of the objects above it. The data is then filtered to remove buildings and other features such as solar farms.  Finally, a precise digital boundary is drawn around the leafy canopy of each tree, calculating the exact peak height to create a comprehensive landscape profile.
+  - type: text
+    body: "To isolate the vegetation, our mapping process compares two different
+      digital layers: a map of the bare earth and a surface map showing the tops
+      of everything sitting on the ground. By subtracting the ground level from
+      the overall height, we effectively strip away the terrain to reveal the
+      true heights of the objects above it. The data is then carefully filtered
+      to focus entirely on plants and trees. Finally, a precise digital boundary
+      is drawn around the leafy canopy of each tree, calculating the exact peak
+      height to create a comprehensive landscape profile."
 ---
