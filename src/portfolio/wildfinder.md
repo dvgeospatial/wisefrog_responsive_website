@@ -21,4 +21,7 @@ blocks:
       wildFinder helps to promote real engagement and meaningful citizen science
       activity .
     heading: Promote citizen science with wildFinder
+  - type: embed
+    embed_type: iframe
+    embed_url: https://norwichwildfinder.netlify.app/
 ---
